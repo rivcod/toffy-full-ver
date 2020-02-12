@@ -31,12 +31,19 @@
     <div class="card-body">
         <div class="submitForm">
             <div class="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
-                <form>
+                <form method="POST" action=".">
+                    {% csrf_token %}
+                    {% for field in form %}
                     <div class="form-group">
-                        <input type="email" class="form-control" id="_email" aria-describedby="_email" placeholder="Enter email">
-                        <input type="username" class="form-control" id="_username" aria-describedby="_username" placeholder="Enter Username">
-                        <input type="password" class="form-control" id="_password" aria-describedby="_password" placeholder="Enter password">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
+                          placeholder="{{field.label }}" name="{{ field.name }}" />
+                        
                     </div>
+                    {% if field.errors %}
+                    <span style="color: red">{{ field.errors }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </br>
                     <button type="submit" class="btn btn-primary _joinClass">Join</button>
                 </form>
