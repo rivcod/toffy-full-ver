@@ -1,6 +1,12 @@
 from django.shortcuts import render
+from django.views.generic.edit import FormView
+from .forms import RegisterForm
 
 # Create your views here.
 
-def signUp(request):
-    return render(request, 'signUp.html')
+def index(request):
+    return render(request, 'index.html')
+
+class RegisterView(FormView):
+    template_name = 'signUp.html'
+    form_class = RegisterForm

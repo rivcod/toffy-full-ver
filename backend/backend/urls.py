@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tfuser.views import index, RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
+    path('signUp/', RegisterView.as_view())
 ]
