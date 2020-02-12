@@ -8,6 +8,9 @@ class Tfuser(models.Model):
     password = models.CharField(max_length=4, verbose_name='password')
     regdate = models.DateTimeField(auto_now_add=True, verbose_name='regdate')
 
+    def __str__(self):
+        return self.email
+
     class Meta:
         db_table = 'toffy_user'
         verbose_name = '유저'
