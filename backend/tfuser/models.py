@@ -3,8 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Tfuser(models.Model):
-    objects = models.Manager()
-    # Tfuser.DoesNotExists: 오류 해결을 위해 추가
     email = models.EmailField(verbose_name='email')
     username = models.CharField(max_length=10, verbose_name='username')
     password = models.CharField(max_length=4, verbose_name='password')
