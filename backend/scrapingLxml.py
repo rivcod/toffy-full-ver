@@ -8,16 +8,19 @@ import sqlite3
 import django
 import os
 import sys
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 django.setup()
 from tfgame.models import Tfgame
 from datetime import datetime
 import json
-driver = webdriver.Chrome('/Users/piani/Documents/GitHub/Tofffy/backend/chromedriver.exe')
+driver = webdriver.Chrome('/Users/piani/Documents/GitHub/Toffyy/backend/chromedriver.exe')
+
 def main():
     driver.get('https://fnd.io/#/kr/charts/iphone/top-paid/games')
-    driver.implicitly_wait(4)
-    html = driver.page_source
+    driver.implicitly_wait(5)
+    html = driver.page_source  #print(html) OK
+   
+    gameTitle = []
     gameTitle = scrapeGameTitle(html)
     # gameCompany = scrapeGameCompany(html)
     # gamePrice = scrapeGamePrice(html)
@@ -27,26 +30,30 @@ def main():
 
     result = []
     data = {}
+    if gameTitle :
+        for game in gameTitle:
+            print("gameTextStrip : " + game.text.strip())
+            # print(gameCompany.text.strip())
+            # print(gamePrice.text.strip())
+            # print(gameOs.text.strip())
+            # print(gameRating.text.strip())
+        # print(gameRelease.text.strip())
+            data = {
+                'title': game.text.strip(),
+                # 'company': gameCompany.text.strip(),
+                # 'price': gamePrice.text.strip(),
+                # 'os': gameOs.text.strip(),
+                # 'rating': gameRating.text.strip(),
+                #'release': gameRelease.text.strip(),
+            }
 
-    for game in gameTitle:
-        print(game.text.strip())
-        # print(gameCompany.text.strip())
-        # print(gamePrice.text.strip())
-        # print(gameOs.text.strip())
-        # print(gameRating.text.strip())
-       # print(gameRelease.text.strip())
-        data = {
-            'title': game.text.strip(),
-            # 'company': gameCompany.text.strip(),
-            # 'price': gamePrice.text.strip(),
-            # 'os': gameOs.text.strip(),
-            # 'rating': gameRating.text.strip(),
-            #'release': gameRelease.text.strip(),
-        }
+            result.append(data)
+        print("result[1].get(title) : "+result[1].get('title'))
 
-        result.append(data)
+        return result
+    else :
+        print("GameData = X ")
 
-    return result
 
     # for game in gameCompany:
     #     data[company.text] = game.text.strip()
@@ -64,6 +71,7 @@ def scrapeGameTitle(response):
     notices = []
     root = BeautifulSoup(response, 'html.parser')
     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
+    #print(notices) OK
     return notices
 
 # def scrapeGameCompany(response):
@@ -96,9 +104,15 @@ def scrapeGameTitle(response):
 #     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
 #     return notices
 
-
 if __name__ == '__main__':
     gameData = main()
-    for gameList in gameData:
-        for t, c, p, o, r, r2 in gameList.items():
-            game(title=t, company=c, price=p, os=o, rating=r, release=r2).save()
+    if gameData :
+        #print("gameData = main() = " + gameData)
+        #  for gameList in gameData:
+        #      for t, c, p, o, r, r2 in gameList.items():
+        #          game(title=t, company=c, price=p, os=o, rating=r, release=r2).save()
+        for gameList in gameData:
+            for t in gameList.items():
+                print("하나씩 뽑아줌"+t)
+    else :
+        print("gameData = main() = X")
