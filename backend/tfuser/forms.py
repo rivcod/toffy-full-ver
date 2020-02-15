@@ -1,4 +1,5 @@
 from django import forms
+from .models import tfuser
 
 class RegisterForm(forms.Form):
     email = forms.EmailField(
@@ -19,3 +20,15 @@ class RegisterForm(forms.Form):
         },
         widget=forms.PasswordInput, label='password'
     )
+
+    def Join(self):
+        cleaned_date = super().clean()
+        email = cleaned_data.get('email')
+        username = cleaned_data.get('username')
+        password = cleaned_date.get('password')
+
+        tfuser = tfuser(
+            email=email,
+            username=username,
+            password=password
+        )
