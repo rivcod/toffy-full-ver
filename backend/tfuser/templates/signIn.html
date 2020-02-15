@@ -7,7 +7,7 @@
     <title>Toffy - Tap off your Taste</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/tfgame/css/bootstrap4-neon-glow.css">
+    <!-- <link rel="stylesheet" href="static/tfgame/css/bootstrap4-neon-glow.css"> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -30,7 +30,8 @@
     <div class="card-body">
         <div class="submitForm">
             <div class="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
-                {% csrf_token %}
+                <form method="POST" action=".">
+                    {% csrf_token %}
                     {% for field in form %}
                     <div class="form-group">
                         <label for="{{ field.id_for_label }}">{{ field.label }}</label>

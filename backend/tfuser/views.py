@@ -6,6 +6,7 @@ from .forms import RegisterForm, LoginForm
 
 def index(request):
     return render(request, 'index.html', { 'email': request.session.get('user') })
+    # 로그인했을 때 session 안에 있는 user를 보여주려고 값 넘김
 
 class RegisterView(FormView):
     template_name = 'signUp.html'
