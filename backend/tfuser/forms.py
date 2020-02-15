@@ -21,8 +21,8 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput, label='password'
     )
 
-    def Join(self):
-        cleaned_data = super().join()
+    def clean(self):
+        cleaned_data = super().clean()
         email = cleaned_data.get('email')
         username = cleaned_data.get('username')
         password = cleaned_data.get('password')

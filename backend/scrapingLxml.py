@@ -1,3 +1,5 @@
+### Tfgame 크롤링
+
 import requests
 import lxml.html
 from bs4 import BeautifulSoup
@@ -17,43 +19,40 @@ driver = webdriver.Chrome('/Users/piani/Documents/GitHub/Toffyy/backend/chromedr
 
 def main():
     driver.get('https://fnd.io/#/kr/charts/iphone/top-paid/games')
-    driver.implicitly_wait(5)
-    html = driver.page_source  #print(html) OK
+    driver.implicitly_wait(5) # 5초간 대기(타겟 페이지가 크롤링할 시간)
+    html = driver.page_source 
    
     gameTitle = []
     gameTitle = scrapeGameTitle(html)
     # gameCompany = scrapeGameCompany(html)
     # gamePrice = scrapeGamePrice(html)
     # gameOs = scrapeGameOs(html)
-    # gameRating = scrapeGameRating(html)
-    #gameRelease = scrapeGameRelease(html)
+    # gameRelease = scrapeGameRelease(html)
 
     result = []
     data = {}
     if gameTitle :
-        for game in gameTitle:
-            print("gameTextStrip : " + game.text.strip())
+        for gameT in gameTitle :
             # print(gameCompany.text.strip())
             # print(gamePrice.text.strip())
             # print(gameOs.text.strip())
-            # print(gameRating.text.strip())
-        # print(gameRelease.text.strip())
+            # print(gameRelease.text.strip())
             data = {
-                'title': game.text.strip(),
+                'title': gameT.text.strip(),
                 # 'company': gameCompany.text.strip(),
-                # 'price': gamePrice.text.strip(),
+                # 'price': gameP.text.strip(),
                 # 'os': gameOs.text.strip(),
-                # 'rating': gameRating.text.strip(),
-                #'release': gameRelease.text.strip(),
+                # 'release': gameRelease.text.strip(),
+                # 'image' : ???,
+                # 'rank' : ???
             }
 
             result.append(data)
-        print("result[1].get(title) : "+result[1].get('title'))
+        #print("result[1].get(title) : "+result[1].get('title'))
 
         return result
     else :
         print("GameData = X ")
-
 
     # for game in gameCompany:
     #     data[company.text] = game.text.strip()
@@ -61,17 +60,14 @@ def main():
     #     data[price.text] = game.text.strip()
     # for game in gameOs:
     #     data[os.text] = 'IOS'
-    # for game in gameRating:
-    #     data[rating.text] = game.text.strip()
     # for game in gameRelease:
     #     data[release.text] = game.text.strip()
 
-#타이틀 완료
+#타이틀 완료 BeautifulSoup를 사용해서 복수의 태그를 Css 선택자를 사용해 지정후 리턴 
 def scrapeGameTitle(response):
     notices = []
     root = BeautifulSoup(response, 'html.parser')
     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
-    #print(notices) OK
     return notices
 
 # def scrapeGameCompany(response):
@@ -79,20 +75,14 @@ def scrapeGameTitle(response):
 #     root = BeautifulSoup(response, 'html.parser')
 #     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
 #     return notices
-#금액 완료
+
 # def scrapeGamePrice(response):
 #     notices = []
 #     root = BeautifulSoup(response, 'html.parser')
-#     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div  > .col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center >div > span > a')
-#     return notices
-#Os 완료(IOS 리턴)
-# def scrapeGameOs(response):
-#     notices = []
-#     root = BeautifulSoup(response, 'html.parser')
-#     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
-#     return notices
+#     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div  > .col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div > span > a')
+#     return noticess
 
-# def scrapeGameRating(response):
+# def scrapeGameOs(response):
 #     notices = []
 #     root = BeautifulSoup(response, 'html.parser')
 #     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
@@ -104,15 +94,20 @@ def scrapeGameTitle(response):
 #     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
 #     return notices
 
+# main을 실행
 if __name__ == '__main__':
+    #main에서 리턴해준 result를 gameData 변수에 담기
     gameData = main()
     if gameData :
-        #print("gameData = main() = " + gameData)
         #  for gameList in gameData:
-        #      for t, c, p, o, r, r2 in gameList.items():
-        #          game(title=t, company=c, price=p, os=o, rating=r, release=r2).save()
-        for gameList in gameData:
-            for t in gameList.items():
-                print("하나씩 뽑아줌"+t)
+        #      for t, c, p, o, r in gameList.items():
+        #          game(title=t, company=c, price=p, os=o, release=r).save()
+
+        #순서대로 Tfgame 모델에 저장 랭크의 경우 for문이 돌면서 1씩 증가
+         _rank = 1
+         for gameList in gameData:
+             for t in gameList.items():
+                 Tfgame(title=t[1], company='test', price='test', os='IOS', release='test', image='test', rank=_rank).save()
+                 _rank +=1
     else :
         print("gameData = main() = X")

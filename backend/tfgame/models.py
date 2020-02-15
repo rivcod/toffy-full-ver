@@ -13,6 +13,12 @@ class Tfgame(models.Model):
                               verbose_name='os')                                                  
     release = models.CharField(max_length=50,
                               verbose_name='release')
+    image = models.CharField(max_length=100,
+                              verbose_name='image',
+                              default='SOME STRING')
+    rank = models.CharField(max_length=30,
+                              verbose_name='rank',
+                              default='SOME STRING')
 
     class Meta:
         db_table = 'toffy_game'
