@@ -27,7 +27,7 @@ class RegisterForm(forms.Form):
         username = cleaned_data.get('username')
         password = cleaned_data.get('password')
 
-        tfuser = tfuser(
+        tfuser = Tfuser(
             email=email,
             username=username,
             password=password
