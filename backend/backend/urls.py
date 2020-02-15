@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tfgame/', include('tfgame.urls')),
     path('', index),
-    path('signUp/', RegisterView.as_view())
+    path('signUp/', RegisterView.as_view()),
+    path('signIn/', LoginView.as_view())
 ]
