@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +7,7 @@
     <title>Toffy - Tap off your Taste</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="static/tfgame/css/bootstrap4-neon-glow.css"> -->
+    <link rel="stylesheet" href="static/tfgame/css/bootstrap4-neon-glow.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -31,20 +30,25 @@
     <div class="card-body">
         <div class="submitForm">
             <div class="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
-                <form>
+                {% csrf_token %}
+                    {% for field in form %}
                     <div class="form-group">
-                        <input type="email" class="form-control" id="_email" aria-describedby="_email" placeholder="Enter email">
-                        <input type="username" class="form-control" id="_username" aria-describedby="_username" placeholder="Enter Username">
-                        <input type="password" class="form-control" id="_password" aria-describedby="_password" placeholder="Enter password">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
+                          placeholder="{{field.label }}" name="{{ field.name }}" />
                     </div>
+                    {% if field.errors %}
+                    <span style="color: red">{{ field.errors }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </br>
-                    <button type="submit" class="btn btn-primary _joinClass">Join</button>
+                <button type="submit" class="btn btn-primary _joinClass">Login</button>
                 </form>
                 <div id="_apiJoinClass">
                     <br>
                     <p>or</p>
-                    <button type="submit" class="btn btn-primary _apiJoinClass1">Join With Google</button>
-                    <button type="submit" class="btn btn-primary _apiJoinClass2">Join With Facebook</button>
+                    <button type="submit" class="btn btn-primary _apiJoinClass1">Login With Google</button>
+                    <button type="submit" class="btn btn-primary _apiJoinClass2">Login With Facebook</button>
                 </div>
             </div>
         </div>
@@ -52,6 +56,5 @@
     </div>     
 
       <!-- ============ SUBMIT END ============ -->
-
     </body>
 </html>
