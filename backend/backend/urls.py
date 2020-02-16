@@ -14,13 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import path
 from django.urls import path, include
+from rest_framework import routers
+from oneLine import views
+
+# 8000
 from tfuser.views import index, RegisterView, LoginView
+
+router = routers.DefaultRouter()
+router.register('wisesaying', views.WiseSayingView, 'wisesaying')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tfgame/', include('tfgame.urls')),
     path('', index),
     path('signUp/', RegisterView.as_view()),
-    path('signIn/', LoginView.as_view())
+    path('signIn/', LoginView.as_view()),
+    path('api/', include(router.urls))
 ]
+# localhost:8000/api/wisesaying 에 접속하면 api를 볼 수 있다.

@@ -57,7 +57,7 @@ class LoginForm(forms.Form):
         if email and password:
             try:
                 tfuser = Tfuser.objects.get(email=email)
-            except Tfuser.DoesNotExists:
+            except Tfuser.DoesNotExist:
                 self.add_error('email', '존재하지 않는 이메일입니다.')
                 return
 
