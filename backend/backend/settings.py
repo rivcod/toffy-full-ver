@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'tfgame',
     'tftag',
     'tffav',
-    'oneLine.apps.OnelineConfig',
+    'oneLine',
     'rest_framework',
     'corsheaders'
     # 3000 포트 -> 8000 포트로 요청을 하기 위한 corsheaders
