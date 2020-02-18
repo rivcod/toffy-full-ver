@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import TextItem from "./TextItem";
 import SignUp from "./pages/SignUp.js";
 import SignIn from "./pages/SignIn";
 import MyPage from "./pages/MyPage";
 import Home from "./pages/Home";
+import Test from "./pages/Test";
 import axios from "axios";
 
 import "./css/index.css";
