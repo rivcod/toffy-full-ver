@@ -13,7 +13,7 @@ serviceWorker();
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-export { default as Home } from "./pages/Home";
-export { default as Mypage } from "./pages/MyPage";
+export { default as Home } from "./pages/Home.js";
+export { default as Mypage } from "./pages/MyPage.js";
 export { default as SignUp } from "./pages/SignUp.js";
-export { default as SignIn } from "./pages/SignIn";
+export { default as SignIn } from "./pages/SignIn.js";
