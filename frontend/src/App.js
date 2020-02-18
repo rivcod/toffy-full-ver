@@ -5,12 +5,8 @@ import SignIn from "./pages/SignIn";
 import MyPage from "./pages/MyPage";
 import Home from "./pages/Home";
 import Test from "./pages/Test";
-import axios from "axios";
 
 import "./css/index.css";
-
-axios.defaults.xsrfCookieName = "csrftoken";
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
 class App extends Component {
   render() {
