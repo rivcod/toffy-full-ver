@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
 from rest_framework import routers
-from oneLine import views
 
 # 8000
 from tfuser.views import index, RegisterView, LoginView
 
 router = routers.DefaultRouter()
+from oneLine import views
 router.register('wisesaying', views.WiseSayingView, 'wisesaying')
+from tfgame import views
+router.register('tfgame', views.TfgameView, 'tfgame')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
