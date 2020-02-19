@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import axios from "axios";
+import GameListApi from "./GameListApi"
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
 class GameList extends Component {
 
@@ -12,6 +17,7 @@ class GameList extends Component {
   }
 
   render() {
+    const { gameList } = this.state;
     return (
       <div className="GameList">
         <div class="ht-tm-codeblock _stempt">
@@ -101,19 +107,21 @@ class GameList extends Component {
       </div>
     );
   }
-}
-
-// 2. 호출된 _renderText 함수는 장고 Model에 있는 Data를 Json으로 보여주는 페이지에서 Data를 가져와 SetState해줌
-_renderText = () => {
-  axios
-  // Restframework에서 json으로 보여주는 페이지 url을 get 방식으로 접근
+  // 2. 호출된 _renderText 함수는 장고 Model에 있는 Data를 Json으로 보여주는 페이지에서 Data를 가져와 SetState해줌
+  _renderText = () => {
+    axios
+    // Restframework에서 json으로 보여주는 페이지 url을 get 방식으로 접근
     .get("/api/tfgame/")
     .then(res => this.setState({ gameList: res.data })) // res에 데이터들이 담겨짐, state의 textList에 res의 데이터를 저장
     .catch(err => console.log(err));
-};
+  };
+}
+
+
 
 class Game extends Component {
   render() {
+    
     return (
       <td>
         <div className="col-sm-20 GameCard">
