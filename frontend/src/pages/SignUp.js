@@ -1,16 +1,18 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React, { useState } from "react";
 import Logo from "../components/Logo";
-import Email from "../components/Email";
+// import Email from "../components/Email";
 import Username from "../components/Username";
 import Password from "../components/Password";
 import OtherLogin from "../components/OtherLogin";
+import { Form, Input, Button } from "antd";
 
 import "../css/bootstrap4-neon-glow.css";
 
 const SignUp = () => {
-  const [email, setId] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setNick] = useState("");
+  const [username, setUsername] = useState("");
 
   const onSubmit = e => {
     e.preventDefault();
@@ -34,11 +36,16 @@ const SignUp = () => {
             <div className="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
               <div className="form-group">
                 <Form onSubmit={onSubmit}>
-                  <Email
-                    handleEmail={this.handleEmail}
-                    checkEmail={this.checkEmail}
-                    value={this.state.email}
-                  />
+                  <div>
+                    <label htmlFor="user-email">이메일</label>
+                    <br />
+                    <Input
+                      name="user-email"
+                      value={email}
+                      required
+                      onChange={onChangeEmail}
+                    />
+                  </div>
                   <Username
                     handleUsername={this.handleUsername}
                     checkUsername={this.checkUsername}

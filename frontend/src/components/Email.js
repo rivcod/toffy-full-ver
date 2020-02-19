@@ -5,7 +5,7 @@ class Email extends Component {
     return (
       <input
         name="email"
-        value={id}
+        value={email}
         required
         onChange={onChangeId}
         // type="email"
