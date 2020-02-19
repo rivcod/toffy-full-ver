@@ -7,58 +7,25 @@ import OtherLogin from "../components/OtherLogin";
 
 import "../css/bootstrap4-neon-glow.css";
 
-class SignUp extends Component {
-  constructor(props) {
-    super(props);
+const SignUp = () => {
+  const [email, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setNick] = useState("");
 
-    this.state = {
-      email: "",
-      username: "",
-      password: ""
+  const onSubmit = e => {
+    e.preventDefault();
+
+    // Custom Hook 이전이 무슨..
+    const onChangeEmail = e => {
+      setEmail(e.target.value);
     };
-  }
+    const onChangeUsername = e => {
+      setUsername(e.target.value);
+    };
+    const onChangePassword = e => {
+      setPassword(e.target.value);
+    };
 
-// 이메일 인풋창 핸들링
-handleEmail = e => {
-  e.preventDfault ();
-  this.setState({
-    email: e.target.value
-  })
-};
-
-// 유저네임 인풋창 핸들링
-handleUsername = e => {
-  e.preventDefault();
-  this.setState({
-    username: e.target.value
-  });
-};
-
-//첫번째 패스워드 입력창 set변환
-handlePW = E => {
-  e.preventDefault();
-  this.setState({
-    pw: e.target.value
-  });
-};
-
-// 서버로 가입 양식 제출
-handleSubmit = e => {
-  e.preventDefault();
-  const {
-    email,
-    username,
-    password
-  } = this.state;
-
-  // const SignUp = {
-  //   email : this.state.emailCheck,
-  //   password: this.state.passwordCheck,
-  //   username: this.state.usernameCheck
-  // };
-
-
-  render() {
     return (
       <div className="SignUp">
         <Logo></Logo>
@@ -66,35 +33,99 @@ handleSubmit = e => {
           <div className="submitForm">
             <div className="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
               <div className="form-group">
-                <Email
-                  handleEmail={this.handleEmail}
-                  checkEmail={this.checkEmail}
-                  value={this.state.email}
-                />
-                <Username
-                  handleUsername={this.handleUsername}
-                  checkUsername={this.checkUsername}
-                  value={this.state.username}
-                />
-                <Password
-                  handlePassword={this.handlePassword}
-                  checkPassword={this.checkPassword}
-                  value={this.state.password}
-                />
+                <Form onSubmit={onSubmit}>
+                  <Email
+                    handleEmail={this.handleEmail}
+                    checkEmail={this.checkEmail}
+                    value={this.state.email}
+                  />
+                  <Username
+                    handleUsername={this.handleUsername}
+                    checkUsername={this.checkUsername}
+                    value={this.state.username}
+                  />
+                  <Password
+                    handlePassword={this.handlePassword}
+                    checkPassword={this.checkPassword}
+                    value={this.state.password}
+                  />
+
+                  <OtherLogin></OtherLogin>
+                  <div>
+                    <button
+                      htmlType="submit"
+                      className="btn btn-primary _joinclassName"
+                    >
+                      Join
+                    </button>
+                  </div>
+                </Form>
               </div>
             </div>
-            <OtherLogin></OtherLogin>
-
-            {/* <button onClick={this.handleSubmit} className="btn btn-primary _joinclassName">
-          Join
-        </button> */}
           </div>
 
           {/* <a href="SignIn">or Login</a> */}
         </div>
       </div>
     );
-  }
-}
+  };
+};
+
+// class SignUp extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       email: "",
+//       username: "",
+//       password: ""
+//     };
+//   }
+
+// // 이메일 인풋창 핸들링
+// handleEmail = e => {
+//   e.preventDfault ();
+//   this.setState({
+//     email: e.target.value
+//   })
+// };
+
+// // 유저네임 인풋창 핸들링
+// handleUsername = e => {
+//   e.preventDefault();
+//   this.setState({
+//     username: e.target.value
+//   });
+// };
+
+// //첫번째 패스워드 입력창 set변환
+// handlePW = E => {
+//   e.preventDefault();
+//   this.setState({
+//     pw: e.target.value
+//   });
+// };
+
+// // 서버로 가입 양식 제출
+// handleSubmit = e => {
+//   e.preventDefault();
+//   const {
+//     email,
+//     username,
+//     password
+//   } = this.state;
+
+//   // const SignUp = {
+//   //   email : this.state.emailCheck,
+//   //   password: this.state.passwordCheck,
+//   //   username: this.state.usernameCheck
+//   // };
+
+//   render() {
+//     return (
+
+//     );
+//   }
+// }
 
 export default SignUp;
