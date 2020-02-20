@@ -5,7 +5,7 @@ import Logo from "../components/Logo";
 import Username from "../components/Username";
 import Password from "../components/Password";
 import OtherLogin from "../components/OtherLogin";
-import { Form, Input, Button } from "antd";
+import { Form, Input } from "antd";
 
 import "../css/bootstrap4-neon-glow.css";
 
@@ -46,16 +46,26 @@ const SignUp = () => {
                       onChange={onChangeEmail}
                     />
                   </div>
-                  <Username
-                    handleUsername={this.handleUsername}
-                    checkUsername={this.checkUsername}
-                    value={this.state.username}
-                  />
-                  <Password
-                    handlePassword={this.handlePassword}
-                    checkPassword={this.checkPassword}
-                    value={this.state.password}
-                  />
+                  <div>
+                    <label htmlFor="username">유저네임</label>
+                    <br />
+                    <Input
+                      name="username"
+                      value={username}
+                      required
+                      onChange={onChangeUsername}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="password">비밀번호</label>
+                    <br />
+                    <Input
+                      name="password"
+                      value={password}
+                      required
+                      onChange={onChangePassword}
+                    />
+                  </div>
 
                   <OtherLogin></OtherLogin>
                   <div>
