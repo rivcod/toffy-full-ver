@@ -11,7 +11,7 @@ class GameList extends Component {
     value: "",
     gameList: []
   };
-  // 1.렌더링 하기전 _renderText() 함수를 호출
+  // 1.렌더링 되고난 뒤 _renderText() 함수를 호출
   componentDidMount() {
     this._renderText();
   }
