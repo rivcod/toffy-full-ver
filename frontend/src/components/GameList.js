@@ -35,7 +35,11 @@ class GameList extends Component {
       </div>
         {/* 3. state에 담긴 textList에서 Data(파라미터가 text로 표현되어있음)를 있는대로 
             다꺼내서 화면에 return (index는 자동으로 지정됨) */}
-        {gameList.map((text, index) => {
+        
+        <table>
+          <tbody>
+            <tr>
+            {gameList.map((text, index) => {
           return (
             <GameListApi
               title={text.title}
@@ -49,58 +53,6 @@ class GameList extends Component {
             />
           );
         })}
-        <table>
-          <tbody>
-            <tr>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-            </tr>
-            <tr>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-            </tr>
-            <tr>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
-              <Game
-                gTitle={this.props.gTitle}
-                gCompany={this.props.gCompany}
-                gPrice={this.props.gPrice}
-              ></Game>
             </tr>
           </tbody>
         </table>
@@ -117,11 +69,8 @@ class GameList extends Component {
   };
 }
 
-
-
 class Game extends Component {
   render() {
-    
     return (
       <td>
         <div className="col-sm-20 GameCard">
