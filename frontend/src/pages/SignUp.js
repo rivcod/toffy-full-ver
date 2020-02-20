@@ -6,7 +6,7 @@ import AppLayout from "../components/AppLayout.js";
 // import Username from "../components/Username";
 // import Password from "../components/Password";
 import OtherLogin from "../components/OtherLogin";
-import { Form, Input } from "antd";
+import { Form, Input, Button } from "antd";
 
 import "../css/bootstrap4-neon-glow.css";
 
@@ -18,7 +18,8 @@ const SignUp = () => {
   const onSubmit = e => {
     e.preventDefault();
 
-    // Custom Hook 이전이 무슨..
+  };
+
     const onChangeEmail = e => {
       setEmail(e.target.value);
     };
@@ -29,10 +30,11 @@ const SignUp = () => {
       setPassword(e.target.value);
     };
 
+
     return (
       <AppLayout>
-        <div className="SignUp">
           {/* <Logo></Logo> */}
+        <div className="SignUp">
           <Form onSubmit={onSubmit}>
             <div className="card-body">
               <div className="submitForm">
