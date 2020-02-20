@@ -70,21 +70,20 @@ const SignUp = () => {
                     </div>
                     <OtherLogin></OtherLogin>
                     <div>
-                      <button
+                      <Button
+                        type="primary"
                         htmlType="submit"
                         className="btn btn-primary _joinclassName"
                       >
                         Join
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* <a href="SignIn">or Login</a> */}
             </div>
-          </div>
-        </Form>
+          </Form>
+        </div>
       </AppLayout>
     );
   };
