@@ -1,6 +1,6 @@
 // import React, { Component } from "react";
-import React, { useState } from "react";
-import AppLayout from "../components/AppLayout.js";
+import React, { useState, Component } from "react";
+// import AppLayout from "../components/AppLayout.js";
 // import Logo from "../components/Logo";
 import OtherLogin from "../components/OtherLogin";
 import { Form, Input, Button } from "antd";
@@ -27,9 +27,8 @@ const SignUp = () => {
   };
 
   return (
-    <AppLayout>
       {/* <Logo></Logo> */}
-      <div className="SignUp">
+      // <div className="SignUp">
         <Form onSubmit={onSubmit}>
           <div className="card-body">
             <div className="submitForm">
@@ -80,8 +79,7 @@ const SignUp = () => {
             </div>
           </div>
         </Form>
-      </div>
-    </AppLayout>
+      // </div>
   );
 };
 
