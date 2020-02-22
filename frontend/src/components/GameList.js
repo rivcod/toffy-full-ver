@@ -69,44 +69,4 @@ class GameList extends Component {
   };
 }
 
-class Game extends Component {
-  render() {
-    return (
-      <td>
-        <div className="col-sm-20 GameCard">
-          <a href="/">
-            {
-              <img
-                src="static/tfgame/images/logo3.png"
-                alt="Featured Job"
-                className="img-responsive"
-              />
-            }
-          </a>
-          <div className="featured-job">
-            <div className="title" id="titlePadding">
-              <h5>{this.props.gTitle}</h5>
-              <p>{this.props.gCompany}</p>
-            </div>
-            <div id="_price">
-              <a
-                href="/"
-                className="ht-tm-element btn btn-outline-primary btn-sm"
-                id="_priceBtn"
-              >
-                {this.props.gPrice}
-              </a>
-            </div>
-            <div className="data">
-              <a className="ht-tm-element badge badge-primary">#어드벤처</a>
-              <a className="ht-tm-element badge badge-primary">#인디</a>
-              <a className="ht-tm-element badge badge-primary">#전략</a>
-            </div>
-          </div>
-        </div>
-      </td>
-    );
-  }
-}
-
 export default GameList;
