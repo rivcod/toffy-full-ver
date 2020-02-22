@@ -1,6 +1,6 @@
 // import React, { Component } from "react";
 import React, { useState, Component } from "react";
-// import AppLayout from "../components/AppLayout.js";
+import AppLayout from "../components/AppLayout.js";
 // import Logo from "../components/Logo";
 import OtherLogin from "../components/OtherLogin";
 import { Form, Input, Button } from "antd";
@@ -27,18 +27,19 @@ const SignUp = () => {
   };
 
   return (
+    <AppLayout>
       {/* <Logo></Logo> */}
-      // <div className="SignUp">
+      <div className="SignUp">
         <Form onSubmit={onSubmit}>
           <div className="card-body">
             <div className="submitForm">
               <div className="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
                 <div className="form-group">
                   <div>
-                    <label htmlFor="user-email">이메일</label>
+                    <label htmlFor="email">이메일</label>
                     <br />
                     <Input
-                      name="user-email"
+                      name="email"
                       value={email}
                       required
                       onChange={onChangeEmail}
@@ -79,7 +80,8 @@ const SignUp = () => {
             </div>
           </div>
         </Form>
-      // </div>
+      </div>
+    </AppLayout>
   );
 };
 
