@@ -2,15 +2,16 @@ import React, { useState, Fragment } from 'react';
 
 const [count, setCount] = useState(1);
 
-increment = () => {
-  setCount(count + 1);
-}
-initCount = () => {
-  setCount(0);
-}
+// increment = () => {
+//   setCount(count + 1);
+// }
+// initCount = () => {
+//   setCount(0);
+// }
 
 const GameListApi = ({ title, company, price, os, release, image, rank}) => {
   return (
+    <div>hihi</div>
   //    { count } <= 4 ? 
   //     (
   //       {increment()}
@@ -75,7 +76,6 @@ const GameListApi = ({ title, company, price, os, release, image, rank}) => {
   //           </td>
   //       </tr>
   //     )
-  pass
   );
   
 };
