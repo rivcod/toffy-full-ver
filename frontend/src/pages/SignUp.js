@@ -42,7 +42,7 @@ class SignUp extends Component {
                   <div>
                     <label htmlFor="email">이메일</label>
                     <br />
-                    <Input
+                    <input
                       name="email"
                       value={email}
                       required
@@ -52,7 +52,7 @@ class SignUp extends Component {
                   <div>
                     <label htmlFor="username">유저네임</label>
                     <br />
-                    <Input
+                    <input
                       name="username"
                       value={username}
                       required
@@ -62,21 +62,21 @@ class SignUp extends Component {
                   <div>
                     <label htmlFor="password">비밀번호</label>
                     <br />
-                    <Input
+                    <input
                       name="password"
                       value={password}
                       required
-                      onChange={onChangePassword}
+                      onChange={this.handleChange}
                     />
                   </div>
                   <OtherLogin></OtherLogin>
                   <div>
-                    <Button
+                    <button
                       type="submit"
                       className="btn btn-primary _joinclassName"
                     >
                       Join
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>
