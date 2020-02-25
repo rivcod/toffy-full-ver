@@ -1,36 +1,40 @@
-// import React, { Component } from "react";
-import React, { useState, Component } from "react";
-import AppLayout from "../components/AppLayout.js";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 // import Logo from "../components/Logo";
 import OtherLogin from "../components/OtherLogin";
-import { Form, Input, Button } from "antd";
 
 import "../css/bootstrap4-neon-glow.css";
 
-const SignUp = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+class SignUp extends Component {
+  static propTypes = {
+    endpoint: PropTypes.string.isRequired
+  };
+  state = {
+    username: "",
+    email: "",
+    password: ""
+  };
 
-  const onSubmit = e => {
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+  handleSubmit = e => {
     e.preventDefault();
+    const { email, username, password } = this.state;
+    const lead = { email, username, password };
+    const conf = {
+      method: "post",
+      body: JSON.stringify(lead),
+      headers: new Headers({ "Content-Type": "application/json" })
+    };
+    fetch(this.props.endpoint, conf).then(response => console.log(response));
   };
 
-  const onChangeEmail = e => {
-    setEmail(e.target.value);
-  };
-  const onChangeUsername = e => {
-    setUsername(e.target.value);
-  };
-  const onChangePassword = e => {
-    setPassword(e.target.value);
-  };
-
-  return (
-    <AppLayout>
-      {/* <Logo></Logo> */}
+  render() {
+    const { email, username, password } = this.state;
+    return (
       <div className="SignUp">
-        <Form onSubmit={onSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <div className="card-body">
             <div className="submitForm">
               <div className="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
@@ -42,7 +46,7 @@ const SignUp = () => {
                       name="email"
                       value={email}
                       required
-                      onChange={onChangeEmail}
+                      onChange={this.handleChange}
                     />
                   </div>
                   <div>
@@ -52,7 +56,7 @@ const SignUp = () => {
                       name="username"
                       value={username}
                       required
-                      onChange={onChangeUsername}
+                      onChange={this.handleChange}
                     />
                   </div>
                   <div>
@@ -68,8 +72,7 @@ const SignUp = () => {
                   <OtherLogin></OtherLogin>
                   <div>
                     <Button
-                      type="primary"
-                      htmlType="submit"
+                      type="submit"
                       className="btn btn-primary _joinclassName"
                     >
                       Join
@@ -79,10 +82,10 @@ const SignUp = () => {
               </div>
             </div>
           </div>
-        </Form>
+        </form>
       </div>
-    </AppLayout>
-  );
-};
+    );
+  }
+}
 
 export default SignUp;
