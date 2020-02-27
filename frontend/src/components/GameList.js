@@ -39,7 +39,6 @@ class GameList extends Component {
         
         <table>
           <tbody>
-            <tr>
             {gameList.map((text, index) => {
           return (
             <GameListApi
@@ -54,7 +53,6 @@ class GameList extends Component {
             />
           );
         })}
-            </tr>
           </tbody>
         </table>
       </div>
