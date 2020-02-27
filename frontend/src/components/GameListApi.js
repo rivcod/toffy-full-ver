@@ -1,26 +1,24 @@
 import React, { useState, Fragment } from 'react';
-let foo = 1;
+
+let count = 1;
 
 const GameListApi = ({ title, company, price, os, release, image, rank }) => {
-  const [count, setCount] = useState(1);
-  
-  console.log("현재 foo =  "+foo)
-
-  // count가 1씩 증가
+  /* useState hook을 사용하려 했으나 hook 규칙상 계속 초기화되어 삭제
+  count가 1씩 증가*/
   const increment = () => {
-    console.log("증가"+foo)
-    {foo +=1}
+    console.log("증가"+count)
+    {count +=1}
   }
 
   // count를 1로 재설정
   const initCount = () => {
-    console.log("재설정"+foo)
-    {foo =1}
+    console.log("재설정"+count)
+    {count =1}
   }
 
   // GameList에서 Map함수로 던져주는 파라미터가 존재할 경우 렌더링
   if(title){
-    if( foo  <= 4) {
+    if( count  <= 4) {
       increment()
       return (
       <React.Fragment>
