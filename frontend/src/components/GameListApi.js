@@ -3,13 +3,12 @@ import React, { useState, Fragment } from 'react';
 let count = 1;
 
 const GameListApi = ({ title, company, price, os, release, image, rank }) => {
-  /* useState hook을 사용하려 했으나 hook 규칙상 계속 초기화되어 삭제
-  count가 1씩 증가*/
+
   const increment = () => {
     console.log("증가"+count)
     {count +=1}
   }
-
+const [foo, setFoo]  = useState(0);
   // count를 1로 재설정
   const initCount = () => {
     console.log("재설정"+count)
