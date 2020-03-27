@@ -19,7 +19,6 @@ from django.urls import path, include
 from rest_framework import routers
 
 # 8000
-from tfuser.views import index, RegisterView, LoginView
 
 router = routers.DefaultRouter()
 from oneLine import views
@@ -30,9 +29,6 @@ router.register('tfgame', views.TfgameView, 'tfgame')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tfgame/', include('tfgame.urls')),
-    path('', index),
-    path('signUp/', RegisterView.as_view()),
-    path('signIn/', LoginView.as_view()),
     path('api/', include(router.urls))
 ]
 # localhost:8000/api/wisesaying 에 접속하면 api를 볼 수 있다.

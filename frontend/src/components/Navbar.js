@@ -44,8 +44,6 @@ class Navbar extends Component {
                 ></input>
 
                 <div className="_mainSignUp">
-                  <Link to="/SignUp">Sign Up </Link>
-                  <Link to="/SignIn">Sign In </Link>
                   {/* <a href="mypage" id="_taste"> */}
                   <Link to="/MyPage">MyPage</Link>
                   {/* </a> */}
