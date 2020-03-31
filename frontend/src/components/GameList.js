@@ -12,9 +12,9 @@ class GameList extends Component {
     gameList: []
   };
   
-  // 1.렌더링이 되면 _renderText() 함수를 호출
+  //1.렌더링이 되면 _renderText() 함수를 호출
   componentDidMount() {
-    this._renderText();
+    this._renderText()
   }
 
   render() {
@@ -58,6 +58,7 @@ class GameList extends Component {
       </div>
     );
   }
+  
   // 2. 호출된 _renderText 함수는 장고 Model에 있는 Data를 Json으로 보여주는 페이지에서 Data를 가져와 SetState해줌
   _renderText = () => {
     axios
