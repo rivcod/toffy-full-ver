@@ -25,5 +25,3 @@ export default function createRequestThunk(type, request) {
         }
     }
 }
-
-// createRequestThunk('GET_USERS', api.getUsers);

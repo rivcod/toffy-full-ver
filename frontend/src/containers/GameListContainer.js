@@ -27,7 +27,7 @@ export default connect(
         loadingGameList: loading['gameList/GET_GAMELIST']
     }),
     {
-        // 함수
+        // 리듀서 함수 (module/gameList.js)
         getGameList
     },
 )(GameListContainer)

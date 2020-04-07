@@ -19,10 +19,10 @@ const GameList = ({ gameList, loadingGameList }) => {
         <table>
           <tbody>
           {loadingGameList && '로딩중...'}
-        {!loadingGameList && gameList && (
+        {!loadingGameList && gameList && ( // 자바스크립트 연산자에 표현식이 &&로 연달아 있으면 계산된 값이 true가면 보여짐 (ES6)
           <ul>
-            {gameList.map(game => (
-              <li key={game.id}>
+            {gameList.map(game => ( // gameListContainer에서 넣어준 props 객체를 map 함수를 사용하여 game 변수에 순차적으로 담고 game 변수에 대입된 프로퍼티들을 꺼내어 표현
+              <li key={game.id}> 
                 {game.title}
                 {game.company}
                 {game.price}
