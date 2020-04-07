@@ -1,22 +1,26 @@
-import { createAction, handleActions } from 'redux-actions';
-import axios from "axios";
-// 액션 타입을 정의한다.
-// const DECREASE = '/gameList/DECREASE'; /* 모듈 이름/액션 이름 */
+import { handleActions } from 'redux-actions';
+import * as api from "../lib/api";
+import createRequestThunk from '../lib/createRequestThunk.js';
 
-// export const decrease = createAction(DECREASE);
+const GET_GAMELIST_SUCCESS = "gameList/GET_GAMELIST_SUCCESS";
+const GET_GAMELIST = "gameList/GET_GAMELIST";
+
+export const getGameList = createRequestThunk(GET_GAMELIST, api.getGameList);
 
 const initialState = {
-    value: "",
-    gameList: []
+    value: null,
+    gameList: null
 };
 
 const gameList = handleActions(
     {
-        //[INCREASE]: (state, action) => ({ number: state.number + 1 }), // 액션 타입에 모듈 이름/액션 이름으로 되어있기 때문에 []로 감싸줘야함
-        //[DECREASE]: (state, action) => ({ number: state.number - 1 })
+      [GET_GAMELIST_SUCCESS]: (state, action) => ({
+        ...state,
+        gameList : action.payload
+      }),
     },
     initialState
-);
+  );
 
 
 export default gameList;

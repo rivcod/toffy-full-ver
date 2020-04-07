@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import "./css/index.css";
-// import App from './App';
 import Root from "./Root";
-// import * as serviceWorker from "./serviceWorker";
 import rootReducer from './modules';
+import { createLogger } from 'redux-logger';
+import ReduxThunk from 'redux-thunk'; // 액션객체가 아닌 함수로 넘겨주어서 여러가지 확장성을 부여함
 
-const store = createStore(rootReducer, composeWithDevTools());
+const logger = createLogger(); // 로그 확인 미들웨어
+const store = createStore(rootReducer ,applyMiddleware(logger,ReduxThunk));
 
 ReactDOM.render(
     //Provider를 사용해서 store의 상태가 변경될 때 마다 렌더링을 할 수 있도록 알려줌
