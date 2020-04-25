@@ -22,8 +22,8 @@ def main():
     driver.implicitly_wait(5) # 5초간 대기(타겟 페이지가 크롤링할 시간)
     html = driver.page_source 
    
-    gameTitle, gamePrice = [], []
-    gameTitle, gamePrice = scrapeGameTitle(html)
+    gameTitle, gamePrice, gamePriceT = [], []
+    gameTitle, gamePrice, gamePriceT = scrapeGameTitle(html)
     # gameCompany = scrapeGameCompany(html)
     # gamePrice = scrapeGamePrice(html)
     # gameOs = scrapeGameOs(html)
@@ -32,14 +32,14 @@ def main():
     result = []
     data = {}
     if gameTitle :
-        for gameT, gameP in zip(gameTitle, gamePrice) :
+        for gameT, gameP in zip(gameTitle, gamePrice, gamePriceT) :
             data = {
                 'title': gameT.text.strip(),
                 # 'company': gameCompany.text.strip(),
                 'price': gameP.get('href')
                 # 'os': gameOs.text.strip(),
                 # 'release': gameRelease.text.strip(),
-                # 'image' : gameOs.href.strip(),
+                'image' : gameT.text.strip(),
                 # 'rank' : ???
             }
 
@@ -62,7 +62,7 @@ def scrapeGameTitle(response):
     # price(text)
     notices3 = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span')
     
-    return notices, notices2
+    return notices, notices2, notices3
 
 # **** Apple app store price href !! ****
 # div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span > a
@@ -104,7 +104,7 @@ if __name__ == '__main__':
          _rank = 1
          for gameList in gameData:
              for t in gameList.items():
-                 Tfgame(title=t[0], company='test', price=t[1], os='IOS', release='test', image='test', rank=_rank).save()
+                 Tfgame(title=t[0], company='test', price=t[1], os='IOS', release='test', image=t[2], rank=_rank).save()
                  _rank +=1
     else :
         print("gameData = main() = X")
