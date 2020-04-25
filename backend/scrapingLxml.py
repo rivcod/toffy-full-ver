@@ -22,8 +22,8 @@ def main():
     driver.implicitly_wait(5) # 5초간 대기(타겟 페이지가 크롤링할 시간)
     html = driver.page_source 
    
-    gameTitle = []
-    gameTitle = scrapeGameTitle(html)
+    gameTitle, gamePrice = [], []
+    gameTitle, gamePrice = scrapeGameTitle(html)
     # gameCompany = scrapeGameCompany(html)
     # gamePrice = scrapeGamePrice(html)
     # gameOs = scrapeGameOs(html)
@@ -32,43 +32,40 @@ def main():
     result = []
     data = {}
     if gameTitle :
-        for gameT in gameTitle :
-            # print(gameCompany.text.strip())
-            # print(gamePrice.text.strip())
-            # print(gameOs.text.strip())
-            # print(gameRelease.text.strip())
+        for gameT, gameP in zip(gameTitle, gamePrice) :
             data = {
                 'title': gameT.text.strip(),
                 # 'company': gameCompany.text.strip(),
-                # 'price': gameP.text.strip(),
+                'price': gameP.get('href')
                 # 'os': gameOs.text.strip(),
                 # 'release': gameRelease.text.strip(),
-                # 'image' : ???,
+                # 'image' : gameOs.href.strip(),
                 # 'rank' : ???
             }
 
             result.append(data)
-        #print("result[1].get(title) : "+result[1].get('title'))
 
         return result
     else :
         print("GameData = X ")
 
-    # for game in gameCompany:
-    #     data[company.text] = game.text.strip()
-    # for game in gamePrice:
-    #     data[price.text] = game.text.strip()
-    # for game in gameOs:
-    #     data[os.text] = 'IOS'
-    # for game in gameRelease:
-    #     data[release.text] = game.text.strip()
-
 #타이틀 완료 BeautifulSoup를 사용해서 복수의 태그를 Css 선택자를 사용해 지정후 리턴 
 def scrapeGameTitle(response):
     notices = []
+    notices2 = []
+    notices3 = []
     root = BeautifulSoup(response, 'html.parser')
+    # Title
     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
-    return notices
+    # price(href)
+    notices2 = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span > a')
+    # price(text)
+    notices3 = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span')
+    
+    return notices, notices2
+
+# **** Apple app store price href !! ****
+# div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span > a
 
 # def scrapeGameCompany(response):
 #     notices = []
@@ -103,11 +100,11 @@ if __name__ == '__main__':
         #      for t, c, p, o, r in gameList.items():
         #          game(title=t, company=c, price=p, os=o, release=r).save()
 
-        #순서대로 Tfgame 모델에 저장 랭크의 경우 for문이 돌면서 1씩 증가
+        # 순서대로 Tfgame 모델에 저장 랭크의 경우 for문이 돌면서 1씩 증가
          _rank = 1
          for gameList in gameData:
              for t in gameList.items():
-                 Tfgame(title=t[1], company='test', price='test', os='IOS', release='test', image='test', rank=_rank).save()
+                 Tfgame(title=t[0], company='test', price=t[1], os='IOS', release='test', image='test', rank=_rank).save()
                  _rank +=1
     else :
         print("gameData = main() = X")
