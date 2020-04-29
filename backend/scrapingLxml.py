@@ -23,9 +23,18 @@ outpath = "C:/Users/piani/Documents/GitHub/Toffyy/frontend/src/images/"
 if not os.path.isdir(outpath):
     os.makedirs(outpath)
 
+
+
 def main():
     driver.get('https://fnd.io/#/kr/charts/iphone/top-paid/games')
-    driver.implicitly_wait(5) # 5초간 대기(타겟 페이지가 크롤링할 시간)
+    driver.implicitly_wait(20) # 10초간 대기(타겟 페이지가 크롤링할 시간)
+    elem = driver.find_element_by_tag_name("body")
+    pagedowns = 1 # 동적페이지 크롤링을 위한 페이지다운
+    while pagedowns < 200:
+         elem.send_keys(Keys.PAGE_DOWN)
+         time.sleep(0.1)
+         pagedowns += 1
+
     html = driver.page_source 
    
     gameTitle, gamePrice, gamePriceT, gameImg = [], [], [], []
