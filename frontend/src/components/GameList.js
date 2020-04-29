@@ -3,19 +3,6 @@ import React from "react";
 const GameList = ({ gameList, loadingGameList }) => {
     return (
       <div className="GameList">
-        <div class="ht-tm-codeblock _stempt">
-        <ul class="nav nav-pills ht-tm-element">
-          <li class="nav-item">
-            <a class="nav-link active" href="#!">All</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">IOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Android</a>
-          </li>
-        </ul>
-      </div>
         <table>
           <tbody>
           {loadingGameList && '로딩중...'}
