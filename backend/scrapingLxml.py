@@ -83,10 +83,6 @@ if __name__ == '__main__':
     #main에서 리턴해준 result를 gameData 변수에 담기
     gameData = main()
     if gameData :
-        #  for gameList in gameData:
-        #      for t, c, p, o, r in gameList.items():
-        #          game(title=t, company=c, price=p, os=o, release=r).save()
-
         # 순서대로 Tfgame 모델에 저장 랭크의 경우 for문이 돌면서 1씩 증가
          _rank = 1
          for t in gameData:
