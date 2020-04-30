@@ -17,7 +17,6 @@ class Test extends Component {
   }
   render() {
     const { textList } = this.state;
-    console.log(textList);
     return (
       <div className="App">
         <h1>OneLine App</h1>
