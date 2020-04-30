@@ -13,7 +13,7 @@ const GameList = ({ gameList, loadingGameList }) => {
                 {game.title}
                 {game.company}
                 {game.price}
-                <a href={game.os}>앱스토어 가기</a>
+                <a href={game.href}>앱스토어 가기</a>
                 {game.release}
                 <img src={game.image}></img>
                 {game.rank}

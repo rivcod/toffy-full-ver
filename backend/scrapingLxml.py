@@ -27,18 +27,18 @@ if not os.path.isdir(outpath):
 
 def main():
     driver.get('https://fnd.io/#/kr/charts/iphone/top-paid/games')
-    driver.implicitly_wait(20) # 10초간 대기(타겟 페이지가 크롤링할 시간)
+    driver.implicitly_wait(25) # 10초간 대기(타겟 페이지가 크롤링할 시간)
     elem = driver.find_element_by_tag_name("body")
     pagedowns = 1 # 동적페이지 크롤링을 위한 페이지다운
-    while pagedowns < 200:
+    while pagedowns < 250:
          elem.send_keys(Keys.PAGE_DOWN)
          time.sleep(0.1)
          pagedowns += 1
 
     html = driver.page_source 
    
-    gameTitle, gamePrice, gamePriceT, gameImg = [], [], [], []
-    gameTitle, gamePrice, gamePriceT, gameImg = scrapeGameTitle(html)
+    gameTitle, gameHref, gamePrice, gameImg = [], [], [], []
+    gameTitle, gameHref, gamePrice, gameImg = scrapeGameTitle(html)
     # gameCompany
     # gamePrice
     # gameOs
@@ -47,13 +47,11 @@ def main():
     result = []
     data = {}
     if gameTitle :
-        for gameT, gameP, gamePT,gameI in zip(gameTitle, gamePrice, gamePriceT, gameImg) :
+        for gameT, gameH, gameP,gameI in zip(gameTitle, gameHref, gamePrice, gameImg) :
             data = {
                 'title': gameT.text.strip(),
-                # 'company': gameCompany.text.strip(),
-                'price': gamePT.text.strip(),
-                'os': gameP.get('href'),
-                # 'release': gameRelease.text.strip(),
+                'price': gameP.text.strip(),
+                'href': gameH.get('href'),
                 'image': gameI.get('src')
                 # 'rank' : ???
             }
@@ -76,13 +74,13 @@ def scrapeGameTitle(response):
     notices2 = []
     notices3 = []
     root = BeautifulSoup(response, 'html.parser')
-    # Title
+    # Title(text)
     notices = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.media-heading.ii-media-heading.col-xs-8.col-sm-10 > a > div.ember-view.ii-name > span')
-    # price(href)
+    # Appstore(href)
     notices2 = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span > a')
-    # price(text)
+    # Price(text)
     notices3 = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > div.clearfix > div > div > div.col-xs-4.col-sm-2.ii-action-wrapper.ii-action-wrapper--center > div.ii-action.ii-action--center > span')
-    # img(src)
+    # Img(src)
     notices4 = root.select('div.app-main > div.container.app-body > div.pagebody.chart > div.ember-view:last-child > div >ul> div > li > a > img')
     return notices, notices2, notices3, notices4
 
@@ -96,7 +94,7 @@ if __name__ == '__main__':
          _rank = 1
          for t in gameData:
              print(t["title"])
-             Tfgame(title=t["title"], company='test', price=t["price"], os=t["os"], release='test', image=t['image'], rank=_rank).save()
+             Tfgame(title=t["title"], price=t["price"], href=t["href"], image=t['image'], rank=_rank).save()
              _rank +=1
 
     else :
