@@ -12233,6 +12233,11 @@ a.text-dark:focus {
 
 /* 사용자 정의 CSS (선오) */
 
+/*메인배경*/
+#ht-tm-jumbotron{
+  background-image: url('../images/A_back.png');
+}
+
 .TagsContainer {
   background-color: white;
 }
