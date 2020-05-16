@@ -9,5 +9,3 @@ def croll(request):
 class TfgameView(viewsets.ModelViewSet):
     serializer_class = TfgameSerializer
     queryset = Tfgame.objects.all()
-
-    # 해당 뷰는 viewsets을 통해서 get, post, put, delete 의 기능 제공
