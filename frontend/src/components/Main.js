@@ -50,26 +50,6 @@ const Main = () => {
 
 
   return (
-    // <div id="ht-tm-jumbotron">
-    //   <div class="jumbotron bg-transparent mb-0 radius-0">
-    //     <div class="container">
-    //       <div class="ht-tm-header">
-    //         <div class="row">
-    //           <div class="col-xl-8">
-    //             <div className="survey">
-    //               <Fragment>
-    //                 {
-    //                   "댕댕이보다 냥냥이!"
-    //                 }
-    //               </Fragment>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-
     <div id="ht-tm-jumbotron">
       <div class="jumbotron bg-transparent mb-0 radius-0">
         <div class="container">
