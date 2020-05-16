@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React, {  Fragment, useState } from "react";
 
-class Main extends Component {
-  render() {
+const Main = ()=> {
     return (
       <div id="ht-tm-jumbotron">
         <div class="jumbotron bg-transparent mb-0 radius-0">
@@ -38,7 +37,6 @@ class Main extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default Main;
