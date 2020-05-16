@@ -61,7 +61,6 @@ const GameList = ({ gameList, loadingGameList }) => {
                 {
                 gameList.map((game) => branchRendering(game,firstPage,lastPage)) //커런트 게임
                 }
-                <div>1 2 3 4 5 6 7 8 9</div>
               </Fragment>
             )}
     </div>
