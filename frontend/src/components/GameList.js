@@ -7,11 +7,10 @@ const GameList = ({ gameList, loadingGameList }) => {
     console.log('파라미터 = '+ game.id)
     console.log('firstPage = '+ firstPage)
     console.log('lastPage = '+ lastPage)
-    console.log(typeof(game.id))
     count += 1
-    if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
+    if( (Number(game.num) < lastPage) && (Number(game.num) >= firstPage) ){
       return (
-        <span key={game.id}>
+        <span key={game.num}>
           {game.title}
           {game.price}
           <a href={game.href}>앱스토어 가기</a>
@@ -23,11 +22,11 @@ const GameList = ({ gameList, loadingGameList }) => {
   };
   const B = (game, firstPage, lastPage) => {
     count=1
-    if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
+    if( (Number(game.num) < lastPage) && (Number(game.num) >= firstPage) ){
       return (
         <Fragment>
           <br/>
-          <span key={game.id}>
+          <span key={game.num}>
             {game.title}
             {game.price}
             <a href={game.href}>앱스토어 가기</a>
