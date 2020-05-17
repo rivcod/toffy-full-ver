@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Tfgame(models.Model):
+    num = models.CharField(max_length=30,
+                              verbose_name='num',
+                              default='SOME STRING')  
     title = models.CharField(max_length=50,
                              verbose_name='title')
     price = models.CharField(max_length=30,
@@ -14,15 +17,6 @@ class Tfgame(models.Model):
                               default='SOME STRING')
     rank = models.CharField(max_length=30,
                               verbose_name='rank',
-                              default='SOME STRING')
-    tag1 = models.CharField(max_length=25,
-                              verbose_name='tag1',
-                              default='SOME STRING')
-    tag2 = models.CharField(max_length=25,
-                              verbose_name='tag2',
-                              default='SOME STRING')
-    tag3 = models.CharField(max_length=25,
-                              verbose_name='tag3',
                               default='SOME STRING')                                                    
 
     class Meta:

@@ -8,4 +8,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 django.setup()
 from tfgame.models import Tfgame
 
-Tfgame.objects.filter(company='test').delete()
+Tfgame.objects.filter(num='SOME STRING').delete()
