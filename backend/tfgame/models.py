@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Tfgame(models.Model):
+    num = models.CharField(max_length=30,
+                              verbose_name='num',
+                              default='SOME STRING')  
     title = models.CharField(max_length=50,
                              verbose_name='title')
     price = models.CharField(max_length=30,
@@ -14,7 +17,7 @@ class Tfgame(models.Model):
                               default='SOME STRING')
     rank = models.CharField(max_length=30,
                               verbose_name='rank',
-                              default='SOME STRING')                                           
+                              default='SOME STRING')                                                    
 
     class Meta:
         db_table = 'toffy_game'
