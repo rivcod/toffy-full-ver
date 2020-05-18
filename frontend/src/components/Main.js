@@ -1,15 +1,50 @@
 import React, { Fragment, useState } from "react";
 
 const Main = () => {
+  const askArr = []
 
+  const addArr = (param) =>{
+    askArr.push(param)
+    console.log(askArr)
+  }
+  const OX = (questNum) => {
+    if(questNum =="quest1"){
+      return (
+        
+        <Fragment>
+        <button onClick = {() => {addArr("dog")}}>
+          O
+        </button>
+        <button onClick = {() => {addArr("cat")}}>
+          X
+        </button>
+        </Fragment>
+      )
+    } ifelse(questNum =="quest2"){
+      <Fragment>
+        <button onClick = {() => {addArr("constructure")}}>
+          O
+        </button>
+        <button onClick = {() => {addArr("X")}}>
+          X
+        </button>
+        </Fragment>
+    }
+    
+  }
   const quest1 = () => {
     return (
-      "댕댕이보다 냥냥이!"
-    );
+      <Fragment>
+        "댕댕이보다 냥냥이!"
+        {OX("quest1")}
+      </Fragment>
+    )
   }
   const quest2 = () => {
     return (
       "나만의 건축물을 설계하고 건설하고 싶다."
+      {OX("quest1")}
+      </Fragment>
     );
   }
   const quest3 = () => {
