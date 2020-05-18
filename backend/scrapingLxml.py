@@ -17,8 +17,8 @@ from tfgame.models import Tfgame
 from datetime import datetime
 import json
 import re
-driver = webdriver.Chrome('/Users/piani/Documents/GitHub/Toffyy/backend/chromedriver.exe')
-outpath = "C:/Users/piani/Documents/GitHub/Toffyy/frontend/src/images/"
+driver = webdriver.Chrome('/Toffyy/backend/chromedriver.exe')
+outpath = "/Toffyy/frontend/src/images/"
 
 if not os.path.isdir(outpath):
     os.makedirs(outpath)
