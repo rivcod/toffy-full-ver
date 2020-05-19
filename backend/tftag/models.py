@@ -1,9 +1,12 @@
 from django.db import models
+from tfgame.models import Tfgame
 
 # Create your models here.
 
 class Tftag(models.Model):
    
+    num = models.ForeignKey(Tfgame, on_delete=models.CASCADE)
+
     action = models.CharField(max_length=25,
                               verbose_name='action',
                               blank=True)
@@ -160,5 +163,6 @@ class Tftag(models.Model):
 
     class Meta:
         db_table = 'toffy_tag'
+        managed = False
         verbose_name = '태그'
         verbose_name_plural = '태그'
