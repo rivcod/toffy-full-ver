@@ -9,9 +9,9 @@ class Tfgame(models.Model):
                              verbose_name='title')
     price = models.CharField(max_length=7,
                               verbose_name='price')
-    href = models.CharField(max_length=100,
+    href = models.CharField(max_length=300,
                               verbose_name='href')                                                  
-    image = models.CharField(max_length=200,
+    image = models.CharField(max_length=300,
                               verbose_name='image',
                               default='SOME STRING')
     rank = models.CharField(max_length=4,

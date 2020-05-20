@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='tfgame',
             name='href',
-            field=models.CharField(max_length=100, verbose_name='href'),
+            field=models.CharField(max_length=300, verbose_name='href'),
         ),
     ]

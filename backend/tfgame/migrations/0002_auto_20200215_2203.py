@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='tfgame',
             name='image',
-            field=models.CharField(default='SOME STRING', max_length=200, verbose_name='image'),
+            field=models.CharField(default='SOME STRING', max_length=300, verbose_name='image'),
         ),
         migrations.AddField(
             model_name='tfgame',
