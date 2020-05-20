@@ -16,6 +16,7 @@ const Main = () => {
   // 버튼 함수 시작
   const OX = (questNum) => {
     if(questNum =="quest1"){
+      console.log("로그1"+askArr)
       return (
         <Fragment>
         <button onClick = {() => {addArr("dog")}}>
@@ -27,6 +28,7 @@ const Main = () => {
         </Fragment>
       )
     } else if(questNum =="quest2"){
+      console.log("로그2"+askArr)
       return(
         <Fragment>
           <button onClick = {() => {addArr("constructure")}}>
@@ -38,6 +40,7 @@ const Main = () => {
         </Fragment>
       )
     } else if(questNum =="quest3"){
+      console.log("로그3"+askArr)
       return(
         <Fragment>
           <button onClick = {() => {addArr("constructure")}}>
@@ -134,7 +137,7 @@ const Main = () => {
     return (
       <Fragment>
       "나만의 건축물을 설계하고 건설하고 싶다."
-      {OX("quest1")}
+      {OX("quest2")}
       </Fragment>
     );
   }
@@ -142,7 +145,7 @@ const Main = () => {
     return (
       <Fragment>
       "등골이 서늘해지는 짜릿한 공포를 느끼고 싶다."
-      {OX("quest2")}
+      {OX("quest3")}
       </Fragment>
     );
   }
@@ -150,7 +153,7 @@ const Main = () => {
     return (
       <Fragment>
       "현실 연애 스킬, 게임에서 써볼까?"
-      {OX("quest3")}
+      {OX("quest4")}
       </Fragment>
     );
   }
@@ -158,7 +161,7 @@ const Main = () => {
     return (
       <Fragment>
       "귀엽고 아기자기한 그래픽"
-      {OX("quest4")}
+      {OX("quest5")}
       </Fragment>
     );
 }
