@@ -92,7 +92,7 @@ if __name__ == '__main__':
          _num = 1
          for t in gameData:
              print(t["title"])
-             Tfgame(num=_num, title=t["title"], price=t["price"], href=t["href"], image=t['image'], rank=_rank).save()
+             Tfgame(id=_num, title=t["title"], price=t["price"], href=t["href"], image=t['image'], rank=_rank).save()
              _rank +=1
              _num +=1
 

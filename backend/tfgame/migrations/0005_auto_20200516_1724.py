@@ -10,16 +10,16 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='tfgame',
-            name='tag1',
-        ),
-        migrations.RemoveField(
-            model_name='tfgame',
-            name='tag2',
-        ),
-        migrations.RemoveField(
-            model_name='tfgame',
-            name='tag3',
-        ),
+        # migrations.RemoveField(
+        #     model_name='tfgame',
+        #     name='tag1',
+        # ),
+        # migrations.RemoveField(
+        #     model_name='tfgame',
+        #     name='tag2',
+        # ),
+        # migrations.RemoveField(
+        #     model_name='tfgame',
+        #     name='tag3',
+        # ),
     ]

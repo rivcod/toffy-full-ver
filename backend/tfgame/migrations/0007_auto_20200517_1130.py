@@ -10,9 +10,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='tfgame',
-            name='num',
-            field=models.CharField(default='SOME STRING', max_length=30, verbose_name='num'),
-        ),
+        
     ]

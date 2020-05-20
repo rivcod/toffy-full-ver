@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tfgame',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True)),
                 ('title', models.CharField(max_length=50, verbose_name='title')),
                 ('company', models.CharField(max_length=30, verbose_name='company')),
                 ('price', models.CharField(max_length=30, verbose_name='price')),

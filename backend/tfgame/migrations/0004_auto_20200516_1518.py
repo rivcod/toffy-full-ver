@@ -10,21 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='tfgame',
-            name='tag1',
-            field=models.CharField(default='SOME STRING', max_length=25, verbose_name='tag1'),
-        ),
-        migrations.AddField(
-            model_name='tfgame',
-            name='tag2',
-            field=models.CharField(default='SOME STRING', max_length=25, verbose_name='tag2'),
-        ),
-        migrations.AddField(
-            model_name='tfgame',
-            name='tag3',
-            field=models.CharField(default='SOME STRING', max_length=25, verbose_name='tag3'),
-        ),
         migrations.AlterField(
             model_name='tfgame',
             name='href',

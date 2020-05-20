@@ -4,6 +4,6 @@ from .models import Tfgame
 # Register your models here.
 
 class TfgameAdmin(admin.ModelAdmin):
-    list_display = ('num', 'title', 'price', 'href', 'image', 'rank',)
+    list_display = ('id', 'title', 'price', 'href', 'image', 'rank', 'tag1', 'tag2', 'tag3')
 
 admin.site.register(Tfgame, TfgameAdmin)

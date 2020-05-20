@@ -12,6 +12,6 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='tfgame',
-            options={'managed': True, 'verbose_name': '게임', 'verbose_name_plural': '게임'},
+            options={'managed': False, 'verbose_name': '게임', 'verbose_name_plural': '게임'},
         ),
     ]
