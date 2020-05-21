@@ -6,8 +6,6 @@ const Main = () => {
 
   // 버튼에 따라 배열에 추가
   const addArr = (answer) => {
-    console.log("함수에들어옴 =" +answer)
-    console.log("배열 객체 보자 = "+askArr)
     setAskArr([
       ...askArr,
         answer
@@ -18,10 +16,10 @@ const Main = () => {
     if (questNum == "quest1") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("dog") }}>
+          <button onClick={() => { addArr("46") }}> {/*dog*/}
             O
         </button>
-          <button onClick={() => { addArr("cat") }}>
+          <button onClick={() => { addArr("45") }}> {/*cat*/}
             X
         </button>
         </Fragment>
@@ -29,7 +27,7 @@ const Main = () => {
     } else if (questNum == "quest2") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("25") }}> {/*structure*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -40,7 +38,7 @@ const Main = () => {
     } else if (questNum == "quest3") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("10") }}> {/*horror*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -51,7 +49,7 @@ const Main = () => {
     } else if (questNum == "quest4") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("31") }}> {/*rom_simulation*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -62,7 +60,7 @@ const Main = () => {
     } else if (questNum == "quest5") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("20") }}> {/*cute*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -73,7 +71,7 @@ const Main = () => {
     } else if (questNum == "quest6") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("22") }}> {/*zombie*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -84,7 +82,7 @@ const Main = () => {
     } else if (questNum == "quest7") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("24") }}> {/*mystery*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -95,7 +93,7 @@ const Main = () => {
     } else if (questNum == "quest8") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("23") }}> {/*dark*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -106,7 +104,7 @@ const Main = () => {
     } else if (questNum == "quest9") {
       return (
         <Fragment>
-          <button onClick={() => { addArr("constructure") }}>
+          <button onClick={() => { addArr("21") }}> {/*movie*/}
             O
           </button>
           <button onClick={() => { addArr("X") }}>
@@ -190,7 +188,7 @@ const Main = () => {
     );
   }
   const greet = () => {
-    console.log("축하축하")
+    console.log("askArr = "+askArr)
     return (
       <Fragment>
         "축하합니다 설문조사를 완료했습니다. 블라블라"
