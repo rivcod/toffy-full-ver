@@ -114,12 +114,7 @@ const Main = () => {
           </button>
         </Fragment>
       )
-    } else if (questNum == "quest10") {
-      return (
-        addArr("done")
-      )
-    }
-
+    } 
   }
   // 질문함수 시작
   const quest1 = () => {
@@ -195,10 +190,10 @@ const Main = () => {
     );
   }
   const greet = () => {
+    console.log("축하축하")
     return (
       <Fragment>
         "축하합니다 설문조사를 완료했습니다. 블라블라"
-        {OX("quest10")}
       </Fragment>
     );
   }
