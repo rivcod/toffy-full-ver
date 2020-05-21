@@ -5,7 +5,7 @@ const GameList = ({ gameList, loadingGameList }) => {
 
   const A = (game, firstPage, lastPage) => {
     count += 1
-    if( (Number(game.num) < lastPage) && (Number(game.num) >= firstPage) ){
+    if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
       return (
         <span key={game.num}>
           {game.title}
@@ -19,11 +19,11 @@ const GameList = ({ gameList, loadingGameList }) => {
   };
   const B = (game, firstPage, lastPage) => {
     count=1
-    if( (Number(game.num) < lastPage) && (Number(game.num) >= firstPage) ){
+    if( (Number(game.id) < lastPage) && (Number(game.num) >= firstPage) ){
       return (
         <Fragment>
           <br/>
-          <span key={game.num}>
+          <span key={game.id}>
             {game.title}
             {game.price}
             <a href={game.href}>앱스토어 가기</a>

@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
 const Main = () => {
-  // 정답 배열
+  // 태그 배열
   const [askArr, setAskArr] = useState([]);
 
   // 버튼에 따라 배열에 추가
