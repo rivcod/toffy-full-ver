@@ -4,9 +4,6 @@ const GameList = ({ gameList, loadingGameList }) => {
   let count = 0
 
   const A = (game, firstPage, lastPage) => {
-    console.log('파라미터 = '+ game.id)
-    console.log('firstPage = '+ firstPage)
-    console.log('lastPage = '+ lastPage)
     count += 1
     if( (Number(game.num) < lastPage) && (Number(game.num) >= firstPage) ){
       return (
