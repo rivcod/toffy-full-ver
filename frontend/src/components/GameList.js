@@ -1,6 +1,6 @@
 import React, {  Fragment, useState } from "react";
 
-const GameList = ({ gameList, loadingGameList }) => {
+const GameList = ({ gameList, loadingGameList, tagsTest }) => {
   let count = 0
 
   const A = (game, firstPage, lastPage) => {
@@ -39,7 +39,7 @@ const GameList = ({ gameList, loadingGameList }) => {
       if(count<4){
         return A(game,firstPage,lastPage)
       } else {
-        return B(game,firstPage,lastPage)
+        return (B(game,firstPage,lastPage),tagsTest)
       }
     } else{
       return "No Data"

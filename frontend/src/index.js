@@ -11,6 +11,7 @@ import ReduxThunk from 'redux-thunk'; // 액션객체가 아닌 함수로 넘겨
 
 const logger = createLogger(); // 로그 확인 미들웨어
 const store = createStore(rootReducer ,applyMiddleware(logger,ReduxThunk)); // store 생성하고 다운로드 or 생성한 미들웨어 적용
+console.log(store.getState());
 
 ReactDOM.render(
     //Provider를 사용해서 store의 상태가 변경될 때 마다 렌더링을 할 수 있도록 알려줌
