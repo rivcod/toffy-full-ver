@@ -3,15 +3,16 @@ import { connect } from 'react-redux';
 import Main from '../components/Main';
 import { addTags } from '../modules/main'
 
-const MainContainer = ({ addTags }) => {
+const MainContainer = ({ tags,addTags }) => {
     return(
-        <Main onAddTags={addTags}/>
+        <Main checkTags={tags} onAddTags={addTags}/>
     );
 };
 
 
 export default connect(
     state => ({
+        tags: state.main.tags
     }),
     {
         addTags,

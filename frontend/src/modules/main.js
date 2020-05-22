@@ -1,21 +1,19 @@
 import { createAction, handleActions } from "redux-actions";
+import produce from 'immer';
 
 const ADDTAGS = "main/ADDTAGS";
 
 export const addTags = createAction(ADDTAGS);
 
-const initialState = [];
-
-export const addTagsOne = () => dispatch => {
-    dispatch(addTags());
+const initialState = {
+    tags:[],
 };
-
 
 const main = handleActions(
   {
-    [ADDTAGS]: (state, actions) => state.concat(actions)
+    [ADDTAGS]: (state, action) => ({tags: state.tags.concat(action.payload)}),
   },
-  initialState
+  initialState,
 );
 
 export default main;

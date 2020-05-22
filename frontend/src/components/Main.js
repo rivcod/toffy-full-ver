@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const Main = (onAddTags) => {
+const Main = ({ checkTags, onAddTags }) => {
   // 태그 배열
   const [askArr, setAskArr] = useState([]);
 
@@ -44,7 +44,7 @@ const Main = (onAddTags) => {
           </button>
           <button
             onClick={() => {
-              addArr("X");
+              return addArr("X");
             }}
           >
             X
@@ -176,7 +176,7 @@ const Main = (onAddTags) => {
         <Fragment>
           <button
             onClick={() => {
-              return addArr("21"), onAddTags;
+              return addArr("21"), onAddTags(askArr);
             }}
           >
             {" "}
@@ -184,7 +184,7 @@ const Main = (onAddTags) => {
           </button>
           <button
             onClick={() => {
-              return addArr("X"), onAddTags;
+              return addArr("X"), onAddTags(askArr);
             }}
           >
             X
@@ -197,6 +197,7 @@ const Main = (onAddTags) => {
   const quest1 = () => {
     return (
       <Fragment>
+        <h1>{checkTags}</h1>
         "댕댕이보다 냥냥이!"
         {OX("quest1")}
       </Fragment>
@@ -267,8 +268,12 @@ const Main = (onAddTags) => {
     );
   };
   const greet = () => {
-    console.log("askArr = " + askArr);
-    return <Fragment>"축하합니다 설문조사를 완료했습니다. 블라블라"</Fragment>;
+    return (
+      <Fragment>
+        <h1>{checkTags}</h1>
+        "축하합니다 설문조사를 완료했습니다. 블라블라"
+      </Fragment>
+    );
   };
 
   const branchRendering = (num) => {
