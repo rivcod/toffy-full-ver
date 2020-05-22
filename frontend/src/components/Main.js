@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const Main = () => {
+const Main = (onAddTags) => {
   // 태그 배열
   const [askArr, setAskArr] = useState([]);
 
@@ -176,7 +176,7 @@ const Main = () => {
         <Fragment>
           <button
             onClick={() => {
-              addArr("21");
+              return addArr("21"), onAddTags;
             }}
           >
             {" "}
@@ -184,7 +184,7 @@ const Main = () => {
           </button>
           <button
             onClick={() => {
-              addArr("X");
+              return addArr("X"), onAddTags;
             }}
           >
             X
