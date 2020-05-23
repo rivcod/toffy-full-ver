@@ -28,6 +28,11 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
+pandas@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/pandas/-/pandas-0.0.3.tgz#2a11b02074f0ffcc0729c73235572e5adbb0f1f7"
+  integrity sha1-KhGwIHTw/8wHKccyNVcuWtuw8fc=
+
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
