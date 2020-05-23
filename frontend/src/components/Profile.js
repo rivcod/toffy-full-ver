@@ -31,8 +31,8 @@ class YourGame extends Component {
             }
           </a>
           <div className="title" id="titlePadding">
-            <h5>{this.props.date}</h5>
-            <p>{this.props.writer}</p>
+            <h5>{this.props.gTitle}</h5>
+            <p>{this.props.gCompany}</p>
           </div>
           <div id="_price">
             <a
@@ -40,7 +40,7 @@ class YourGame extends Component {
               className="ht-tm-element btn btn-outline-primary btn-sm"
               id="_priceBtn"
             >
-              {this.props.text}
+              {this.props.gPrice}
             </a>
           </div>
           <div className="data">
@@ -79,7 +79,7 @@ class Profile extends Component {
                           height="150px"
                         />
                         <div>
-                          <h6>dfsdfads</h6>
+                          <h6>vnqud</h6>
                         </div>
                         <a
                           href="/"

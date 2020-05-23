@@ -27,7 +27,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  Get In?
+                  I'll do it!
                 </a>
               </div>
             </div>
@@ -43,7 +43,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  Get In?
+                  Excatly!
                 </a>
               </div>
             </div>
@@ -62,7 +62,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*structure*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -81,7 +82,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*horror*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -100,7 +102,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*rom_simulation*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -119,7 +122,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*cute*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -138,7 +142,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*zombie*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -157,7 +162,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*mystery*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -176,7 +182,8 @@ const Main = ({ checkTags, onAddTags }) => {
             {/*dark*/}Yes
           </button>
           <button
-            onClick={() => { addArr("0")
+            onClick={() => {
+              addArr("0");
             }}
           >
             No
@@ -196,7 +203,7 @@ const Main = ({ checkTags, onAddTags }) => {
           </button>
           <button
             onClick={() => {
-              return addArr("0"),onAddTags(askArr);
+              return addArr("0"), onAddTags(askArr);
             }}
           >
             No
@@ -211,6 +218,7 @@ const Main = ({ checkTags, onAddTags }) => {
     return (
       <Fragment>
         "댕댕이보다 냥냥이!"
+        {/* I prefer cat than doggy */}
         {OX("quest1")}
       </Fragment>
     );
