@@ -8,28 +8,47 @@ const Main = ({ checkTags, onAddTags }) => {
   const addArr = (answer) => {
     setAskArr([...askArr, answer]);
   };
+
   // 버튼 함수 시작
   const OX = (questNum) => {
     if (questNum == "quest1") {
       return (
-        <Fragment>
-          <button
-            onClick={() => {
-              addArr("46");
-            }}
-          >
-            {" "}
-            {/*dog*/}O
-          </button>
-          <button
-            onClick={() => {
-              addArr("45");
-            }}
-          >
-            {" "}
-            {/*cat*/}X
-          </button>
-        </Fragment>
+        <div>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("46");
+              }}
+            >
+              {" "}
+              {/*dog*/}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Get In?
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("45");
+              }}
+            >
+              {" "}
+              {/*cat*/}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Get In?
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       );
     } else if (questNum == "quest2") {
       return (
@@ -194,10 +213,10 @@ const Main = ({ checkTags, onAddTags }) => {
     }
   };
   // 질문함수 시작
+
   const quest1 = () => {
     return (
       <Fragment>
-        <h1>{checkTags}</h1>
         "댕댕이보다 냥냥이!"
         {OX("quest1")}
       </Fragment>
@@ -309,24 +328,15 @@ const Main = ({ checkTags, onAddTags }) => {
             <div class="row">
               <div class="col-xl-8">
                 <h1 class="display-2">
-                  #Cooking, #Farm Gam<span class="vim-caret">e</span>
+                  #Tap of your tast<span class="vim-caret">e</span>
                 </h1>
                 <div class="lead mb-3 text-mono text-success">
-                  A Bootstrap theme for 1337 hackers.
+                  Find the game suits you perfectly on Toffy.
                 </div>
 
                 <p class="mt-5 text-grey text-spacey ask">
                   {branchRendering(askArr)}
                 </p>
-
-                <div class="text-mono">
-                  <a
-                    href="#!"
-                    class="ht-tm-element btn btn-shadow text-mono btn-outline-warning"
-                  >
-                    Join With Us
-                  </a>
-                </div>
               </div>
             </div>
           </div>
