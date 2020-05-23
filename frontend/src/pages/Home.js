@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar";
-import Main from "../components/Main";
-import Tags from "../components/Tags";
+import TagContainer from "../containers/TagContainer";
 import Mail from "../components/Mail";
 import Footer from "../components/Footer";
 import GameListContainer from "../containers/GameListContainer";
@@ -19,7 +18,7 @@ class Home extends Component {
       <div className="Home">
         <Navbar></Navbar>
         <MainContainer></MainContainer>
-        <Tags></Tags>
+        <TagContainer></TagContainer>
         <GameListContainer></GameListContainer>
         <Pagination></Pagination>
         <Mail></Mail>

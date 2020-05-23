@@ -59,14 +59,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*structure*/}O
+            {/*structure*/}Yes
           </button>
           <button
-            onClick={() => {
-              return addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -79,14 +78,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*horror*/}O
+            {/*horror*/}Yes
           </button>
           <button
-            onClick={() => {
-              addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -99,14 +97,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*rom_simulation*/}O
+            {/*rom_simulation*/}Yes
           </button>
           <button
-            onClick={() => {
-              addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -119,14 +116,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*cute*/}O
+            {/*cute*/}Yes
           </button>
           <button
-            onClick={() => {
-              addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -139,14 +135,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*zombie*/}O
+            {/*zombie*/}Yes
           </button>
           <button
-            onClick={() => {
-              addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -159,14 +154,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*mystery*/}O
+            {/*mystery*/}Yes
           </button>
           <button
-            onClick={() => {
-              addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -179,14 +173,13 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*dark*/}O
+            {/*dark*/}Yes
           </button>
           <button
-            onClick={() => {
-              addArr("X");
+            onClick={() => { addArr("0")
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
@@ -199,14 +192,14 @@ const Main = ({ checkTags, onAddTags }) => {
             }}
           >
             {" "}
-            {/*movie*/}O
+            {/*movie*/}Yes
           </button>
           <button
             onClick={() => {
-              return addArr("X"), onAddTags(askArr);
+              return addArr("0"),onAddTags(askArr);
             }}
           >
-            X
+            No
           </button>
         </Fragment>
       );
