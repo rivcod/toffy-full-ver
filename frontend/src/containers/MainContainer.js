@@ -9,7 +9,6 @@ const MainContainer = ({ tags,addTags }) => {
     );
 };
 
-
 export default connect(
     state => ({
         tags: state.main.tags
