@@ -17,7 +17,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("0");
+                addArr("do");
               }}
             >
               {" "}
@@ -33,7 +33,7 @@ const Main = ({ checkTags, onAddTags }) => {
             </div>
             <div
               onClick={() => {
-                addArr("0");
+                addArr("do");
               }}
             >
               {" "}
@@ -51,12 +51,13 @@ const Main = ({ checkTags, onAddTags }) => {
         </div>
       );
     } else if (questNum == "quest2") {
+      delete askArr["0"]
       return (
         <Fragment>
           <div class="row">
             <div
               onClick={() => {
-                addArr("45");
+                addArr("고양이");
               }}
             >
               {" "}
@@ -73,7 +74,7 @@ const Main = ({ checkTags, onAddTags }) => {
             </div>
             <div
               onClick={() => {
-                addArr("46");
+                addArr("강아지");
               }}
             >
               <div class="text-mono">
@@ -95,7 +96,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("10");
+                addArr("공포");
               }}
             >
               {" "}
@@ -134,7 +135,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("31");
+                addArr("좀비");
               }}
             >
               {" "}
@@ -171,7 +172,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("57");
+                addArr("사운드트랙");
               }}
             >
               {" "}
@@ -208,7 +209,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("14");
+                addArr("스토리텔링");
               }}
             >
               {" "}
@@ -297,11 +298,21 @@ const Main = ({ checkTags, onAddTags }) => {
       </Fragment>
     );
   };
+  const tagPush =(num) => {
+    if(askArr[num]!="0"){
+      return (<button className="ht-tm-element badge badge-primary main-badge">{askArr[num]}</button>);
+    }
+  }
+  
   const greet = () => {
     return (
       <Fragment>
-        <h1>{checkTags}</h1>
         "좋아하는 장르는"
+        {tagPush("1")}
+        {tagPush("2")}
+        {tagPush("3")}
+        {tagPush("4")}
+        {tagPush("5")}
         {/* You are interested in... */}
       </Fragment>
     );

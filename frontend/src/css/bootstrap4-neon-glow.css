@@ -12258,6 +12258,22 @@ a.text-dark:focus {
   width: 25%;
   margin: 10px 0px 0px 40%;
 }
+/*태그 사이즈*/
+.ht-tm-element.badge.badge-primary{
+  border-color: rgb(113, 76, 223);
+  width : auto;
+  height : 25px;
+  margin : 0px 7px 0px 0px;
+  font-size : 15px;
+}
+.container.py-5.mb5{
+  max-width: 1330px;
+}
+
+.ht-tm-element.badge.badge-primary.main-badge{
+  width : 100px;
+  height : 50px;
+}
 
 /*배경색 시작*/
 .ht-tm-codeblock.TagsContainer {
