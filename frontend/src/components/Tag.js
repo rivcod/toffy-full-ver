@@ -20,7 +20,6 @@ const Tag = ({selectedTags, selectTags, unselectTags}) => {
     return (
       <div className="ht-tm-codeblock TagsContainer">
         <div className="container py-5 mb5">
-          <p>{selectedTags}</p>
           <button className="ht-tm-element badge badge-primary" onClick={() => {
               return tagToggle("1");
             }}>

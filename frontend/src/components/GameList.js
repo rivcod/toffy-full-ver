@@ -58,7 +58,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
     count = 1
     //if( (Number(game.id) < lastPage) && (Number(game.num) >= firstPage) ){
     return (
-
       <div className="featured-job">
         <a href={game.href}>
           {
@@ -88,7 +87,9 @@ const GameList = ({ gameList, loadingGameList, select }) => {
     //}
   };
   const branchRendering = (game, firstPage, lastPage) => {
-    if (game) {
+    if (game&&selectCasting.length == 0) {
+      return A(game, firstPage, lastPage)
+    } else {
       if (
         (selectCasting.length == 1 && ((selectCasting.indexOf(game.tag1) != -1) || (selectCasting.indexOf(game.tag2) != -1) || (selectCasting.indexOf(game.tag3) != -1)))
         || (
@@ -106,8 +107,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
       } else {
         return ""
       }
-    } else {
-      return "No Data"
     }
   }
 
@@ -119,7 +118,7 @@ const GameList = ({ gameList, loadingGameList, select }) => {
       {!loadingGameList &&
         gameList && ( // 자바스크립트 연산자에 표현식이 &&로 연달아 있으면 계산된 값이 true가면 보여짐 (ES6)
           <div className="GameList">  {
-            gameList.map((game) => branchRendering(game, firstPage, lastPage)) //커런트 게임
+            gameList.map((game) => branchRendering(game, firstPage, lastPage))
           }
           </div>
         )}
