@@ -8,9 +8,7 @@ const GameList = ({ gameList, loadingGameList, select }) => {
     count += 1
     //if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
     return (
-      <div className="col-sm-20 GameCard">
-        
-        <div className="featured-job">
+      <div className="featured-job">
         <a href={game.href}>
           {
             <img
@@ -20,21 +18,20 @@ const GameList = ({ gameList, loadingGameList, select }) => {
             />
           }
         </a>
-          <div className="title" id="titlePadding">
-            <h5>{game.title}</h5>
-            <h5>{game.rank}</h5>
-            
-          </div>
+        <div className="title" id="titlePadding">
+          <h5>{game.title}</h5>
+          <h5>{game.rank}</h5>
           <div id="_price">
-            <a
-              href="/"
-              className="ht-tm-element btn btn-outline-primary btn-sm"
-              id="_priceBtn"
-            >
-              {game.price}
-            </a>
-          </div>
+          <a
+            href="/"
+            className="ht-tm-element btn btn-outline-primary btn-sm"
+            id="_priceBtn"
+          >
+            {game.price}
+          </a>
         </div>
+        </div>
+        
       </div>
     );
     //}
@@ -43,21 +40,21 @@ const GameList = ({ gameList, loadingGameList, select }) => {
     count = 1
     //if( (Number(game.id) < lastPage) && (Number(game.num) >= firstPage) ){
     return (
-      
+
       <div className="featured-job">
         <a href={game.href}>
-        {
-          <img
-            src={game.image}
-            alt="Featured Job"
-            className="img-responsive"
-          />
-        }
-      </a>
+          {
+            <img
+              src={game.image}
+              alt="Featured Job"
+              className="img-responsive"
+            />
+          }
+        </a>
         <div className="title" id="titlePadding">
           <h5>{game.title}</h5>
           <h5>{game.rank}</h5>
-          
+
         </div>
         <div id="_price">
           <a
