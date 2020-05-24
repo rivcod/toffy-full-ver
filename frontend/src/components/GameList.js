@@ -1,12 +1,22 @@
 import React, { Fragment, } from "react";
+import tagConverting from "../js/tagConvert.js"
 
 const GameList = ({ gameList, loadingGameList, select }) => {
   let count = 0
   const selectCasting = Array.from(select)
 
   const A = (game, firstPage, lastPage) => {
-    count += 1
     //if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
+      const nukeOne = (tagCheck) => {
+        if(tagCheck !== 0){
+          return tagConverting(parseInt(tagCheck))
+        } else {
+          return ""
+        }
+      }
+      const tagOne = nukeOne(game.tag1)
+      const tagTwo = nukeOne(game.tag2)
+      const tagThree = nukeOne(game.tag3)
     return (
       <div className="featured-job">
         <a href={game.href}>
@@ -19,8 +29,12 @@ const GameList = ({ gameList, loadingGameList, select }) => {
           }
         </a>
         <div className="title" id="titlePadding">
-          <h5>{game.title}</h5>
+          <div>
+            <h5>{game.title}</h5>
+          </div>
+          <div>
           <h5>{game.rank}</h5>
+          </div>
           <div id="_price">
           <a
             href="/"
@@ -29,6 +43,10 @@ const GameList = ({ gameList, loadingGameList, select }) => {
           >
             {game.price}
           </a>
+          <div id="_tags">
+            {tagOne}
+            {tagTwo}
+            {tagThree}</div>
         </div>
         </div>
         
@@ -66,16 +84,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
           </a>
         </div>
       </div>
-      // <Fragment>
-      //   <br />
-      //   <span key={game.id}>
-      //     {game.title}
-      //     {game.price}
-      //     <a href={game.href}>앱스토어 가기</a>
-      //     <img src={game.image}></img>
-      //     {game.rank}
-      //   </span>
-      // </Fragment>
     );
     //}
   };
@@ -90,7 +98,7 @@ const GameList = ({ gameList, loadingGameList, select }) => {
           selectCasting.length == 3 && ((selectCasting.indexOf(game.tag1) != -1) && (selectCasting.indexOf(game.tag2) != -1) && (selectCasting.indexOf(game.tag3) != -1))
         )
       ) {
-        if (count < 4) {
+        if (count < 300) {
           return A(game, firstPage, lastPage)
         } else {
           return (B(game, firstPage, lastPage))
