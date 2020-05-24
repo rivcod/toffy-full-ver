@@ -43,6 +43,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   Excatly!
+                  {/* 당장 시작해 */}
                 </a>
               </div>
             </div>
@@ -94,7 +95,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("25");
+                addArr("10");
               }}
             >
               {" "}
@@ -104,8 +105,8 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  네!
-                  {/* Yess. */}
+                  언제나
+                  {/* My Favorite */}
                 </a>
               </div>
             </div>
@@ -119,8 +120,8 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  아니오.
-                  {/* Nope. */}
+                  싫어요
+                  {/* Nope */}
                 </a>
               </div>
             </div>
@@ -156,7 +157,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  아니오.
+                  아니오
                   {/* Nope. */}
                 </a>
               </div>
@@ -170,7 +171,7 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("30");
+                addArr("57");
               }}
             >
               {" "}
@@ -179,7 +180,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  네!
+                  있다
                 </a>
               </div>
             </div>
@@ -193,7 +194,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  아니오.
+                  없다
                   {/* Nope. */}
                 </a>
               </div>
@@ -216,7 +217,7 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  네!
+                  당연하죠
                 </a>
               </div>
             </div>
@@ -230,8 +231,8 @@ const Main = ({ checkTags, onAddTags }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  아니오.
-                  {/* Nope. */}
+                  별로
+                  {/* Nooo... */}
                 </a>
               </div>
             </div>
@@ -300,7 +301,7 @@ const Main = ({ checkTags, onAddTags }) => {
     return (
       <Fragment>
         <h1>{checkTags}</h1>
-        "축하합니다 설문조사를 완료했습니다. 블라블라"
+        "좋아하는 장르는"
         {/* You are interested in... */}
       </Fragment>
     );
