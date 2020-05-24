@@ -128,9 +128,6 @@ const Main = ({ checkTags, onAddTags }) => {
         </Fragment>
       );
     } else if (questNum == "quest4") {
-      {
-        /* zombie */
-      }
       return (
         <Fragment>
           <div class="row">
@@ -168,9 +165,6 @@ const Main = ({ checkTags, onAddTags }) => {
         </Fragment>
       );
     } else if (questNum == "quest5") {
-      {
-        /* muzik */
-      }
       return (
         <Fragment>
           <div class="row">
@@ -208,9 +202,6 @@ const Main = ({ checkTags, onAddTags }) => {
         </Fragment>
       );
     } else if (questNum == "quest6") {
-      {
-        /* Storytelling */
-      }
       return (
         <Fragment>
           <div class="row">
@@ -247,7 +238,9 @@ const Main = ({ checkTags, onAddTags }) => {
           </div>
         </Fragment>
       );
+    }
   };
+
   // 질문함수 시작
 
   const quest1 = () => {
@@ -327,7 +320,7 @@ const Main = ({ checkTags, onAddTags }) => {
       return quest5();
     } else if (arrCheck.length == 5) {
       return quest6();
-    } else if (arrCheck.length == 9) {
+    } else if (arrCheck.length == 6) {
       return greet();
     }
   };
