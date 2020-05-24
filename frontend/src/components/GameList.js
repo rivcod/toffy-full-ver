@@ -30,14 +30,14 @@ const GameList = ({ gameList, loadingGameList, select }) => {
         </a>
         <div className="title" id="titlePadding">
           <div>
-            <h5>{game.title}</h5>
+            <h5>{game.rank}</h5>
           </div>
           <div>
-            <h5>{game.rank}</h5>
+            <h5>{game.title}</h5>
           </div>
           <div id="_price">
             <a
-              href="/"
+              href={game.href}
               className="ht-tm-element btn btn-outline-primary btn-sm"
               id="_priceBtn"
             >

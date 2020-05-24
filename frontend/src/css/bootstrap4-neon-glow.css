@@ -12327,9 +12327,9 @@ a.text-dark:focus {
 }
 
 #_priceBtn {
-  font-size: 0.625rem;
+  font-size: 0.825rem;
   padding: 0.1rem 0.2rem;
-  width: 60px;
+  width: 100px;
   margin: 0 0 20px 0;
   display : inline-block;
 }
