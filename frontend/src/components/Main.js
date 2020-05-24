@@ -17,27 +17,26 @@ const Main = ({ checkTags, onAddTags }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("46");
+                addArr("0");
               }}
             >
               {" "}
-              {/*dog*/}
               <div class="text-mono">
                 <a
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   I'll do it!
+                  {/* 해볼게요! */}
                 </a>
               </div>
             </div>
             <div
               onClick={() => {
-                addArr("45");
+                addArr("0");
               }}
             >
               {" "}
-              {/*cat*/}
               <div class="text-mono">
                 <a
                   href="#!"
@@ -53,172 +52,208 @@ const Main = ({ checkTags, onAddTags }) => {
     } else if (questNum == "quest2") {
       return (
         <Fragment>
-          <button
-            onClick={() => {
-              addArr("25");
-            }}
-          >
-            {" "}
-            {/*structure*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("45");
+              }}
+            >
+              {" "}
+              {/*cat and dog*/}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  갓냥이!
+                  {/* Yess. */}
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("46");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  개는 우리의 친구!
+                  {/* Nope. */}
+                </a>
+              </div>
+            </div>
+          </div>
         </Fragment>
       );
     } else if (questNum == "quest3") {
       return (
         <Fragment>
-          <button
-            onClick={() => {
-              addArr("10");
-            }}
-          >
-            {" "}
-            {/*horror*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("25");
+              }}
+            >
+              {" "}
+              {/*structure*/}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  네!
+                  {/* Yess. */}
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  아니오.
+                  {/* Nope. */}
+                </a>
+              </div>
+            </div>
+          </div>
         </Fragment>
       );
     } else if (questNum == "quest4") {
+      {
+        /* zombie */
+      }
       return (
         <Fragment>
-          <button
-            onClick={() => {
-              addArr("31");
-            }}
-          >
-            {" "}
-            {/*rom_simulation*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("31");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  네!
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  아니오.
+                  {/* Nope. */}
+                </a>
+              </div>
+            </div>
+          </div>
         </Fragment>
       );
     } else if (questNum == "quest5") {
+      {
+        /* muzik */
+      }
       return (
         <Fragment>
-          <button
-            onClick={() => {
-              addArr("20");
-            }}
-          >
-            {" "}
-            {/*cute*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("30");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  네!
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  아니오.
+                  {/* Nope. */}
+                </a>
+              </div>
+            </div>
+          </div>
         </Fragment>
       );
     } else if (questNum == "quest6") {
+      {
+        /* Storytelling */
+      }
       return (
         <Fragment>
-          <button
-            onClick={() => {
-              addArr("22");
-            }}
-          >
-            {" "}
-            {/*zombie*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("14");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  네!
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  아니오.
+                  {/* Nope. */}
+                </a>
+              </div>
+            </div>
+          </div>
         </Fragment>
       );
-    } else if (questNum == "quest7") {
-      return (
-        <Fragment>
-          <button
-            onClick={() => {
-              addArr("24");
-            }}
-          >
-            {" "}
-            {/*mystery*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
-        </Fragment>
-      );
-    } else if (questNum == "quest8") {
-      return (
-        <Fragment>
-          <button
-            onClick={() => {
-              addArr("23");
-            }}
-          >
-            {" "}
-            {/*dark*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              addArr("0");
-            }}
-          >
-            No
-          </button>
-        </Fragment>
-      );
-    } else if (questNum == "quest9") {
-      return (
-        <Fragment>
-          <button
-            onClick={() => {
-              return addArr("21"), onAddTags(askArr);
-            }}
-          >
-            {" "}
-            {/*movie*/}Yes
-          </button>
-          <button
-            onClick={() => {
-              return addArr("0"), onAddTags(askArr);
-            }}
-          >
-            No
-          </button>
-        </Fragment>
-      );
-    }
   };
   // 질문함수 시작
 
   const quest1 = () => {
     return (
       <Fragment>
-        "댕댕이보다 냥냥이!"
-        {/* I prefer cat than doggy */}
+        설문조사!
         {OX("quest1")}
       </Fragment>
     );
@@ -226,7 +261,8 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest2 = () => {
     return (
       <Fragment>
-        "나만의 건축물을 설계하고 건설하고 싶다."
+        "댕댕이보다 냥냥이!"
+        {/* Do you prefer cat than doggy? */}
         {OX("quest2")}
       </Fragment>
     );
@@ -235,6 +271,7 @@ const Main = ({ checkTags, onAddTags }) => {
     return (
       <Fragment>
         "등골이 서늘해지는 짜릿한 공포를 느끼고 싶다."
+        {/* I fancy a thrilling thrill */}
         {OX("quest3")}
       </Fragment>
     );
@@ -242,7 +279,8 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest4 = () => {
     return (
       <Fragment>
-        "현실 연애 스킬, 게임에서 써볼까?"
+        "좀비물 완전 내 취향!"
+        {/* I really love zombie! */}
         {OX("quest4")}
       </Fragment>
     );
@@ -250,7 +288,8 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest5 = () => {
     return (
       <Fragment>
-        "귀엽고 아기자기한 그래픽"
+        "게임에 등장하는 사운드트랙을 따로 찾아본 적이 있다."
+        {/* I've been looking for soundtracks in the game. */}
         {OX("quest5")}
       </Fragment>
     );
@@ -258,32 +297,9 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest6 = () => {
     return (
       <Fragment>
-        "좀비물 완전 내 취향!"
+        "스토리가 좋으면 좋을 수록 몰입도가 커진다."
+        {/* The better the story, the greater the immersion. */}
         {OX("quest6")}
-      </Fragment>
-    );
-  };
-  const quest7 = () => {
-    return (
-      <Fragment>
-        "해결되지 않은 미지의 것에 대한 호기심이 있다."
-        {OX("quest7")}
-      </Fragment>
-    );
-  };
-  const quest8 = () => {
-    return (
-      <Fragment>
-        "어두운 분위기가 좋다."
-        {OX("quest8")}
-      </Fragment>
-    );
-  };
-  const quest9 = () => {
-    return (
-      <Fragment>
-        "영화 속 이야기의 주인공이 돼보고 싶다."
-        {OX("quest9")}
       </Fragment>
     );
   };
@@ -292,6 +308,7 @@ const Main = ({ checkTags, onAddTags }) => {
       <Fragment>
         <h1>{checkTags}</h1>
         "축하합니다 설문조사를 완료했습니다. 블라블라"
+        {/* You are interested in... */}
       </Fragment>
     );
   };
@@ -310,12 +327,6 @@ const Main = ({ checkTags, onAddTags }) => {
       return quest5();
     } else if (arrCheck.length == 5) {
       return quest6();
-    } else if (arrCheck.length == 6) {
-      return quest7();
-    } else if (arrCheck.length == 7) {
-      return quest8();
-    } else if (arrCheck.length == 8) {
-      return quest9();
     } else if (arrCheck.length == 9) {
       return greet();
     }
