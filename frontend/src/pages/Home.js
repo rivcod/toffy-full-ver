@@ -20,7 +20,6 @@ class Home extends Component {
         <MainContainer></MainContainer>
         <TagContainer></TagContainer>
         <GameListContainer></GameListContainer>
-        <Pagination></Pagination>
         <Mail></Mail>
         <Footer></Footer>
       </div>

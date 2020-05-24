@@ -56,7 +56,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
             </div>
           </div>
         </div>
-
       </div >
     );
     //}
@@ -124,7 +123,7 @@ const GameList = ({ gameList, loadingGameList, select }) => {
       {loadingGameList && "로딩중..."}
       {!loadingGameList &&
         gameList && ( // 자바스크립트 연산자에 표현식이 &&로 연달아 있으면 계산된 값이 true가면 보여짐 (ES6)
-          <div className="GameList">  {
+          <div>  {
             gameList.map((game) => branchRendering(game, firstPage, lastPage))
           }
           </div>

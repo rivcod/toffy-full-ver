@@ -5312,8 +5312,7 @@ input[type="button"].btn-block {
   margin-left : 100px;
 }
 
-.featured-job img {
-  display: inline-block;
+.featured-job.img-responsive {
   margin-left: 15px;
 }
 
@@ -12252,12 +12251,6 @@ a.text-dark:focus {
   background-color: white;
 }
 
-.GameCard {
-  text-align: center;
-  height: 33.33333%;
-  width: 25%;
-  margin: 10px 0px 0px 40%;
-}
 /*태그 사이즈*/
 .ht-tm-element.badge.badge-primary{
   border-color: rgb(113, 76, 223);
@@ -12280,12 +12273,20 @@ a.text-dark:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.GameList  {
-  background-color: rgba(255, 255, 255, 0.05);
-  height: 1200px;
+.subscribe-section.section.bg-gray.pt-55.pb-55  {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: auto;
   text-align: center;
 }
 /*배경색 끝*/
+
+.GameCard {
+  text-align: center;
+  height: 33.33333%;
+  width: 25%;
+  margin: 10px 0px 0px 40%;
+}
+
 .GameList > table {
   margin: 0px auto;
   padding: 0px 0px 0px 0px;
