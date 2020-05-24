@@ -12259,6 +12259,10 @@ a.text-dark:focus {
   margin: 10px 0px 0px 40%;
 }
 
+.ht-tm-element.badge.badge-primary{
+  border-color: rgb(113, 76, 223);
+}
+
 /*배경색 시작*/
 .ht-tm-codeblock.TagsContainer {
   background-color: rgba(255, 255, 255, 0.1);
