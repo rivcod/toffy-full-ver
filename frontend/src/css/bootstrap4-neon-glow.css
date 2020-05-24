@@ -5291,6 +5291,10 @@ input[type="button"].btn-block {
 
 /* 5.3. FEATURED JOBS
      ---------------------------------------------------------------*/
+  .featured-job > .title > div #_tags > button {
+    margin : 0px 5px;
+  }
+
 .featured-job{
   float:left;
   width:25%;
@@ -12255,12 +12259,17 @@ a.text-dark:focus {
   margin: 10px 0px 0px 40%;
 }
 
-.GameList {
-  background-color: white;
+/*배경색 시작*/
+.ht-tm-codeblock.TagsContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.GameList  {
+  background-color: rgba(255, 255, 255, 0.05);
   height: 1200px;
   text-align: center;
 }
-
+/*배경색 끝*/
 .GameList > table {
   margin: 0px auto;
   padding: 0px 0px 0px 0px;

@@ -7,16 +7,16 @@ const GameList = ({ gameList, loadingGameList, select }) => {
 
   const A = (game, firstPage, lastPage) => {
     //if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
-      const nukeOne = (tagCheck) => {
-        if(tagCheck !== 0){
-          return tagConverting(parseInt(tagCheck))
-        } else {
-          return ""
-        }
+    const nukeOne = (tagCheck) => {
+      if (tagCheck !== 0) {
+        return tagConverting(parseInt(tagCheck))
+      } else {
+        return ""
       }
-      const tagOne = nukeOne(game.tag1)
-      const tagTwo = nukeOne(game.tag2)
-      const tagThree = nukeOne(game.tag3)
+    }
+    const tagOne = nukeOne(game.tag1)
+    const tagTwo = nukeOne(game.tag2)
+    const tagThree = nukeOne(game.tag3)
     return (
       <div className="featured-job">
         <a href={game.href}>
@@ -33,24 +33,31 @@ const GameList = ({ gameList, loadingGameList, select }) => {
             <h5>{game.title}</h5>
           </div>
           <div>
-          <h5>{game.rank}</h5>
+            <h5>{game.rank}</h5>
           </div>
           <div id="_price">
-          <a
-            href="/"
-            className="ht-tm-element btn btn-outline-primary btn-sm"
-            id="_priceBtn"
-          >
-            {game.price}
-          </a>
-          <div id="_tags">
-            {tagOne}
-            {tagTwo}
-            {tagThree}</div>
+            <a
+              href="/"
+              className="ht-tm-element btn btn-outline-primary btn-sm"
+              id="_priceBtn"
+            >
+              {game.price}
+            </a>
+            <div id="_tags">
+              <button className="ht-tm-element badge badge-primary">
+                {tagOne}
+              </button>
+              <button className="ht-tm-element badge badge-primary">
+                {tagTwo}
+              </button>
+              <button className="ht-tm-element badge badge-primary">
+                {tagThree}
+              </button>
+            </div>
+          </div>
         </div>
-        </div>
-        
-      </div>
+
+      </div >
     );
     //}
   };
@@ -87,7 +94,7 @@ const GameList = ({ gameList, loadingGameList, select }) => {
     //}
   };
   const branchRendering = (game, firstPage, lastPage) => {
-    if (game&&selectCasting.length == 0) {
+    if (game && selectCasting.length == 0) {
       return A(game, firstPage, lastPage)
     } else {
       if (
