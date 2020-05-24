@@ -12263,8 +12263,11 @@ a.text-dark:focus {
   border-color: rgb(113, 76, 223);
   width : auto;
   height : 25px;
-  margin : 0px auto;
+  margin : 0px 7px 0px 0px;
   font-size : 15px;
+}
+.container.py-5.mb5{
+  max-width: 1330px;
 }
 
 .ht-tm-element.badge.badge-primary.main-badge{
