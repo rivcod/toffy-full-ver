@@ -25,6 +25,8 @@ from oneLine import views
 router.register('wisesaying', views.WiseSayingView, 'wisesaying')
 from tfgame import views
 router.register('tfgame', views.TfgameView, 'tfgame')
+from tfnote import views
+router.register('tfnote', views.TfnoteView, 'tfnote')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

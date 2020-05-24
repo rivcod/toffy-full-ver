@@ -12242,6 +12242,14 @@ a.text-dark:focus {
 
 /* 사용자 정의 CSS (선오) */
 
+/* 방명록 */
+.form-control.text {
+  width : 800px;
+}
+.form-control.writer {
+  width : 150px;
+}
+
 /*메인배경*/
 #ht-tm-jumbotron{
   background-image: url('../images/A_back.png');
@@ -12390,11 +12398,11 @@ a.text-dark:focus {
 
 .submitLogo {
   margin: 0 auto;
-  padding: 100px 0px 0px 0px;
+  padding: 25px 0px 0px 0px;
   text-align: center;
   border: solid white;
   border-width: 0px 0px 1px 0px;
-  width: 400px;
+  width: 800px;
 }
 
 ._request {
