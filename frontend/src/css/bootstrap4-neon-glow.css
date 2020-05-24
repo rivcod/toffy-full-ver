@@ -5291,6 +5291,11 @@ input[type="button"].btn-block {
 
 /* 5.3. FEATURED JOBS
      ---------------------------------------------------------------*/
+.featured-job{
+  float:left;
+  width:25%;
+  height: 320px;
+}
 
 .featured-job > #titlePadding {
   color: #888;
@@ -5298,12 +5303,13 @@ input[type="button"].btn-block {
 
 .featured-job img,
 .featured-job .title {
-  float: left;
   margin-bottom: 15px;
   margin-top: 15px;
+  margin-left : 100px;
 }
 
 .featured-job img {
+  display: inline-block;
   margin-left: 15px;
 }
 
@@ -12245,7 +12251,8 @@ a.text-dark:focus {
 .GameCard {
   text-align: center;
   height: 33.33333%;
-  margin: 0px 15px 0px 15px;
+  width: 25%;
+  margin: 10px 0px 0px 40%;
 }
 
 .GameList {
@@ -12276,9 +12283,11 @@ a.text-dark:focus {
 }
 
 #titlePadding {
-  position: relative;
+  /*position: relative;*/
+  /*float: left;*/
+  display: inline-block;
   padding-left: 0px;
-  margin: 5px 0px 10px 0px;
+  margin: 20px 0px 10px 0px;
 }
 
 .featured-job > .title {
@@ -12286,9 +12295,9 @@ a.text-dark:focus {
 }
 
 #_price {
-  position: absolute;
+  /* position: absolute;
   width: 51.333px;
-  padding: 20px 0px 0px 200px;
+  padding: 20px 0px 0px 200px; */
 }
 
 #_priceBtn {
@@ -12296,11 +12305,12 @@ a.text-dark:focus {
   padding: 0.1rem 0.2rem;
   width: 30px;
   margin: 0 0 20px 0;
+  display : inline-block;
 }
 
 #_priceBtn > a {
-  padding: 50px 50px;
-  margin: 50px;
+  /* padding: 50px 50px;
+  margin: 50px; */
 }
 
 ._mainSignUp {
