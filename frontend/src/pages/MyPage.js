@@ -3,9 +3,13 @@ import axios from "axios";
 
 import "../css/bootstrap4-neon-glow.css";
 
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
 class MyPage extends Component {
   state = {
-    value: "",
+    value1: "",
+    value2: "",
     textList: []
   };
   componentDidMount() {
@@ -22,39 +26,41 @@ class MyPage extends Component {
       .get("/api/tfnote/")
       .then(res => this.setState({ textList: res.data }))
       .catch(err => console.log(err));
-
-    console.log("들어왔는지 볼까? " + this.state.textList)
   };
 
-
   // writer
-  handleEmail = e => {
+  _handleWriter = e => {
     e.preventDefault();
     this.setState({
-      writer: e.target.value
+      value1: e.target.value
     });
   };
 
   //text
-  handleUsername = e => {
+  _handleText = e => {
     e.preventDefault();
+    console.log("텍스트변경중 = "  +e.target.value)
     this.setState({
-      text: e.target.value
+      value2: e.target.value
     });
   };
 
   //date
-  handlePassword = e => {
-    e.preventDefault();
-    this.setState({
-      date: e.target.value
-    });
-  };
-
+  // handlePassword = e => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     date: e.target.value
+  //   });
+  // };
+  
   //서버로 가입 양식 제출
-  handleSubmit = e => {
-    e.preventDefault();
-
+  _handleSubmit = () => {
+    const  value1  = this.state.value1;
+    const  value2  = this.state.value2;
+    console.log("_handleSubmit state 밸류접근 ="+this.state.value1)
+    axios
+      .post("/api/tfnote/", { writer: value1, text: value2 })
+      .then(res => this._renderText());
   };
   render() {
     const { textList } = this.state;
@@ -68,12 +74,13 @@ class MyPage extends Component {
               </div>
               <div>
                 {textList.map((text, index) => {
-                  return(
-                  <div className="Contact">
-                  <p>번호 : {index}</p>
-                  <p>작성자 : {text.writer}</p>
-                  <p>본문 : {text.text}</p>
-                  </div>
+                  return (
+                    <div className="Contact">
+                      <p>번호 : {index}</p>
+                      <p>작성자 : {text.writer}</p>
+                      <p>본문 : {text.text}</p>
+                      <p>작성일자 : {text.date}</p>
+                    </div>
                   );
                 })}
               </div>
@@ -83,6 +90,8 @@ class MyPage extends Component {
                 <input
                   type="writer"
                   className="form-control writer"
+                  value={this.state.value}
+                  onChange={this._handleWriter}
                   id="_writer"
                   aria-describedby="_writer"
                   placeholder="작성자"
@@ -90,6 +99,8 @@ class MyPage extends Component {
                 <textarea
                   type="text"
                   className="form-control text"
+                  value={this.state.value}
+                  onChange={this._handleText}
                   id="_text"
                   aria-describedby="_text"
                   placeholder="내용"
@@ -97,9 +108,9 @@ class MyPage extends Component {
               </div>
             </div>
             <div id="_apiJoinclassName">
-              <a href="#!" class="ht-tm-element btn btn-shadow text-mono btn-warning">
-                <span class="fa fa-download mr-2"></span>글쓰기
-          </a>
+              <button onClick={this._handleSubmit} class="ht-tm-element btn btn-shadow text-mono btn-warning">
+                글쓰기
+              </button>
             </div>
             {/* <button onClick={this.handleSubmit} className="btn btn-primary _joinclassName">
           Join
