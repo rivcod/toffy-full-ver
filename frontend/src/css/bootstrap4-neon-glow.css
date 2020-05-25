@@ -5298,22 +5298,25 @@ input[type="button"].btn-block {
 .featured-job{
   float:left;
   width:25%;
-  height: auto;
+  height: 500px;
 }
 
 .featured-job > #titlePadding {
   color: #888;
 }
 
+.featured-job > #titlePadding > h5 {
+}
+
 .featured-job img,
 .featured-job .title {
   margin-bottom: 15px;
   margin-top: 15px;
-  margin-left : 100px;
+  margin-left : 120px;
 }
 
 .featured-job.img-responsive {
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .featured-job .data {
@@ -12235,6 +12238,10 @@ a.text-dark:focus {
 
 /* 사용자 정의 CSS (선오) */
 
+.Home{
+  width: 1920px;
+}
+
 /* 방명록 */
 .form-control.text {
   width : 800px;
@@ -12263,7 +12270,7 @@ a.text-dark:focus {
   margin-bottom: -0.75rem;
   margin-left: -0.625rem;
   border-bottom: 0;
-  background-color: rgba(255,255,255,) ;
+  background-color: rgba(255,255,255,1) ;
 }
 .card-header-tabs > li.nav-item > button {
   font-weight: bold;
@@ -12315,7 +12322,7 @@ a.text-dark:focus {
 
 .GameList {
   margin: 0px auto;
-  padding: 0px 150px 0px 150px;
+  padding: 0px 0px 0px 0px;
   clear: both;
 }
 
@@ -12339,7 +12346,8 @@ a.text-dark:focus {
   /*float: left;*/
   /* display: inline-block; */
   text-align:center;
-  margin: 20px 0px 10px 0px;
+  margin: 10px 0px 15px 0px;
+  padding : 0px;
 }
 
 .featured-job > .title {
@@ -12452,6 +12460,7 @@ a.text-dark:focus {
   justify-content: space-between;
   align-items: center;
   transition-duration: 0.5s;
+  max-width: 1920px;
 }
 
 ._search {

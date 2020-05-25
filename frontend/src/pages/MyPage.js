@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, Fragment } from "react";
 import axios from "axios";
 
 import "../css/bootstrap4-neon-glow.css";
@@ -39,20 +39,11 @@ class MyPage extends Component {
   //text
   _handleText = e => {
     e.preventDefault();
-    console.log("텍스트변경중 = "  +e.target.value)
     this.setState({
       value2: e.target.value
     });
   };
 
-  //date
-  // handlePassword = e => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     date: e.target.value
-  //   });
-  // };
-  
   //서버로 가입 양식 제출
   _handleSubmit = () => {
     const  value1  = this.state.value1;
@@ -76,16 +67,24 @@ class MyPage extends Component {
                 {}
               </div>
               <div>
+              <div className="Contact">
+              <textarea>
                 {textList.map((text, index) => {
+                  const realDate=text.date.split('T')
+                  const realTime=realDate[1].split("+")
+                  const realTimer=realTime[0].split(".")
+                  //realDate[0]
+                  const _memo = text.text+" : "+text.writer
+                  
                   return (
-                    <div className="Contact">
-                      <p>번호 : {index}</p>
-                      <p>작성자 : {text.writer}</p>
-                      <p>본문 : {text.text}</p>
-                      <p>작성일자 : {text.date}</p>
-                    </div>
+                            <Fragment>
+                              {_memo}
+                              <p>{realDate[0]} {realTimer[0]}</p>
+                            </Fragment>
                   );
                 })}
+                </textarea>
+                </div>
               </div>
               <div class="submitLogo">
               </div>
