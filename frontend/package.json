@@ -49,5 +49,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://qqooap.github.io/toffyy/"
+  "homepage": "https://qqooap.github.io/toffyy/",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }
