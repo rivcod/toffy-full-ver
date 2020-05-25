@@ -5298,7 +5298,7 @@ input[type="button"].btn-block {
 .featured-job{
   float:left;
   width:25%;
-  height: 500px;
+  height: auto;
 }
 
 .featured-job > #titlePadding {
@@ -5411,13 +5411,6 @@ input[type="button"].btn-block {
 }
 .card-footer:last-child {
   border-radius: 0 0 calc(6px - 1px) calc(6px - 1px);
-}
-
-.card-header-tabs {
-  margin-right: -0.625rem;
-  margin-bottom: -0.75rem;
-  margin-left: -0.625rem;
-  border-bottom: 0;
 }
 
 .card-header-pills {
@@ -12251,6 +12244,11 @@ a.text-dark:focus {
 }
 
 /*메인배경*/
+
+.row.align-items-center{
+  margin : 0px 0px 75px 0px
+}
+
 #ht-tm-jumbotron{
   background-image: url('../images/A_back.png');
 }
@@ -12258,6 +12256,22 @@ a.text-dark:focus {
 .TagsContainer {
   background-color: white;
 }
+
+/*필터*/
+.card-header-tabs {
+  margin-right: -0.625rem;
+  margin-bottom: -0.75rem;
+  margin-left: -0.625rem;
+  border-bottom: 0;
+  background-color: rgba(255,255,255,) ;
+}
+.card-header-tabs > li.nav-item > button {
+  font-weight: bold;
+  color:white;
+  background-color: rgb(113, 76, 223) ;
+}
+
+
 
 /*태그 사이즈*/
 .ht-tm-element.badge.badge-primary{
@@ -12285,6 +12299,10 @@ a.text-dark:focus {
   background-color: rgba(255, 255, 255, 0.1);
   height: auto;
   text-align: center;
+} 
+.footer.py-5{
+  background-color: rgba(255, 255, 255, 0.1);
+  margin:0px;
 }
 /*배경색 끝*/
 
@@ -12295,9 +12313,9 @@ a.text-dark:focus {
   margin: 10px 0px 0px 40%;
 }
 
-.GameList > table {
+.GameList {
   margin: 0px auto;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 150px 0px 150px;
   clear: both;
 }
 

@@ -77,7 +77,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
         <div className="title" id="titlePadding">
           <h5>{game.title}</h5>
           <h5>{game.rank}</h5>
-
         </div>
         <div id="_price">
           <a
@@ -119,16 +118,26 @@ const GameList = ({ gameList, loadingGameList, select }) => {
   const firstPage = 10;
   const lastPage = 20;
   return (
+    <Fragment>
+        {/* <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+          <button class="nav-link">순위</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link">가격</button>
+          </li>
+        </ul> */}
     <div className="GameList">
       {loadingGameList && "로딩중..."}
       {!loadingGameList &&
         gameList && ( // 자바스크립트 연산자에 표현식이 &&로 연달아 있으면 계산된 값이 true가면 보여짐 (ES6)
-          <div>  {
+          <div className="gameMain">  {
             gameList.map((game) => branchRendering(game, firstPage, lastPage))
           }
           </div>
         )}
     </div>
+    </Fragment>
   );
 };
 

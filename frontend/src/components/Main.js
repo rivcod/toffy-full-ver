@@ -244,7 +244,6 @@ const Main = ({ checkTags, onAddTags }) => {
   };
 
   // 질문함수 시작
-
   const quest1 = () => {
     return (
       <Fragment>
