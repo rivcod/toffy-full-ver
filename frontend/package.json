@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -49,5 +49,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://qqooap.github.io/toffyy/"
+  "homepage": "https://qqooap.github.io/toffyy/",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }
