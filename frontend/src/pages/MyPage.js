@@ -57,7 +57,10 @@ class MyPage extends Component {
   _handleSubmit = () => {
     const  value1  = this.state.value1;
     const  value2  = this.state.value2;
-    console.log("_handleSubmit state 밸류접근 ="+this.state.value1)
+    let input1, input2
+    [input1, input2] = [document.getElementById("_writer"),document.getElementById("_text")]
+    input1.value = "";
+    input2.value = "";
     axios
       .post("/api/tfnote/", { writer: value1, text: value2 })
       .then(res => this._renderText());
@@ -95,6 +98,7 @@ class MyPage extends Component {
                   id="_writer"
                   aria-describedby="_writer"
                   placeholder="작성자"
+                  maxlength="20"
                 ></input>
                 <textarea
                   type="text"
@@ -104,6 +108,7 @@ class MyPage extends Component {
                   id="_text"
                   aria-describedby="_text"
                   placeholder="내용"
+                  maxlength="200"
                 ></textarea>
               </div>
             </div>
