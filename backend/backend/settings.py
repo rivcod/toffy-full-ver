@@ -139,6 +139,8 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'frontend', 'build', 'static')
 # ]
 
+# git test
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static') # Root Static 파일
 ]
