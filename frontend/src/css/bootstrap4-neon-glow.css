@@ -2437,7 +2437,7 @@ textarea.form-control {
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-top: 8px;
 }
 
 .form-text {
@@ -12243,10 +12243,14 @@ a.text-dark:focus {
 }
 
 /* 방명록 */
-
+.ContactBack{
+  margin : 50px 0px 0px 0px;
+  background-size: 100%;
+  /*background-image: url('../images/A_back.png');*/
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/A_back.png');
+}
 .ContactBody{
-  margin : 50px 340px 0px 0px;
-  
+  margin : 50px 330px 0px 0px;
 }
 .form-control.text {
   width : 400px;
@@ -12260,21 +12264,22 @@ a.text-dark:focus {
   height : 600px;
 }
 .form-group > #_text{
-  display : inline-block;
+  position: relative;
+  display : inline-flex;
   height: 38px;
-  width: 500px;
+  width: 550px;
+  top : 12px;
 }
 .form-control.writer {
   width : 150px;
   margin : 0px;
   display : inline-block;
 }
-
+/*버튼*/
 .form-group >#_apiJoinclassName {
-  background-color: red;
-  width : 65.78px;
+  width : 35.78px;
   display : inline-block;
-
+  margin : 0px 0px 0px 10px;
 }
 /*메인배경*/
 
@@ -12288,6 +12293,15 @@ a.text-dark:focus {
 
 .TagsContainer {
   background-color: white;
+}
+
+.submitLogo {
+  margin: 0 auto;
+  padding: 25px 0px 0px 0px;
+  text-align: center;
+  border: solid white;
+  border-width: 0px 0px 1px 0px;
+  width: 800px;
 }
 
 /*필터*/
@@ -12448,14 +12462,6 @@ a.text-dark:focus {
   text-align: center;
 }
 
-.submitLogo {
-  margin: 0 auto;
-  padding: 25px 0px 0px 0px;
-  text-align: center;
-  border: solid white;
-  border-width: 0px 0px 1px 0px;
-  width: 800px;
-}
 
 ._request {
   text-align: center;

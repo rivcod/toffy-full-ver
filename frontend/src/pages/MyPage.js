@@ -66,6 +66,7 @@ class MyPage extends Component {
     return (
       <Fragment>
       <Navbar></Navbar>
+      <div className="ContactBack">
       <div className="ContactBody">
         <div className="card-body">
           <div className="submitForm">
@@ -82,11 +83,13 @@ class MyPage extends Component {
                   _memo += ("[ "+text.writer+" ] : "+text.text+" "+realDate[0]+" "+realTimer[0]+"\n")
                   realMemo = _undefined(_memo)
                 })}
+                <div className="blackBox">
                 <textarea value={realMemo}
                   type="text"
                   className="form-control text chating"
                  >
                 </textarea>
+                </div>
                 </div>
               </div>
               <div class="submitLogo">
@@ -113,7 +116,7 @@ class MyPage extends Component {
                   maxlength="200"
                 ></textarea>
                 <div id="_apiJoinclassName">
-              <button onClick={this._handleSubmit} class="ht-tm-element btn btn-shadow text-mono btn-warning">
+              <button onClick={this._handleSubmit} class="ht-tm-element btn btn-outline-light">
                 SEND
               </button>
             </div>
@@ -126,6 +129,7 @@ class MyPage extends Component {
           </div>
         </div>
       </div>
+    </div>  
       </Fragment>
     );
   }
