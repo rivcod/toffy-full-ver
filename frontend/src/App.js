@@ -14,7 +14,7 @@ class App extends Component {
         {" "}
         <Route path="/g" component={GameListContainer} />{" "}
         <Route exact path="/" component={Home} />{" "}
-        <Route path="/mypage" component={MyPage} />{" "}
+        <Route path="/contact" component={MyPage} />{" "}
         <Route path="/test" component={Test} />{" "}
       </div>
     );

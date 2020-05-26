@@ -45,7 +45,7 @@ class Navbar extends Component {
 
                 <div className="_mainSignUp">
                   {/* <a href="mypage" id="_taste"> */}
-                  <Link to="/MyPage">MyPage</Link>
+                  <Link to="/Contact">Contact</Link>
                   {/* </a> */}
                 </div>
 

@@ -1,5 +1,6 @@
 import React, { Component, useState, Fragment } from "react";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 import "../css/bootstrap4-neon-glow.css";
 
@@ -15,10 +16,7 @@ class MyPage extends Component {
   componentDidMount() {
     this._renderText();
   }
-  //map new object 생성
-  //console.log("확인 ===="+contact.writer[1])
-  //console.log("확인2 ===="+_writer)
-
+  
   // 텍스트 렌더링
   _renderText = () => {
     axios
@@ -44,7 +42,7 @@ class MyPage extends Component {
     });
   };
 
-  //서버로 가입 양식 제출
+  //서버로 Data 전송
   _handleSubmit = () => {
     const  value1  = this.state.value1;
     const  value2  = this.state.value2;
@@ -58,8 +56,11 @@ class MyPage extends Component {
   };
   render() {
     const { textList } = this.state;
+    let _memo
     return (
-      <div className="SignUp">
+      <Fragment>
+      <Navbar></Navbar>
+      <div className="ContactBody">
         <div className="card-body">
           <div className="submitForm">
             <div className="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
@@ -68,21 +69,17 @@ class MyPage extends Component {
               </div>
               <div>
               <div className="Contact">
-              <textarea>
                 {textList.map((text, index) => {
                   const realDate=text.date.split('T')
                   const realTime=realDate[1].split("+")
                   const realTimer=realTime[0].split(".")
-                  //realDate[0]
-                  const _memo = text.text+" : "+text.writer
-                  
-                  return (
-                            <Fragment>
-                              {_memo}
-                              <p>{realDate[0]} {realTimer[0]}</p>
-                            </Fragment>
-                  );
+                  _memo += ("[ "+text.writer+" ] : "+text.text+" "+realDate[0]+" "+realTimer[0]+"\n").replace("undefined","")
+                  console.log(_memo)
                 })}
+                <textarea value={_memo}
+                  type="text"
+                  className="form-control text chating"
+                 >
                 </textarea>
                 </div>
               </div>
@@ -122,6 +119,7 @@ class MyPage extends Component {
           </div>
         </div>
       </div>
+      </Fragment>
     );
   }
 
