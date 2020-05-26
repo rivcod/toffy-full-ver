@@ -12243,22 +12243,39 @@ a.text-dark:focus {
 }
 
 /* 방명록 */
+
 .ContactBody{
-  margin : 50px 365px 0px 0px;
+  margin : 50px 340px 0px 0px;
   
 }
 .form-control.text {
-  width : 800px;
+  width : 400px;
   resize:none;
+}
+.ht-tm-codeblock.ht-tm-btn-replaceable.ht-tm-element.ht-tm-element-inner > .form-group{
+  width : 800px
 }
 .form-control.text.chating {
   width : 800px;
   height : 600px;
 }
+.form-group > #_text{
+  display : inline-block;
+  height: 38px;
+  width: 500px;
+}
 .form-control.writer {
   width : 150px;
+  margin : 0px;
+  display : inline-block;
 }
 
+.form-group >#_apiJoinclassName {
+  background-color: red;
+  width : 65.78px;
+  display : inline-block;
+
+}
 /*메인배경*/
 
 .row.align-items-center{
