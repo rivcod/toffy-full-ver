@@ -99,7 +99,7 @@ class MyPage extends Component {
                   onChange={this._handleWriter}
                   id="_writer"
                   aria-describedby="_writer"
-                  placeholder="작성자"
+                  placeholder="Stranger"
                   maxlength="20"
                 ></input>
                 <textarea
@@ -109,16 +109,17 @@ class MyPage extends Component {
                   onChange={this._handleText}
                   id="_text"
                   aria-describedby="_text"
-                  placeholder="내용"
+                  placeholder="Want to talk?"
                   maxlength="200"
                 ></textarea>
-              </div>
-            </div>
-            <div id="_apiJoinclassName">
+                <div id="_apiJoinclassName">
               <button onClick={this._handleSubmit} class="ht-tm-element btn btn-shadow text-mono btn-warning">
-                글쓰기
+                SEND
               </button>
             </div>
+              </div>
+            </div>
+            
             {/* <button onClick={this.handleSubmit} className="btn btn-primary _joinclassName">
           Join
         </button> */}
