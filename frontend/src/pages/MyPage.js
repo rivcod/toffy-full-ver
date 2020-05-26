@@ -54,9 +54,15 @@ class MyPage extends Component {
       .post("/api/tfnote/", { writer: value1, text: value2 })
       .then(res => this._renderText());
   };
+
+  
   render() {
     const { textList } = this.state;
     let _memo
+    let realMemo
+    const _undefined = (arg) => {
+      return arg.replace("undefined","")
+    }
     return (
       <Fragment>
       <Navbar></Navbar>
@@ -73,10 +79,10 @@ class MyPage extends Component {
                   const realDate=text.date.split('T')
                   const realTime=realDate[1].split("+")
                   const realTimer=realTime[0].split(".")
-                  _memo += ("[ "+text.writer+" ] : "+text.text+" "+realDate[0]+" "+realTimer[0]+"\n").replace("undefined","")
-                  console.log(_memo)
+                  _memo += ("[ "+text.writer+" ] : "+text.text+" "+realDate[0]+" "+realTimer[0]+"\n")
+                  realMemo = _undefined(_memo)
                 })}
-                <textarea value={_memo}
+                <textarea value={realMemo}
                   type="text"
                   className="form-control text chating"
                  >
