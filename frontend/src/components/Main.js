@@ -307,6 +307,7 @@ const Main = ({ checkTags, onAddTags }) => {
     return (
       <Fragment>
         "좋아하는 장르는"
+        <br></br>
         {tagPush("1")}
         {tagPush("2")}
         {tagPush("3")}
