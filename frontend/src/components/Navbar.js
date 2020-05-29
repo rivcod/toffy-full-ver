@@ -1,17 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo-white1.png";
-//import Typekit from 'react-typekit';
 
 class Navbar extends Component {
-  componentDidMount() {
-    const script = document.createElement("script");
-
-    script.src = "../static/tfgame/js/navigation.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-  }
   render() {
     return (
       <div className="navbar-dark text-white _floating">
