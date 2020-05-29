@@ -4,6 +4,19 @@ import logo from "../images/logo-white1.png";
 
 class Navbar extends Component {
   render() {
+    
+  var nav = document.getElementsByClassName("_floating");
+  window.onscroll = function sticky() {
+    if(window.pageYOffset > nav[0].offsetTop) {
+      nav[0].classList.add("navCustom");
+      console.log("nav[0].offsetTop = "+nav[0].offsetTop);
+      console.log("window.pageYOffset = "+window.pageYOffset);
+    } else {
+      nav[0].classList.remove("navCustom");
+      console.log("nav[0].offsetTop = "+nav[0].offsetTop);
+      console.log("window.pageYOffset = "+window.pageYOffset);
+    }
+  }
     return (
       <div className="navbar-dark text-white _floating">
         <div className="container">
@@ -19,25 +32,20 @@ class Navbar extends Component {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
                 <a href="/">
                   <img src={logo} alt="Logo" />
                 </a>
               </div>
-
               <div className="input-group">
                 <input
                   type="text"
                   className="form-control _searchFormControl"
                   placeholder="Search"
                 ></input>
-
                 <div className="_mainSignUp">
-                  {/* <a href="mypage" id="_taste"> */}
                   <Link to="/Contact">Contact</Link>
-                  {/* </a> */}
                 </div>
 
                 <div className="_tasteBox"></div>

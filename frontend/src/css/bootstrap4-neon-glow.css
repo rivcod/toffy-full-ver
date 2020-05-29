@@ -12239,6 +12239,41 @@ a.text-dark:focus {
 
 /* 사용자 정의 CSS (선오) */
 
+/*네비게이션 스크롤*/
+._floating {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgb(0, 0, 0);
+  height: 50px;
+  width: 1920px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.5s;
+  max-width: 1920px;
+}
+.navCustom{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0,0.65);
+  width: 1920px;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.5s;
+  max-width: 1920px;
+}
+.navbar-dark.text-white._floating.navCustom>.container>.navbar.px-0.navbar-expand-lg.navbar-dark>#navbarNavAltMarkup>.input-group>.form-control._searchFormControl{
+  background-color: rgba(40, 41, 62,0.65);
+}
 /*노 데이터*/
 .ht-tm-element.alert.alert-success{
   text-align: center;
@@ -12423,7 +12458,7 @@ a.text-dark:focus {
 }
 
 ._mainSignUp {
-  margin: 0 auto;
+  margin: 5px 0 0 15px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -12486,22 +12521,6 @@ a.text-dark:focus {
 .carouselHeight {
   height: 492px;
   margin-top: 200px;
-}
-
-._floating {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background-color: rgb(0, 0, 0);
-  height: 50px;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition-duration: 0.5s;
-  max-width: 1920px;
 }
 
 ._search {
