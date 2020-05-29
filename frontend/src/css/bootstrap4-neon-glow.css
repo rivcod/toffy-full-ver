@@ -12321,6 +12321,12 @@ a.text-dark:focus {
 
 
 /*태그 사이즈*/
+.ht-tm-element.badge.badge-success{
+  width : auto;
+  height : 25px;
+  margin : 0px 7px 0px 0px;
+  font-size : 15px;
+}
 .ht-tm-element.badge.badge-primary{
   border-color: rgb(113, 76, 223);
   width : auto;
