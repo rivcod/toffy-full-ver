@@ -9,6 +9,7 @@ export const unselectTags = createAction(UNSELECTTAGS);
 
 const initialState = {
     selectedTags:[],
+    selectedColors:[],
 };
 
 const removeTag = (arr, id) => {
@@ -19,8 +20,14 @@ const removeTag = (arr, id) => {
 
 const tag = handleActions(
   {
-    [SELECTTAGS]: (state, action) => ({selectedTags: state.selectedTags.concat(action.payload)}),
-    [UNSELECTTAGS]: (state, action) => ({selectedTags: removeTag(state.selectedTags, action.payload)}),
+    [SELECTTAGS]: (state, action) => ({
+      selectedTags: state.selectedTags.concat(action.payload),
+      selectedColors: state.selectedColors.concat(action.payload)
+    }),
+    [UNSELECTTAGS]: (state, action) => ({
+      selectedTags: removeTag(state.selectedTags, action.payload),
+      selectedColors: removeTag(state.selectedTags, action.payload)
+    }),
   },                                                                     
   initialState,
 );
