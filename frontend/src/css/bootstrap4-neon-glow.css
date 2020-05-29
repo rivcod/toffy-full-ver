@@ -143,7 +143,7 @@ body {
   line-height: 1.5;
   color: #e4e2ff;
   text-align: left;
-  background-color: #0c0d16;
+  background-color:rgba(0,0,0,0.8);
 }
 
 [tabindex="-1"]:focus {
@@ -5299,7 +5299,7 @@ input[type="button"].btn-block {
   float:left;
   width:25%;
   height: 500px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .featured-job > #titlePadding {
@@ -12242,7 +12242,13 @@ a.text-dark:focus {
 .Home{
   width: 1920px;
 }
-
+/*푸터*/
+.footer.py-5{
+  float:left;
+  background-color: black;
+  width : 1920px;
+  margin:0px;
+}
 /* 방명록 */
 .ContactBack{
   margin : 50px 0px 0px 0px;
@@ -12344,18 +12350,9 @@ a.text-dark:focus {
 
 /*배경색 시작*/
 .ht-tm-codeblock.TagsContainer {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.subscribe-section.section.bg-gray.pt-55.pb-55  {
-  background-color: rgba(255, 255, 255, 0.1);
-  height: auto;
-  text-align: center;
-} 
-.footer.py-5{
-  background-color: rgba(255, 255, 255, 0.1);
-  margin:0;
-}
 /*배경색 끝*/
 
 .GameCard {

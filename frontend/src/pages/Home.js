@@ -21,7 +21,7 @@ class Home extends Component {
         <TagContainer></TagContainer>
         <GameListContainer></GameListContainer>
         <Mail></Mail>
-        {/* <Footer></Footer> */}
+        <Footer></Footer> 
       </div>
     );
   }
