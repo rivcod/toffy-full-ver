@@ -3,7 +3,6 @@ import React, { Fragment, useState } from "react";
 const Tag = ({selectedTags,selectedColors, selectTags, unselectTags}) => {
   const colorCasting = Array.from(selectedColors)
   const colorToggle = (tags) => {
-    console.log(colorCasting[tags])
     if(colorCasting.indexOf(String(tags))!==-1){
       return true;
     } else {
@@ -30,7 +29,7 @@ const Tag = ({selectedTags,selectedColors, selectTags, unselectTags}) => {
       <div className="ht-tm-codeblock TagsContainer">
         <div className="container py-5 mb5">
           <button className={colorToggle(1) ? "ht-tm-element badge badge-success" : "ht-tm-element badge badge-primary" }  onClick={() => {
-              return (tagToggle("1"),console.log("확인-"+colorToggle(1)));
+              return (tagToggle("1"));
             }}>
             #액션
           </button>

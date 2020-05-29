@@ -12239,6 +12239,13 @@ a.text-dark:focus {
 
 /* 사용자 정의 CSS (선오) */
 
+/*노 데이터*/
+.ht-tm-element.alert.alert-success{
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 3px;
+}
 .Home{
   width: 1920px;
 }
