@@ -64,7 +64,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
   };
   const B = (game, firstPage, lastPage) => {
     check +=1
-    console.log("dddddd = "+check)
     if(check>=200){
       check = 0
       return (
