@@ -12293,13 +12293,13 @@ a.text-dark:focus {
 }
 /* 방명록 */
 .ContactBack{
-  margin : 50px 0px 0px 0px;
+  margin : 0px 0px 0px 0px;
   background-size: 100%;
   /*background-image: url('../images/A_back.png');*/
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/A_back.png');
 }
 .ContactBody{
-  margin : 50px 330px 0px 0px;
+  margin : 0px 330px 0px 0px;
 }
 .form-control.text {
   width : 400px;
