@@ -7,7 +7,13 @@ import GameListContainer from './containers/GameListContainer'
 
 import "./css/index.css";
 
+
 class App extends Component {
+
+  componentDidMount(){
+    document.title = "Toffy"
+  }
+
   render() {
     return (
       <div className="font">

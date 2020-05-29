@@ -247,7 +247,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest1 = () => {
     return (
       <Fragment>
-        설문조사!
+        💡설문조사!
         {OX("quest1")}
       </Fragment>
     );
