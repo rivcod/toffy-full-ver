@@ -5,7 +5,7 @@ import Mail from "../components/Mail";
 import Footer from "../components/Footer";
 import GameListContainer from "../containers/GameListContainer";
 import MainContainer from "../containers/MainContainer";
-import Pagination from '../components/Pagination'
+import PaginationContainer from '../containers/PaginationContainer'
 import "../css/bootstrap4-neon-glow.css";
 
 class Home extends Component {
@@ -21,6 +21,7 @@ class Home extends Component {
         <TagContainer></TagContainer>
         <GameListContainer></GameListContainer>
         <Mail></Mail>
+        <PaginationContainer></PaginationContainer>
         <Footer></Footer> 
       </div>
     );

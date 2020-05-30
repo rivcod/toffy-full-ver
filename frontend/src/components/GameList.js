@@ -1,20 +1,21 @@
-import React, { Fragment,useState } from "react";
+import React, { Fragment,useEffect } from "react";
 import tagConverting from "../js/tagConvert.js"
-import Pagination from "../components/Pagination.js"
 
 let check = 0;
-let Posts = 0;
-let currentPage = 1;
-const GameList = ({ gameList, loadingGameList, select }) => {
+let Posts = 0;                                                                    
+const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, postsPerPage, setTotalPosts, setCurrentPage, setPostsPerPage}) => {
   // 페이지네이션 //
-  //const [posts, setPosts] = useState([]);
-  const [postsPerPage] = useState(20);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const paginate = pageNumber => {return currentPage=pageNumber,console.log("paginate 함수실행")}; // 현재 페이지를 저장하는 함수
   console.log("currentPage = "+currentPage)
-  // 페이지네이션 끝//
+  console.log("postsPerPage = "+postsPerPage)
+  console.log("totalPosts = "+totalPosts)
 
+  useEffect (() => {
+    return(
+    setTotalPosts(Posts))
+  },[]);
+  // 페이지네이션 끝//
   const selectCasting = Array.from(select)
   check = 0;
   Posts = 0;
@@ -110,7 +111,7 @@ const GameList = ({ gameList, loadingGameList, select }) => {
       }
     }
   }
-
+ 
   return (
     <Fragment>
     <div className="GameList">
@@ -121,7 +122,6 @@ const GameList = ({ gameList, loadingGameList, select }) => {
           }
           </div>}
     </div>
-    {Pagination(postsPerPage,Posts,paginate)}
     </Fragment>
   );
 };
