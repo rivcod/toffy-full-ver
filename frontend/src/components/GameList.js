@@ -1,11 +1,24 @@
-import React, { Fragment, } from "react";
+import React, { Fragment,useState } from "react";
 import tagConverting from "../js/tagConvert.js"
+import Pagination from "../components/Pagination.js"
+
 let check = 0;
+let Posts = 0;
 const GameList = ({ gameList, loadingGameList, select }) => {
+  // 페이지네이션 //
+  //const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(8);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const paginate = pageNumber => setCurrentPage(pageNumber); // 현재 페이지를 저장하는 함수
+  // 페이지네이션 끝//
+
   const selectCasting = Array.from(select)
   check = 0;
-  const A = (game, firstPage, lastPage) => {
-    //if( (Number(game.id) < lastPage) && (Number(game.id) >= firstPage) ){
+  Posts = 0;
+  const A = (game) => {
+    Posts += 1
     if(game){
       const nukeOne = (tagCheck) => {
         if (tagCheck !== 0) {
@@ -62,10 +75,11 @@ const GameList = ({ gameList, loadingGameList, select }) => {
       return ""
     }
   };
-  const B = (game, firstPage, lastPage) => {
+  const B = (game) => {
     check +=1
     if(check>=200){
       check = 0
+      Posts = 0;
       return (
       <div class="ht-tm-element alert alert-success" role="alert">
       <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
@@ -75,10 +89,9 @@ const GameList = ({ gameList, loadingGameList, select }) => {
       )
     }
   }
-    //}
-  const branchRendering = (game, firstPage, lastPage) => {
+  const branchRendering = (game) => {
     if (game && selectCasting.length == 0) {
-      return A(game, firstPage, lastPage)
+      return A(game)
     } else {
       if (
         (selectCasting.length == 1 && ((selectCasting.indexOf(game.tag1) != -1) || (selectCasting.indexOf(game.tag2) != -1) || (selectCasting.indexOf(game.tag3) != -1)))
@@ -90,26 +103,24 @@ const GameList = ({ gameList, loadingGameList, select }) => {
         )
       ) 
       {
-        return A(game, firstPage, lastPage)
+        return A(game)
       } else {
-        return B(game, firstPage, lastPage)
+        return B(game)
       }
     }
   }
 
-  const firstPage = 10;
-  const lastPage = 20;
   return (
     <Fragment>
     <div className="GameList">
       {loadingGameList && "로딩중..."}
       {!loadingGameList && gameList && 
           <div className="gameMain">  {
-            gameList.map((game) => branchRendering(game, firstPage, lastPage))
+            gameList.map((game) => branchRendering(game))
           }
           </div>}
-        
     </div>
+    {Pagination(postsPerPage,Posts,paginate)}
     </Fragment>
   );
 };
