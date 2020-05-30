@@ -9,12 +9,8 @@ class Navbar extends Component {
   window.onscroll = function sticky() {
     if(window.pageYOffset > nav[0].offsetTop) {
       nav[0].classList.add("navCustom");
-      console.log("nav[0].offsetTop = "+nav[0].offsetTop);
-      console.log("window.pageYOffset = "+window.pageYOffset);
     } else {
       nav[0].classList.remove("navCustom");
-      console.log("nav[0].offsetTop = "+nav[0].offsetTop);
-      console.log("window.pageYOffset = "+window.pageYOffset);
     }
   }
     return (

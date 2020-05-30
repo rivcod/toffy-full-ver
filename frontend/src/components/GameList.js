@@ -4,14 +4,15 @@ import Pagination from "../components/Pagination.js"
 
 let check = 0;
 let Posts = 0;
+let currentPage = 1;
 const GameList = ({ gameList, loadingGameList, select }) => {
   // 페이지네이션 //
   //const [posts, setPosts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(8);
+  const [postsPerPage] = useState(20);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const paginate = pageNumber => setCurrentPage(pageNumber); // 현재 페이지를 저장하는 함수
+  const paginate = pageNumber => {return currentPage=pageNumber,console.log("paginate 함수실행")}; // 현재 페이지를 저장하는 함수
+  console.log("currentPage = "+currentPage)
   // 페이지네이션 끝//
 
   const selectCasting = Array.from(select)
