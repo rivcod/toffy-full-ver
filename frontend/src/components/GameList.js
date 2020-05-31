@@ -5,11 +5,11 @@ let check = 0;
 let Posts = 0;                                                                    
 const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, postsPerPage, setTotalPosts, setCurrentPage, setPostsPerPage}) => {
   // 페이지네이션 //
-  let firstValue = (currentPage * 10) - 9
-  let markValue = (currentPage * 10) - 9
+  let firstValue = (currentPage * 10) - 8
+  let markValue = 0
   if(currentPage==1){
-    firstValue =1
-    markValue = 1
+    firstValue = 0
+    markValue = 0
   }
   
   useEffect(() => {
@@ -22,11 +22,10 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, 
   Posts = 0;
   const A = (game) => {
     Posts += 1
-    console.log("firstValue = "+firstValue+" <= markValue ="+markValue+"< firstValue+9 = "+(firstValue+9))
-    if(firstValue <= markValue < firstValue+9){
-      console.log("if문 개무시하네")
+    console.log("firstValue = "+firstValue+" < markValue ="+markValue+"< firstValue+9 = "+(firstValue+11))
+    markValue +=1
+    if(firstValue < markValue&&markValue < firstValue+13){
       if(game){
-        markValue +=1
         const nukeOne = (tagCheck) => {
           if (tagCheck !== 0) {
             return tagConverting(parseInt(tagCheck))
