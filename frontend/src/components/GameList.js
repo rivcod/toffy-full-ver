@@ -5,75 +5,83 @@ let check = 0;
 let Posts = 0;                                                                    
 const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, postsPerPage, setTotalPosts, setCurrentPage, setPostsPerPage}) => {
   // 페이지네이션 //
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  console.log("currentPage = "+currentPage)
-  console.log("postsPerPage = "+postsPerPage)
-  console.log("totalPosts = "+totalPosts)
+  let firstValue = (currentPage * 10) - 9
+  let markValue = (currentPage * 10) - 9
+  if(currentPage==1){
+    firstValue =1
+    markValue = 1
+  }
+  
+  useEffect(() => {
+      setTotalPosts(Posts);
+  });
 
-  useEffect (() => {
-    return(
-    setTotalPosts(Posts))
-  },[]);
   // 페이지네이션 끝//
   const selectCasting = Array.from(select)
   check = 0;
   Posts = 0;
   const A = (game) => {
     Posts += 1
-    if(game){
-      const nukeOne = (tagCheck) => {
-        if (tagCheck !== 0) {
-          return tagConverting(parseInt(tagCheck))
-        } else {
-          return ""
+    console.log("firstValue = "+firstValue+" <= markValue ="+markValue+"< firstValue+9 = "+(firstValue+9))
+    if(firstValue <= markValue < firstValue+9){
+      console.log("if문 개무시하네")
+      if(game){
+        markValue +=1
+        const nukeOne = (tagCheck) => {
+          if (tagCheck !== 0) {
+            return tagConverting(parseInt(tagCheck))
+          } else {
+            return ""
+          }
         }
-      }
-      const tagOne = nukeOne(game.tag1)
-      const tagTwo = nukeOne(game.tag2)
-      const tagThree = nukeOne(game.tag3)
-      return (
-        <div className="featured-job">
-          <a href={game.href}>
-            {
-              <img
-                src={game.image}
-                alt="Featured Job"
-                className="img-responsive"
-              />
-            }
-          </a>
-          <div className="title" id="titlePadding">
-            <div>
-              <h5>{game.rank}</h5>
-            </div>
-            <div>
-              <h5>{game.title}</h5>
-            </div>
-            <div id="_price">
-              <a
-                href={game.href}
-                className="ht-tm-element btn btn-outline-primary btn-sm"
-                id="_priceBtn"
-              >
-                {game.price}
-              </a>
-              <div id="_tags">
-                <button className="ht-tm-element badge badge-primary">
-                  {tagOne}
-                </button>
-                <button className="ht-tm-element badge badge-primary">
-                  {tagTwo}
-                </button>
-                <button className="ht-tm-element badge badge-primary">
-                  {tagThree}
-                </button>
+        const tagOne = nukeOne(game.tag1)
+        const tagTwo = nukeOne(game.tag2)
+        const tagThree = nukeOne(game.tag3)
+        return (
+          <div className="featured-job">
+            <a href={game.href}>
+              {
+                <img
+                  src={game.image}
+                  alt="Featured Job"
+                  className="img-responsive"
+                />
+              }
+            </a>
+            <div className="title" id="titlePadding">
+              <div>
+                <h5>{game.rank}</h5>
+              </div>
+              <div>
+                <h5>{game.title}</h5>
+              </div>
+              <div id="_price">
+                <a
+                  href={game.href}
+                  className="ht-tm-element btn btn-outline-primary btn-sm"
+                  id="_priceBtn"
+                >
+                  {game.price}
+                </a>
+                <div id="_tags">
+                  <button className="ht-tm-element badge badge-primary">
+                    {tagOne}
+                  </button>
+                  <button className="ht-tm-element badge badge-primary">
+                    {tagTwo}
+                  </button>
+                  <button className="ht-tm-element badge badge-primary">
+                    {tagThree}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </div >
-      );
-    } else {
+          </div >
+        );
+      } else {
+        return ""
+      }
+    } else{
       return ""
     }
   };

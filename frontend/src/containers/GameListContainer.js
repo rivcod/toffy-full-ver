@@ -17,9 +17,6 @@ const GameListContainer = ({
     setCurrentPage,
     setPostsPerPage
 }) => {
-    console.log("currentPage in GameListContainer = "+currentPage)
-    console.log("postsPerPage in GameListContainer = "+postsPerPage)
-    console.log("totalPosts in GameListContainer = "+totalPosts)
     useEffect(() => {
         getGameList(1); // createRequestThunk에서 api에서 보내주는 객체의 성공 실패여부를 판단하고 dispatch로 리듀서 함수를 실행시켜 store 상태를 변화시킴
     }, [getGameList]); // getGameList등 스토어 상태가 변화되면 useEffect 실행(렌더링)
