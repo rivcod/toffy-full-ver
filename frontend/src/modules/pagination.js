@@ -10,11 +10,9 @@ export const setPostsPerPage = createAction(SET_POSTSPERPAGE);
 export const setTotalPosts = createAction(SET_TOTALPOSTS);
 
 const initialState = {
-  //paginationObject: {
     currentPage:1,
     totalPosts: 20,
     postsPerPage: 0,
-  //}
 };
 
 const pagination = handleActions(

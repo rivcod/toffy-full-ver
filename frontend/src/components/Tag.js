@@ -11,7 +11,7 @@ const Tag = ({selectedTags,selectedColors, selectTags, unselectTags,setCurrentPa
   }
   const tagToggle = (tags) => {
     const tagCasting = Array.from(selectedTags)
-    setCurrentPage(1)
+    setCurrentPage(1) // 페이지네이션 초기화
     if(tagCasting!=""){
       for (var tagItem in tagCasting) {
         if(tagCasting.indexOf(tags)==-1){

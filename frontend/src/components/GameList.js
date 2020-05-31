@@ -21,7 +21,6 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, 
   Posts = 0;
   const A = (game) => {
     Posts += 1
-    console.log("firstValue = "+firstValue+" < markValue ="+markValue+"< firstValue+13 = "+(firstValue+13))
     markValue +=1
     if(firstValue < markValue&&markValue < firstValue+13){
       if(game){

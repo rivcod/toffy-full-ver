@@ -12241,15 +12241,14 @@ a.text-dark:focus {
 
 /*페이지네이션*/
 .paginationNav{
-  
-  float:left;
-  background-color: rgba(113, 76, 223, 0.25);
-  width : 1920px;
-  margin:0px auto;
+  text-align: center;
+  margin-left: 50%;
+  margin-right: 50%;
 }
 .pagination{
-  position: relative;
-  margin : 0px auto;
+  text-align: center;
+  width : 500px;
+  margin : 0px;
 }
 
 /*네비게이션 스크롤*/
