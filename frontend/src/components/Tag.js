@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const Tag = ({selectedTags,selectedColors, selectTags, unselectTags}) => {
+const Tag = ({selectedTags,selectedColors, selectTags, unselectTags,setCurrentPage}) => {
   const colorCasting = Array.from(selectedColors)
   const colorToggle = (tags) => {
     if(colorCasting.indexOf(String(tags))!==-1){
@@ -11,6 +11,7 @@ const Tag = ({selectedTags,selectedColors, selectTags, unselectTags}) => {
   }
   const tagToggle = (tags) => {
     const tagCasting = Array.from(selectedTags)
+    setCurrentPage(1)
     if(tagCasting!=""){
       for (var tagItem in tagCasting) {
         if(tagCasting.indexOf(tags)==-1){

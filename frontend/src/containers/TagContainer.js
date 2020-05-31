@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Tag from '../components/Tag';
 import { selectTags, unselectTags } from '../modules/tag'
+import { setCurrentPage} from '../modules/pagination'
 
-const TagContainer = ({ selectedTags,selectedColors,selectTags,unselectTags }) => {
+
+const TagContainer = ({ selectedTags,selectedColors,selectTags,unselectTags,setCurrentPage }) => {
     return(
-        <Tag selectedTags={selectedTags} selectedColors={selectedColors} selectTags={selectTags} unselectTags={unselectTags}/>
+        <Tag selectedTags={selectedTags} selectedColors={selectedColors} selectTags={selectTags} unselectTags={unselectTags} setCurrentPage={setCurrentPage}/>
     );
 };
 
@@ -16,6 +18,7 @@ export default connect(
     }),
     {
         selectTags,
-        unselectTags
+        unselectTags,
+        setCurrentPage
     }
 )(TagContainer);
