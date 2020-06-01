@@ -12,7 +12,6 @@ import logo from "../images/logo-white1.png";
       console.log("myDiv = "+myDiv.value)
     }
   });
-  
 
   let nav = document.getElementsByClassName("_floating");
   window.onscroll = function sticky() {

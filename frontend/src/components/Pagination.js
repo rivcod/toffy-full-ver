@@ -5,6 +5,20 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
       for (let i = 1; i <= Math.ceil(totalPosts / 12); i++) {
         pageNumbers.push(i);
       }
+
+      const setClassNameToggle = (number) => {
+        const prevClassName = document.getElementsByClassName("page-item")
+        const afterClassName = document.getElementsByClassName("page-item active")
+        if (afterClassName.length >=1){
+          for(let reset in prevClassName){
+            if(afterClassName[Number(reset)]){
+              afterClassName[Number(reset)].className="page-item";
+            }
+          }
+        }
+        prevClassName[number-1].classList.toggle ("active");
+      }
+
       const unnecessaryPage = () => {
         return ""
       }
@@ -14,7 +28,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
             <ul className='pagination'>
               {pageNumbers.map(number => (
                 <li key={number} className='page-item'>
-                  <button onClick={() => setCurrentPage(number)} className='page-link'>
+                  <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
                     {number}
                   </button>
                 </li>
