@@ -143,7 +143,7 @@ body {
   line-height: 1.5;
   color: #e4e2ff;
   text-align: left;
-  background-color: #0c0d16;
+  background-color:rgba(0,0,0,0.8);
 }
 
 [tabindex="-1"]:focus {
@@ -5299,6 +5299,7 @@ input[type="button"].btn-block {
   float:left;
   width:25%;
   height: 500px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .featured-job > #titlePadding {
@@ -12238,19 +12239,79 @@ a.text-dark:focus {
 
 /* 사용자 정의 CSS (선오) */
 
+/*페이지네이션*/
+.paginationNav{
+  text-align: center;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+.pagination{
+  text-align: center;
+  width : 500px;
+  margin : 0px;
+}
+
+/*네비게이션 스크롤*/
+._floating {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgb(0, 0, 0);
+  height: 50px;
+  width: 1920px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.5s;
+  max-width: 1920px;
+}
+.navCustom{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0,0.65);
+  width: 1920px;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.5s;
+  max-width: 1920px;
+}
+.navbar-dark.text-white._floating.navCustom>.container>.navbar.px-0.navbar-expand-lg.navbar-dark>#navbarNavAltMarkup>.input-group>.form-control._searchFormControl{
+  background-color: rgba(40, 41, 62,0.65);
+}
+/*노 데이터*/
+.ht-tm-element.alert.alert-success{
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 3px;
+}
 .Home{
   width: 1920px;
 }
-
+/*푸터*/
+.footer.py-5{
+  float:left;
+  background-color: black;
+  width : 1920px;
+  margin:0px;
+}
 /* 방명록 */
 .ContactBack{
-  margin : 50px 0px 0px 0px;
+  margin : 0px 0px 0px 0px;
   background-size: 100%;
   /*background-image: url('../images/A_back.png');*/
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/A_back.png');
 }
 .ContactBody{
-  margin : 50px 330px 0px 0px;
+  margin : 0px 330px 0px 0px;
 }
 .form-control.text {
   width : 400px;
@@ -12318,9 +12379,13 @@ a.text-dark:focus {
   background-color: rgb(113, 76, 223) ;
 }
 
-
-
 /*태그 사이즈*/
+.ht-tm-element.badge.badge-success{
+  width : auto;
+  height : 25px;
+  margin : 0px 7px 0px 0px;
+  font-size : 15px;
+}
 .ht-tm-element.badge.badge-primary{
   border-color: rgb(113, 76, 223);
   width : auto;
@@ -12339,18 +12404,9 @@ a.text-dark:focus {
 
 /*배경색 시작*/
 .ht-tm-codeblock.TagsContainer {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.subscribe-section.section.bg-gray.pt-55.pb-55  {
-  background-color: rgba(255, 255, 255, 0.1);
-  height: auto;
-  text-align: center;
-} 
-.footer.py-5{
-  background-color: rgba(255, 255, 255, 0.1);
-  margin:0px;
-}
 /*배경색 끝*/
 
 .GameCard {
@@ -12414,7 +12470,7 @@ a.text-dark:focus {
 }
 
 ._mainSignUp {
-  margin: 0 auto;
+  margin: 5px 0 0 15px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -12477,22 +12533,6 @@ a.text-dark:focus {
 .carouselHeight {
   height: 492px;
   margin-top: 200px;
-}
-
-._floating {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background-color: rgb(0, 0, 0);
-  height: 50px;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition-duration: 0.5s;
-  max-width: 1920px;
 }
 
 ._search {

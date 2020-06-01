@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; // 리덕스와 직접 연동하는 컨테이너 컴포트를 리덕스와 연동하기 위한 connect 임포트
 import GameList from '../components/GameList.js'
 import { getGameList } from '../modules/gameList.js';
+import { setCurrentPage, setPostsPerPage,setTotalPosts } from '../modules/pagination.js';
 
 const { useEffect } = React;
 const GameListContainer = ({ 
@@ -9,6 +10,12 @@ const GameListContainer = ({
     loadingGameList,
     gameList,
     select,
+    currentPage,
+    totalPosts,
+    postsPerPage,
+    setTotalPosts,
+    setCurrentPage,
+    setPostsPerPage
 }) => {
     useEffect(() => {
         getGameList(1); // createRequestThunk에서 api에서 보내주는 객체의 성공 실패여부를 판단하고 dispatch로 리듀서 함수를 실행시켜 store 상태를 변화시킴
@@ -18,19 +25,31 @@ const GameListContainer = ({
             gameList={gameList}
             loadingGameList={loadingGameList}
             select={select}
+            currentPage={currentPage}
+            totalPosts={totalPosts}
+            postsPerPage={postsPerPage}
+            setTotalPosts={setTotalPosts}
+            setCurrentPage={setCurrentPage}
+            setPostsPerPage={setPostsPerPage}
         />
     );
 };
 
 export default connect(
-    ({ gameList, loading, tag }) => ({
+    ({ gameList, loading, tag, pagination }) => ({
         // <GameList>의 props
         gameList: gameList.gameList,
         loadingGameList: loading['gameList/GET_GAMELIST'],
-        select: tag.selectedTags
+        select: tag.selectedTags,
+        currentPage:pagination.currentPage,
+        totalPosts: pagination.totalPosts,
+        postsPerPage: pagination.postsPerPage,
     }),
     {
         // 리듀서 함수 (module/gameList.js)
-        getGameList
+        getGameList,
+        setTotalPosts,
+        setCurrentPage,
+        setPostsPerPage
     },
 )(GameListContainer)

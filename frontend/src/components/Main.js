@@ -247,7 +247,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest1 = () => {
     return (
       <Fragment>
-        설문조사!
+        💡설문조사!
         {OX("quest1")}
       </Fragment>
     );
@@ -255,7 +255,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest2 = () => {
     return (
       <Fragment>
-        "댕댕이보다 냥냥이!"
+        "🐶댕댕이보다 🐱냥냥이!"
         {/* Do you prefer cat than doggy? */}
         {OX("quest2")}
       </Fragment>
@@ -264,7 +264,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest3 = () => {
     return (
       <Fragment>
-        "등골이 서늘해지는 짜릿한 공포를 느끼고 싶다."
+        "등골이 서늘해지는 짜릿한 😱공포를 느끼고 싶다."
         {/* I fancy a thrilling thrill */}
         {OX("quest3")}
       </Fragment>
@@ -273,7 +273,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest4 = () => {
     return (
       <Fragment>
-        "좀비물 완전 내 취향!"
+        "🧟좀비물 완전 내 취향!"
         {/* I really love zombie! */}
         {OX("quest4")}
       </Fragment>
@@ -282,7 +282,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest5 = () => {
     return (
       <Fragment>
-        "게임에 등장하는 사운드트랙을 따로 찾아본 적이 있다."
+        "게임에 등장하는 🎵사운드트랙을 따로 찾아본 적이 있다."
         {/* I've been looking for soundtracks in the game. */}
         {OX("quest5")}
       </Fragment>
@@ -291,7 +291,7 @@ const Main = ({ checkTags, onAddTags }) => {
   const quest6 = () => {
     return (
       <Fragment>
-        "스토리가 좋으면 좋을 수록 몰입도가 커진다."
+        "✍🏻스토리가 좋으면 좋을 수록 몰입도가 커진다."
         {/* The better the story, the greater the immersion. */}
         {OX("quest6")}
       </Fragment>
@@ -307,6 +307,7 @@ const Main = ({ checkTags, onAddTags }) => {
     return (
       <Fragment>
         "좋아하는 장르는"
+        <br></br>
         {tagPush("1")}
         {tagPush("2")}
         {tagPush("3")}
