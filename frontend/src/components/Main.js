@@ -276,7 +276,7 @@ const Main = ({ selectedLang }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("고양이");
+                addArr("Cat");
               }}
             >
               {" "}
@@ -291,7 +291,7 @@ const Main = ({ selectedLang }) => {
             </div>
             <div
               onClick={() => {
-                addArr("강아지");
+                addArr("Dog");
               }}
             >
               <div class="text-mono">
@@ -312,7 +312,7 @@ const Main = ({ selectedLang }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("공포");
+                addArr("Horror");
               }}
             >
               {" "}
@@ -348,7 +348,7 @@ const Main = ({ selectedLang }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("좀비");
+                addArr("Zombie");
               }}
             >
               {" "}
@@ -384,7 +384,7 @@ const Main = ({ selectedLang }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("사운드트랙");
+                addArr("Soundtrack");
               }}
             >
               {" "}
@@ -420,7 +420,7 @@ const Main = ({ selectedLang }) => {
           <div class="row">
             <div
               onClick={() => {
-                addArr("스토리텔링");
+                addArr("Stroytelling");
               }}
             >
               {" "}
@@ -523,7 +523,6 @@ const Main = ({ selectedLang }) => {
         {tagPush("3")}
         {tagPush("4")}
         {tagPush("5")}
-        {/* You are interested in... */}
       </Fragment>
     );
   };
