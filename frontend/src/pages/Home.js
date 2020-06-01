@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Navbar from "../components/Navbar";
+import NavbarContainer from "../containers/NavbarContainer";
 import TagContainer from "../containers/TagContainer";
-import Mail from "../components/Mail";
 import FooterContainer from "../containers/FooterContainer";
 import GameListContainer from "../containers/GameListContainer";
 import MainContainer from "../containers/MainContainer";
@@ -16,11 +15,10 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Navbar></Navbar>
+        <NavbarContainer></NavbarContainer>
         <MainContainer></MainContainer>
         <TagContainer></TagContainer>
         <GameListContainer></GameListContainer>
-        <Mail></Mail>
         <PaginationContainer></PaginationContainer>
         <FooterContainer></FooterContainer> 
       </div>

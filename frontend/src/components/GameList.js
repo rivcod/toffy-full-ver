@@ -3,14 +3,13 @@ import tagConverting from "../js/tagConvert.js"
 
 let check = 0;
 let Posts = 0;                                                                    
-const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPosts, selectedLang}) => {
+const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPosts, selectedLang, selectedGame}) => {
   // 페이지네이션 //
   let firstValue = (currentPage * 12) - 12
   let markValue = 0
   if(currentPage==1){
     firstValue = 0
   }
-  
   useEffect(() => {
       setTotalPosts(Posts);
   });
@@ -22,64 +21,69 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
   const A = (game) => {
     Posts += 1
     markValue +=1
-    if(firstValue < markValue&&markValue < firstValue+13){
-      if(game){
-        const nukeOne = (tagCheck) => {
-          if (tagCheck !== 0) {
-            return tagConverting(parseInt(tagCheck),selectedLang)
-          } else {
-            return ""
-          }
-        }
-        const tagOne = nukeOne(game.tag1)
-        const tagTwo = nukeOne(game.tag2)
-        const tagThree = nukeOne(game.tag3)
-        return (
-          <div className="featured-job">
-            <a href={game.href}>
-              {
-                <img
-                  src={game.image}
-                  alt="Featured Job"
-                  className="img-responsive"
-                />
+    //검색
+    const regGameName = String(game.title).replace(/\s/gi, "").toUpperCase()
+    const regGameNameComparison = String(selectedGame.gameName).replace(/\s/gi, "").toUpperCase()
+    if(regGameName.indexOf(regGameNameComparison)!=-1 || selectedGame=="all"){
+      if(firstValue < markValue&&markValue < firstValue+13){
+        if(game){
+            const nukeOne = (tagCheck) => {
+              if (tagCheck !== 0) {
+                return tagConverting(parseInt(tagCheck),selectedLang)
+              } else {
+                return ""
               }
-            </a>
-            <div className="title" id="titlePadding">
-              <div>
-                <h5>{game.rank}</h5>
-              </div>
-              <div>
-                <h5>{game.title}</h5>
-              </div>
-              <div id="_price">
-                <a
-                  href={game.href}
-                  className="ht-tm-element btn btn-outline-primary btn-sm"
-                  id="_priceBtn"
-                >
-                  {game.price}
+            }
+            const tagOne = nukeOne(game.tag1)
+            const tagTwo = nukeOne(game.tag2)
+            const tagThree = nukeOne(game.tag3)
+            return (
+              <div className="featured-job">
+                <a href={game.href}>
+                  {
+                    <img
+                      src={game.image}
+                      alt="Featured Job"
+                      className="img-responsive"
+                    />
+                  }
                 </a>
-                <div id="_tags">
-                  <button className="ht-tm-element badge badge-primary">
-                    {tagOne}
-                  </button>
-                  <button className="ht-tm-element badge badge-primary">
-                    {tagTwo}
-                  </button>
-                  <button className="ht-tm-element badge badge-primary">
-                    {tagThree}
-                  </button>
+                <div className="title" id="titlePadding">
+                  <div>
+                    <h5>{game.rank}</h5>
+                  </div>
+                  <div>
+                    <h5>{game.title}</h5>
+                  </div>
+                  <div id="_price">
+                    <a
+                      href={game.href}
+                      className="ht-tm-element btn btn-outline-primary btn-sm"
+                      id="_priceBtn"
+                    >
+                      {game.price}
+                    </a>
+                    <div id="_tags">
+                      <button className="ht-tm-element badge badge-primary">
+                        {tagOne}
+                      </button>
+                      <button className="ht-tm-element badge badge-primary">
+                        {tagTwo}
+                      </button>
+                      <button className="ht-tm-element badge badge-primary">
+                        {tagThree}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div >
-        );
-      } else {
+              </div >
+            );
+        } else {
+          return ""
+        }
+      } else{
         return ""
       }
-    } else{
-      return ""
     }
   };
   const B = (game) => {
