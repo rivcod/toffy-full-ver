@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 
-class Footer extends Component {
-  render() {
+const Footer = () => {
+  const setClassNameToggle = () => {
+    const prevClassName = document.getElementsByClassName("dropdown-menu")[0]
+    prevClassName.classList.toggle ("show");
+  }
     return (
       <div className="footer py-5">
         <div className="ht-tm-element btn-group btn-group-sm">
@@ -11,7 +14,7 @@ class Footer extends Component {
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >
+            onClick={() => setClassNameToggle()}>
             Languages
           </button>
           <div
@@ -25,11 +28,11 @@ class Footer extends Component {
               transform: "translate3d(0px, 31px, 0px)"
             }}
           >
-            <a className="dropdown-item" href="#!">
+            <a className="dropdown-item" onClick={() => setClassNameToggle()}>
               English
             </a>
-            <a className="dropdown-item" href="#!">
-              Korean
+            <a className="dropdown-item" onClick={() => setClassNameToggle()}>
+              한국어
             </a>
           </div>
         </div>
@@ -39,7 +42,6 @@ class Footer extends Component {
         </p>
       </div>
     );
-  }
 }
 
 export default Footer;

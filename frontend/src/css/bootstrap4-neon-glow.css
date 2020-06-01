@@ -12303,6 +12303,12 @@ a.text-dark:focus {
   width : 1920px;
   margin:0px;
 }
+
+/*Languages*/
+.footer.py-5 > .ht-tm-element.btn-group.btn-group-sm{
+  width:110px;
+}
+
 /* 방명록 */
 .ContactBack{
   margin : 0px 0px 0px 0px;
