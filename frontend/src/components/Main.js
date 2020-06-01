@@ -1,9 +1,8 @@
 import React, { Fragment, useState } from "react";
 
-const Main = ({ checkTags, onAddTags }) => {
+const Main = ({ selectedLang }) => {
   // 태그 배열
   const [askArr, setAskArr] = useState([]);
-
   // 버튼에 따라 배열에 추가
   const addArr = (answer) => {
     setAskArr([...askArr, answer]);

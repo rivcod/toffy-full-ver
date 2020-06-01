@@ -3,7 +3,7 @@ import tagConverting from "../js/tagConvert.js"
 
 let check = 0;
 let Posts = 0;                                                                    
-const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, postsPerPage, setTotalPosts, setCurrentPage, setPostsPerPage}) => {
+const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPosts, selectedLang}) => {
   // 페이지네이션 //
   let firstValue = (currentPage * 12) - 12
   let markValue = 0
@@ -26,7 +26,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, totalPosts, 
       if(game){
         const nukeOne = (tagCheck) => {
           if (tagCheck !== 0) {
-            return tagConverting(parseInt(tagCheck))
+            return tagConverting(parseInt(tagCheck),selectedLang)
           } else {
             return ""
           }
