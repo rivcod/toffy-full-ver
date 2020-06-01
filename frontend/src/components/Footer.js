@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const Footer = () => {
+const Footer = ({selectedLang, selectLang}) => {
   const setClassNameToggle = () => {
     const prevClassName = document.getElementsByClassName("dropdown-menu")[0]
     prevClassName.classList.toggle ("show");
@@ -15,7 +15,7 @@ const Footer = () => {
             aria-haspopup="true"
             aria-expanded="false"
             onClick={() => setClassNameToggle()}>
-            Languages
+            {selectedLang}
           </button>
           <div
             className="dropdown-menu"
@@ -28,10 +28,10 @@ const Footer = () => {
               transform: "translate3d(0px, 31px, 0px)"
             }}
           >
-            <a className="dropdown-item" onClick={() => setClassNameToggle()}>
+            <a className="dropdown-item" onClick={() =>{return(setClassNameToggle(), selectLang("English"))}}>
               English
             </a>
-            <a className="dropdown-item" onClick={() => setClassNameToggle()}>
+            <a className="dropdown-item" onClick={() => {return(setClassNameToggle(), selectLang("한국어"))}}>
               한국어
             </a>
           </div>

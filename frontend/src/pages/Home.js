@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import TagContainer from "../containers/TagContainer";
 import Mail from "../components/Mail";
-import Footer from "../components/Footer";
+import FooterContainer from "../containers/FooterContainer";
 import GameListContainer from "../containers/GameListContainer";
 import MainContainer from "../containers/MainContainer";
 import PaginationContainer from '../containers/PaginationContainer'
@@ -22,7 +22,7 @@ class Home extends Component {
         <GameListContainer></GameListContainer>
         <Mail></Mail>
         <PaginationContainer></PaginationContainer>
-        <Footer></Footer> 
+        <FooterContainer></FooterContainer> 
       </div>
     );
   }
