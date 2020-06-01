@@ -137,34 +137,55 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
             </div>
           </div >
         );
+      } else {
+        return ""
+      }
     } else {
-      return ""
+      return B("searching")
     }
-    }  
   };
-  const B = (game) => {
+  const B = (arg) => {
     check +=1
     if(check>=200){
       check = 0
       Posts = 0;
-      if(selectedLang=="한국어"){
-        return (
-          <div class="ht-tm-element alert alert-success" role="alert">
-          <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
-          장르 조합을 변경하시거나 &nbsp;
-          <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
-        </div>
-        )
-      } else if (selectedLang=="English"){
-        return (
-          <div class="ht-tm-element alert alert-success" role="alert">
-          <h4 class="alert-heading">Game not found.</h4>
-          Change genre combinations, or &nbsp;
-          <a href="Contact" class="alert-link">Click here to tell us the game you want.</a>
-        </div>
-        )
+      if(arg!="searching"){
+        if(selectedLang=="한국어"){
+          return (
+            <div class="ht-tm-element alert alert-success" role="alert">
+            <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
+            장르 조합을 변경하시거나 &nbsp;
+            <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
+          </div>
+          )
+        } else if (selectedLang=="English"){
+          return (
+            <div class="ht-tm-element alert alert-success" role="alert">
+            <h4 class="alert-heading">Game not found.</h4>
+            Change genre combinations, or &nbsp;
+            <a href="Contact" class="alert-link">Click here to tell us the game you want.</a>
+          </div>
+          )
+        }
+      } else {
+        if(selectedLang=="한국어"){
+          return (
+            <div class="ht-tm-element alert alert-primary" role="alert">
+            <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
+            검색어를 변경하시거나 &nbsp;
+            <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
+          </div>
+          )
+        } else if (selectedLang=="English"){
+          return (
+            <div class="ht-tm-element alert alert-primary" role="alert">
+            <h4 class="alert-heading">Game not found.</h4>
+            Change search value, or &nbsp;
+            <a href="Contact" class="alert-link">Click here to tell us the game you want.</a>
+          </div>
+          )
+        }
       }
-      
     }
   }
   const branchRendering = (game) => {
