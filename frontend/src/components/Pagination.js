@@ -2,7 +2,7 @@ import React, {useEffect } from "react";
 
 const Pagination = ({postsPerPage, totalPosts, currentPage,setCurrentPage}) => {
       const pageNumbers = [];
-      for (let i = 1; i <= Math.ceil(totalPosts / 20); i++) {
+      for (let i = 1; i <= Math.ceil(totalPosts / 12); i++) {
         pageNumbers.push(i);
       }
       const unnecessaryPage = () => {
