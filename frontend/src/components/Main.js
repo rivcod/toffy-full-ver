@@ -25,8 +25,7 @@ const Main = ({ selectedLang }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  I'll do it!
-                  {/* 해볼게요! */}
+                  해볼게요!
                 </a>
               </div>
             </div>
@@ -41,8 +40,7 @@ const Main = ({ selectedLang }) => {
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
-                  Excatly!
-                  {/* 당장 시작해 */}
+                  당장 시작해!
                 </a>
               </div>
             </div>
@@ -60,14 +58,12 @@ const Main = ({ selectedLang }) => {
               }}
             >
               {" "}
-              {/*cat and dog*/}
               <div class="text-mono">
                 <a
                   href="#!"
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   갓냥이!
-                  {/* Yess. */}
                 </a>
               </div>
             </div>
@@ -82,7 +78,6 @@ const Main = ({ selectedLang }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   개는 우리의 친구!
-                  {/* Nope. */}
                 </a>
               </div>
             </div>
@@ -106,7 +101,6 @@ const Main = ({ selectedLang }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   언제나
-                  {/* My Favorite */}
                 </a>
               </div>
             </div>
@@ -121,7 +115,6 @@ const Main = ({ selectedLang }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   싫어요
-                  {/* Nope */}
                 </a>
               </div>
             </div>
@@ -158,7 +151,6 @@ const Main = ({ selectedLang }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   아니오
-                  {/* Nope. */}
                 </a>
               </div>
             </div>
@@ -195,7 +187,6 @@ const Main = ({ selectedLang }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   없다
-                  {/* Nope. */}
                 </a>
               </div>
             </div>
@@ -232,7 +223,227 @@ const Main = ({ selectedLang }) => {
                   class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
                 >
                   별로
-                  {/* Nooo... */}
+                </a>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      );
+    }
+
+    // (English) 버튼함수 시작
+    if (questNum == "questEng1") {
+      return (
+        <div>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("do");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  I'll do it!
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("do");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Excatly!
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    } else if (questNum == "questEng2") {
+      delete askArr["0"]
+      return (
+        <Fragment>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("고양이");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Yess.
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("강아지");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Nope.
+                </a>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      );
+    } else if (questNum == "questEng3") {
+      return (
+        <Fragment>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("공포");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  My Favorite
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Nope
+                </a>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      );
+    } else if (questNum == "questEng4") {
+      return (
+        <Fragment>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("좀비");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Yess.
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Nope.
+                </a>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      );
+    } else if (questNum == "questEng5") {
+      return (
+        <Fragment>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("사운드트랙");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Yess.
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Nope.
+                </a>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      );
+    } else if (questNum == "questEng6") {
+      return (
+        <Fragment>
+          <div class="row">
+            <div
+              onClick={() => {
+                addArr("스토리텔링");
+              }}
+            >
+              {" "}
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Yess.
+                </a>
+              </div>
+            </div>
+            <div
+              onClick={() => {
+                addArr("0");
+              }}
+            >
+              <div class="text-mono">
+                <a
+                  href="#!"
+                  class="ht-tm-element btn btn-outline-primary btn-shadow text-mono"
+                >
+                  Nooo...
                 </a>
               </div>
             </div>
@@ -242,7 +453,7 @@ const Main = ({ selectedLang }) => {
     }
   };
 
-  // 질문함수 시작
+  // (한국어)질문함수 시작
   const quest1 = () => {
     return (
       <Fragment>
@@ -317,22 +528,105 @@ const Main = ({ selectedLang }) => {
     );
   };
 
+  // (English)질문함수 시작
+  const questEng1 = () => {
+    return (
+      <Fragment>
+        💡Survey!
+        {OX("questEng1")}
+      </Fragment>
+    );
+  };
+  const questEng2 = () => {
+    return (
+      <Fragment>
+        "Do you prefer 🐱cat than 🐶doggy?"
+        {OX("questEng2")}
+      </Fragment>
+    );
+  };
+  const questEng3 = () => {
+    return (
+      <Fragment>
+        "I fancy a thrilling 😱thrill."
+        {OX("questEng3")}
+      </Fragment>
+    );
+  };
+  const questEng4 = () => {
+    return (
+      <Fragment>
+        "I really love 🧟zombie"
+        {OX("questEng4")}
+      </Fragment>
+    );
+  };
+  const questEng5 = () => {
+    return (
+      <Fragment>
+        "I've been looking for 🎵soundtracks in the game."
+        {/*  */}
+        {OX("questEng5")}
+      </Fragment>
+    );
+  };
+  const questEng6 = () => {
+    return (
+      <Fragment>
+        "The better the ✍🏻story, the greater the immersion."
+        {OX("questEng6")}
+      </Fragment>
+    );
+  };
+  
+  const greetEng = () => {
+    return (
+      <Fragment>
+        "You are interested in..."
+        <br></br>
+        {tagPush("1")}
+        {tagPush("2")}
+        {tagPush("3")}
+        {tagPush("4")}
+        {tagPush("5")}
+      </Fragment>
+    );
+  };
+
   const branchRendering = (num) => {
     const arrCheck = Object.keys(num);
-    if (arrCheck.length == 0) {
-      return quest1();
-    } else if (arrCheck.length == 1) {
-      return quest2();
-    } else if (arrCheck.length == 2) {
-      return quest3();
-    } else if (arrCheck.length == 3) {
-      return quest4();
-    } else if (arrCheck.length == 4) {
-      return quest5();
-    } else if (arrCheck.length == 5) {
-      return quest6();
-    } else if (arrCheck.length == 6) {
-      return greet();
+    if(selectedLang=="한국어"){
+      if (arrCheck.length == 0) {
+        return quest1();
+      } else if (arrCheck.length == 1) {
+        return quest2();
+      } else if (arrCheck.length == 2) {
+        return quest3();
+      } else if (arrCheck.length == 3) {
+        return quest4();
+      } else if (arrCheck.length == 4) {
+        return quest5();
+      } else if (arrCheck.length == 5) {
+        return quest6();
+      } else if (arrCheck.length == 6) {
+        return greet();
+      }
+    } else if(selectedLang=="English"){
+      if (arrCheck.length == 0) {
+        return questEng1();
+      } else if (arrCheck.length == 1) {
+        return questEng2();
+      } else if (arrCheck.length == 2) {
+        return questEng3();
+      } else if (arrCheck.length == 3) {
+        return questEng4();
+      } else if (arrCheck.length == 4) {
+        return questEng5();
+      } else if (arrCheck.length == 5) {
+        return questEng6();
+      } else if (arrCheck.length == 6) {
+        return greetEng();
+      }
     }
   };
 
