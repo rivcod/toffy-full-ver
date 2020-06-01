@@ -12242,8 +12242,8 @@ a.text-dark:focus {
 /*페이지네이션*/
 .paginationNav{
   text-align: center;
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: 45%;
+  margin-right: 55%;
 }
 .pagination{
   text-align: center;
