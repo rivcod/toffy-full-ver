@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { selectLang } from "../modules/footer";
 
 const Main = ({ selectedLang }) => {
   // 태그 배열
@@ -628,7 +629,13 @@ const Main = ({ selectedLang }) => {
       }
     }
   };
-
+  const entrance = (lang) => {
+    if(lang=="한국어"){
+      return "당신에게 딱 맞는 게임을 찾아보세요."
+    } else if(lang=="English") {
+      return "Find the game suits you perfectly on Toffy."
+    }
+  }
   return (
     <div id="ht-tm-jumbotron">
       <div class="jumbotron bg-transparent mb-0 radius-0">
@@ -640,7 +647,7 @@ const Main = ({ selectedLang }) => {
                   #Tap of your tast<span class="vim-caret">e</span>
                 </h1>
                 <div class="lead mb-3 text-mono text-success">
-                  Find the game suits you perfectly on Toffy.
+                  {entrance(selectedLang)}
                 </div>
 
                 <p class="mt-5 text-grey text-spacey ask">
