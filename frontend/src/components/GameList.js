@@ -208,18 +208,27 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
       }
     }
   }
- 
+ //로딩 애니메이션
+  const loadingAnime = () => {
+    if(loadingGameList){
+    return(
+      <div class="ht-tm-codeblock mt-5">
+        <div class="progress ht-tm-element">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width:'75%'}}></div>
+        </div>
+      </div>
+    );}
+  }
+
   return (
-    <Fragment>
     <div className="GameList">
-      {loadingGameList && "로딩중..."}
+      {loadingAnime()}
       {!loadingGameList && gameList && 
           <div className="gameMain">  {
             gameList.map((game) => branchRendering(game))
           }
           </div>}
     </div>
-    </Fragment>
   );
 };
 

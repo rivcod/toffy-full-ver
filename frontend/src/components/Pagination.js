@@ -6,6 +6,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
         pageNumbers.push(i);
       }
 
+      // 선택 효과
       const setClassNameToggle = (number) => {
         const prevClassName = document.getElementsByClassName("page-item")
         const afterClassName = document.getElementsByClassName("page-item active")
