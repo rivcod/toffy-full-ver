@@ -11,11 +11,18 @@ import logo from "../images/logo-white1.png";
       nav[0].classList.remove("navCustom");
     }
   }
-  
+
   const handleChange = e => {
-    selectGame({
-      [e.target.name]: e.target.value
-    });
+    if(e.target.value!=""){
+      selectGame({
+        [e.target.name]: e.target.value
+      });
+    } else {
+      selectGame({
+        [e.target.name]: "all"
+      });
+    }
+    
   };
 
 

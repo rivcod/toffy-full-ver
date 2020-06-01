@@ -1,6 +1,6 @@
 import React, {useEffect } from "react";
 
-const Pagination = ({postsPerPage, totalPosts, currentPage,setCurrentPage}) => {
+const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, selectedGame}) => {
       const pageNumbers = [];
       for (let i = 1; i <= Math.ceil(totalPosts / 12); i++) {
         pageNumbers.push(i);
@@ -24,7 +24,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage,setCurrentPage}) => {
         )
       }
 
-      if(pageNumbers[1]) {
+      if(pageNumbers[1]&&selectedGame.gameName=="all") {
         return necessaryPage()
       } else {
         return unnecessaryPage()

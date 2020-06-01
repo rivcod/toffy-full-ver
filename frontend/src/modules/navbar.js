@@ -5,7 +5,9 @@ const SELECTGAME = "navbar/SELECTGAME";
 export const selectGame = createAction(SELECTGAME);
 
 const initialState = {
-    selectedGame:"all"
+    selectedGame:{
+      gameName:"all"
+    }
 };
 
 const navbar = handleActions(
