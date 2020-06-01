@@ -12244,6 +12244,8 @@ a.text-dark:focus {
   text-align: center;
   margin-left: 50%;
   margin-right: 50%;
+  margin-top : 510px;
+  margin-bottom : 10px;
 }
 .pagination{
   text-align: center;
