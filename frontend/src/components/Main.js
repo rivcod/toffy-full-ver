@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { selectLang } from "../modules/footer";
 
 const Main = ({ selectedLang }) => {
   // 태그 배열
