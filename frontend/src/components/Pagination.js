@@ -20,20 +20,38 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
         prevClassName[number-1].classList.toggle ("active");
       }
       
+      const branchRendering = (number,check) => {
+        if(!check){
+          console.log( " 펄스 result " + check)
+          check=true;
+          return(
+            <li key={number} className='page-item active'>
+              <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
+                {number}
+              </button>
+            </li>
+          )
+        } else {
+          return(
+            <li key={number} className='page-item'>
+              <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
+                {number}
+              </button>
+            </li>
+          )
+        }
+      }
       const unnecessaryPage = () => {
         return ""
       }
       const necessaryPage = () => {
+        const check = false;
         if(totalPosts!=200){
           return(
             <nav className="paginationNav">
               <ul className='pagination'>
-                {pageNumbers.map(number => (
-                  <li key={number} className='page-item'>
-                    <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
-                      {number}
-                    </button>
-                  </li>
+                {pageNumbers.map((number,check) => (
+                  branchRendering(number,check)
                 ))}
               </ul>
             </nav>
@@ -42,12 +60,8 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
           return(
           <nav className="paginationNav first">
               <ul className='pagination'>
-                {pageNumbers.map(number => (
-                  <li key={number} className='page-item'>
-                    <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
-                      {number}
-                    </button>
-                  </li>
+                {pageNumbers.map((number,check) => (
+                  branchRendering(number,check)
                 ))}
               </ul>
             </nav>
