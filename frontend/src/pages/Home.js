@@ -8,10 +8,6 @@ import PaginationContainer from '../containers/PaginationContainer'
 import "../css/bootstrap4-neon-glow.css";
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="Home">

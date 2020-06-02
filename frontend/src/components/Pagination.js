@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, selectedGame}) => {
       const pageNumbers = [];
@@ -22,7 +22,6 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
       
       const branchRendering = (number,check) => {
         if(!check){
-          console.log( " 펄스 result " + check)
           check=true;
           return(
             <li key={number} className='page-item active'>
@@ -45,8 +44,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
         return ""
       }
       const necessaryPage = () => {
-        const check = false;
-        if(totalPosts!=200){
+        if(totalPosts!==200){
           return(
             <nav className="paginationNav">
               <ul className='pagination'>
@@ -56,7 +54,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
               </ul>
             </nav>
           )
-        } else if(totalPosts==200) {
+        } else if(totalPosts===200) {
           return(
           <nav className="paginationNav first">
               <ul className='pagination'>
@@ -69,7 +67,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
         }
       }
 
-      if(pageNumbers[1]&&selectedGame.gameName=="all") {
+      if(pageNumbers[1]&&selectedGame.gameName==="all") {
         return necessaryPage()
       } else {
         return unnecessaryPage()

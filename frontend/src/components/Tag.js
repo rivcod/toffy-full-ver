@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 
 const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrentPage, selectedLang}) => {
   const colorCasting = Array.from(selectedColors)
@@ -14,7 +14,7 @@ const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrent
     setCurrentPage(1) // 페이지네이션 초기화
     if(tagCasting!=""){
       for (var tagItem in tagCasting) {
-        if(tagCasting.indexOf(tags)==-1){
+        if(tagCasting.indexOf(tags)===-1){
           selectTags(tags)
           break;
         } else {
@@ -26,7 +26,7 @@ const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrent
       selectTags(tags)
     }
   }
-  if(selectedLang=="한국어"){
+  if(selectedLang==="한국어"){
     return (
       <div className="ht-tm-codeblock TagsContainer">
         <div className="container py-5 mb5">
@@ -318,7 +318,7 @@ const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrent
         </div>
       </div>
     );
-  } else if(selectedLang=="English"){
+  } else if(selectedLang==="English"){
     return (
       <div className="ht-tm-codeblock TagsContainer">
         <div className="container py-5 mb5">

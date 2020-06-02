@@ -5,7 +5,7 @@ import logo from "../images/logo-white1.png";
  const Navbar = ({selectedGame, selectGame}) => {
   const para = document.location.href.split("/")[3];
   useEffect(() => {
-    if(para == "Contact"){
+    if(para === "Contact"){
       const myDiv = document.getElementById("inputBlank");
       myDiv.setAttribute('readonly',true)
       myDiv.setAttribute('placeholder',"Search is not available here.")
@@ -23,7 +23,7 @@ import logo from "../images/logo-white1.png";
   }
 
   const handleChange = e => {
-    if(e.target.value!=""){
+    if(e.target.value!==""){
       selectGame({
         [e.target.name]: e.target.value
       });

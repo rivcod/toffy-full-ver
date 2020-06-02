@@ -1,4 +1,4 @@
-import React, { Fragment,useEffect } from "react";
+import React, {useEffect } from "react";
 import tagConverting from "../js/tagConvert.js"
 
 let check = 0;
@@ -7,7 +7,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
   // 페이지네이션 //
   let firstValue = (currentPage * 12) - 12
   let markValue = 0
-  if(currentPage==1){
+  if(currentPage===1){
     firstValue = 0
   }
   useEffect(() => {
@@ -24,7 +24,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
     //검색
     const regGameName = String(game.title).replace(/\s/gi, "").toUpperCase()
     const regGameNameComparison = String(selectedGame.gameName).replace(/\s/gi, "").toUpperCase()
-    if(selectedGame.gameName=="all"){
+    if(selectedGame.gameName==="all"){
       if(firstValue < markValue&&markValue < firstValue+13){
         if(game){
             const nukeOne = (tagCheck) => {
@@ -84,7 +84,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
       } else{
         return ""
       }
-    } else if(regGameName.indexOf(regGameNameComparison)!=-1){
+    } else if(regGameName.indexOf(regGameNameComparison)!==-1){
       if(game){
         const nukeOne = (tagCheck) => {
           if (tagCheck !== 0) {
@@ -149,8 +149,8 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
     if(check>=200){
       check = 0
       Posts = 0;
-      if(arg!="searching"){
-        if(selectedLang=="한국어"){
+      if(arg!=="searching"){
+        if(selectedLang==="한국어"){
           return (
             <div class="ht-tm-element alert alert-success" role="alert">
             <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
@@ -158,7 +158,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
             <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
           </div>
           )
-        } else if (selectedLang=="English"){
+        } else if (selectedLang==="English"){
           return (
             <div class="ht-tm-element alert alert-success" role="alert">
             <h4 class="alert-heading">Game not found.</h4>
@@ -168,7 +168,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
           )
         }
       } else {
-        if(selectedLang=="한국어"){
+        if(selectedLang==="한국어"){
           return (
             <div class="ht-tm-element alert alert-primary" role="alert">
             <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
@@ -176,7 +176,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
             <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
           </div>
           )
-        } else if (selectedLang=="English"){
+        } else if (selectedLang==="English"){
           return (
             <div class="ht-tm-element alert alert-primary" role="alert">
             <h4 class="alert-heading">Game not found.</h4>
@@ -189,16 +189,16 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
     }
   }
   const branchRendering = (game) => {
-    if (game && selectCasting.length == 0) {
+    if (game && selectCasting.length === 0) {
       return A(game)
     } else {
       if (
-        (selectCasting.length == 1 && ((selectCasting.indexOf(game.tag1) != -1) || (selectCasting.indexOf(game.tag2) != -1) || (selectCasting.indexOf(game.tag3) != -1)))
+        (selectCasting.length === 1 && ((selectCasting.indexOf(game.tag1) !== -1) || (selectCasting.indexOf(game.tag2) !== -1) || (selectCasting.indexOf(game.tag3) !== -1)))
         || (
-          (selectCasting.length == 2) && (((selectCasting.indexOf(game.tag1) != -1) && (selectCasting.indexOf(game.tag2) != -1)) || ((selectCasting.indexOf(game.tag1) != -1) && (selectCasting.indexOf(game.tag3) != -1)) | ((selectCasting.indexOf(game.tag2) != -1) && (selectCasting.indexOf(game.tag3) != -1)))
+          (selectCasting.length === 2) && (((selectCasting.indexOf(game.tag1) !== -1) && (selectCasting.indexOf(game.tag2) !== -1)) || ((selectCasting.indexOf(game.tag1) !==-1) && (selectCasting.indexOf(game.tag3) !== -1)) | ((selectCasting.indexOf(game.tag2) !== -1) && (selectCasting.indexOf(game.tag3) !== -1)))
         )
         || (
-          selectCasting.length == 3 && ((selectCasting.indexOf(game.tag1) != -1) && (selectCasting.indexOf(game.tag2) != -1) && (selectCasting.indexOf(game.tag3) != -1))
+          selectCasting.length === 3 && ((selectCasting.indexOf(game.tag1) !== -1) && (selectCasting.indexOf(game.tag2) !== -1) && (selectCasting.indexOf(game.tag3) !== -1))
         )
       ) 
       {

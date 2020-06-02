@@ -10,7 +10,7 @@ const Main = ({ selectedLang }) => {
 
   // 버튼 함수 시작
   const OX = (questNum) => {
-    if (questNum == "quest1") {
+    if (questNum === "quest1") {
       return (
         <div>
           <div class="row">
@@ -47,7 +47,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </div>
       );
-    } else if (questNum == "quest2") {
+    } else if (questNum === "quest2") {
       delete askArr["0"]
       return (
         <Fragment>
@@ -84,7 +84,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "quest3") {
+    } else if (questNum === "quest3") {
       return (
         <Fragment>
           <div class="row">
@@ -121,7 +121,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "quest4") {
+    } else if (questNum === "quest4") {
       return (
         <Fragment>
           <div class="row">
@@ -157,7 +157,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "quest5") {
+    } else if (questNum === "quest5") {
       return (
         <Fragment>
           <div class="row">
@@ -193,7 +193,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "quest6") {
+    } else if (questNum === "quest6") {
       return (
         <Fragment>
           <div class="row">
@@ -232,7 +232,7 @@ const Main = ({ selectedLang }) => {
     }
 
     // (English) 버튼함수 시작
-    if (questNum == "questEng1") {
+    if (questNum === "questEng1") {
       return (
         <div>
           <div class="row">
@@ -269,7 +269,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </div>
       );
-    } else if (questNum == "questEng2") {
+    } else if (questNum === "questEng2") {
       delete askArr["0"]
       return (
         <Fragment>
@@ -306,7 +306,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "questEng3") {
+    } else if (questNum === "questEng3") {
       return (
         <Fragment>
           <div class="row">
@@ -342,7 +342,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "questEng4") {
+    } else if (questNum === "questEng4") {
       return (
         <Fragment>
           <div class="row">
@@ -378,7 +378,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "questEng5") {
+    } else if (questNum === "questEng5") {
       return (
         <Fragment>
           <div class="row">
@@ -414,7 +414,7 @@ const Main = ({ selectedLang }) => {
           </div>
         </Fragment>
       );
-    } else if (questNum == "questEng6") {
+    } else if (questNum === "questEng6") {
       return (
         <Fragment>
           <div class="row">
@@ -457,7 +457,7 @@ const Main = ({ selectedLang }) => {
   const quest1 = () => {
     return (
       <Fragment>
-        💡설문조사!
+        <span role="img" aria-label="">💡설문조사!</span>
         {OX("quest1")}
       </Fragment>
     );
@@ -465,8 +465,7 @@ const Main = ({ selectedLang }) => {
   const quest2 = () => {
     return (
       <Fragment>
-        "🐶댕댕이보다 🐱냥냥이!"
-        {/* Do you prefer cat than doggy? */}
+        <span role="img" aria-label="">"🐶댕댕이보다 🐱냥냥이!"</span>
         {OX("quest2")}
       </Fragment>
     );
@@ -474,8 +473,7 @@ const Main = ({ selectedLang }) => {
   const quest3 = () => {
     return (
       <Fragment>
-        "등골이 서늘해지는 짜릿한 😱공포를 느끼고 싶다."
-        {/* I fancy a thrilling thrill */}
+        <span role="img" aria-label="">"등골이 서늘해지는 짜릿한 😱공포를 느끼고 싶다."</span>
         {OX("quest3")}
       </Fragment>
     );
@@ -483,8 +481,7 @@ const Main = ({ selectedLang }) => {
   const quest4 = () => {
     return (
       <Fragment>
-        "🧟좀비물 완전 내 취향!"
-        {/* I really love zombie! */}
+        <span role="img" aria-label="">"🧟좀비물 완전 내 취향!"</span>
         {OX("quest4")}
       </Fragment>
     );
@@ -492,8 +489,7 @@ const Main = ({ selectedLang }) => {
   const quest5 = () => {
     return (
       <Fragment>
-        "게임에 등장하는 🎵사운드트랙을 따로 찾아본 적이 있다."
-        {/* I've been looking for soundtracks in the game. */}
+        <span role="img" aria-label="">"게임에 등장하는 🎵사운드트랙을 따로 찾아본 적이 있다."</span>
         {OX("quest5")}
       </Fragment>
     );
@@ -501,14 +497,13 @@ const Main = ({ selectedLang }) => {
   const quest6 = () => {
     return (
       <Fragment>
-        "✍🏻스토리가 좋으면 좋을 수록 몰입도가 커진다."
-        {/* The better the story, the greater the immersion. */}
+        <span role="img" aria-label="">"✍🏻스토리가 좋으면 좋을 수록 몰입도가 커진다."</span>
         {OX("quest6")}
       </Fragment>
     );
   };
   const tagPush =(num) => {
-    if(askArr[num]!="0"){
+    if(askArr[num]!=="0"){
       return (<button className="ht-tm-element badge badge-primary main-badge">{askArr[num]}</button>);
     }
   }
@@ -531,7 +526,7 @@ const Main = ({ selectedLang }) => {
   const questEng1 = () => {
     return (
       <Fragment>
-        💡Survey!
+        <span role="img" aria-label="">💡Survey!</span>
         {OX("questEng1")}
       </Fragment>
     );
@@ -539,7 +534,7 @@ const Main = ({ selectedLang }) => {
   const questEng2 = () => {
     return (
       <Fragment>
-        "Do you prefer 🐱cat than 🐶doggy?"
+        <span role="img" aria-label="">"Do you prefer 🐱cat than 🐶doggy?"</span>
         {OX("questEng2")}
       </Fragment>
     );
@@ -547,7 +542,7 @@ const Main = ({ selectedLang }) => {
   const questEng3 = () => {
     return (
       <Fragment>
-        "I fancy a thrilling 😱thrill."
+        <span role="img" aria-label="">"I fancy a thrilling 😱thrill."</span>
         {OX("questEng3")}
       </Fragment>
     );
@@ -555,7 +550,7 @@ const Main = ({ selectedLang }) => {
   const questEng4 = () => {
     return (
       <Fragment>
-        "I really love 🧟zombie"
+        <span role="img" aria-label="">"I really love 🧟zombie"</span>
         {OX("questEng4")}
       </Fragment>
     );
@@ -563,7 +558,7 @@ const Main = ({ selectedLang }) => {
   const questEng5 = () => {
     return (
       <Fragment>
-        "I've been looking for 🎵soundtracks in the game."
+        <span role="img" aria-label="">"I've been looking for 🎵soundtracks in the game."</span>
         {/*  */}
         {OX("questEng5")}
       </Fragment>
@@ -572,7 +567,7 @@ const Main = ({ selectedLang }) => {
   const questEng6 = () => {
     return (
       <Fragment>
-        "The better the ✍🏻story, the greater the immersion."
+        <span role="img" aria-label="">"The better the ✍🏻story, the greater the immersion."</span>
         {OX("questEng6")}
       </Fragment>
     );
@@ -594,44 +589,44 @@ const Main = ({ selectedLang }) => {
 
   const branchRendering = (num) => {
     const arrCheck = Object.keys(num);
-    if(selectedLang=="한국어"){
-      if (arrCheck.length == 0) {
+    if(selectedLang==="한국어"){
+      if (arrCheck.length === 0) {
         return quest1();
-      } else if (arrCheck.length == 1) {
+      } else if (arrCheck.length === 1) {
         return quest2();
-      } else if (arrCheck.length == 2) {
+      } else if (arrCheck.length === 2) {
         return quest3();
-      } else if (arrCheck.length == 3) {
+      } else if (arrCheck.length === 3) {
         return quest4();
-      } else if (arrCheck.length == 4) {
+      } else if (arrCheck.length === 4) {
         return quest5();
-      } else if (arrCheck.length == 5) {
+      } else if (arrCheck.length === 5) {
         return quest6();
-      } else if (arrCheck.length == 6) {
+      } else if (arrCheck.length === 6) {
         return greet();
       }
-    } else if(selectedLang=="English"){
-      if (arrCheck.length == 0) {
+    } else if(selectedLang==="English"){
+      if (arrCheck.length === 0) {
         return questEng1();
-      } else if (arrCheck.length == 1) {
+      } else if (arrCheck.length === 1) {
         return questEng2();
-      } else if (arrCheck.length == 2) {
+      } else if (arrCheck.length === 2) {
         return questEng3();
-      } else if (arrCheck.length == 3) {
+      } else if (arrCheck.length === 3) {
         return questEng4();
-      } else if (arrCheck.length == 4) {
+      } else if (arrCheck.length === 4) {
         return questEng5();
-      } else if (arrCheck.length == 5) {
+      } else if (arrCheck.length === 5) {
         return questEng6();
-      } else if (arrCheck.length == 6) {
+      } else if (arrCheck.length === 6) {
         return greetEng();
       }
     }
   };
   const entrance = (lang) => {
-    if(lang=="한국어"){
+    if(lang==="한국어"){
       return "당신에게 딱 맞는 게임을 찾아보세요."
-    } else if(lang=="English") {
+    } else if(lang==="English") {
       return "Find the game suits you perfectly on Toffy."
     }
   }

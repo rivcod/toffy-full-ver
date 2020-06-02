@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Footer = ({selectedLang, selectLang}) => {
   const setClassNameToggle = () => {
@@ -36,9 +36,9 @@ const Footer = ({selectedLang, selectLang}) => {
             </a>
           </div>
         </div>
-        <p>
-          Thank you for downloading this theme. If you have trouble or find a
-          bug, please open an issue on GitHub:
+        <p className="notice">
+          Thank you for coming Toffy. If you have trouble or find a
+          bug, Please contact me at this address.: pianist5555@gmail.com
         </p>
       </div>
     );
