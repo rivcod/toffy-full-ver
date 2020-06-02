@@ -12238,13 +12238,25 @@ a.text-dark:focus {
 }
 
 /* 사용자 정의 CSS (선오) */
-
+/*로딩 애니메이션*/
+.ht-tm-codeblock.mt-5{
+  margin-bottom : 500px;
+}
 /*페이지네이션*/
 .paginationNav{
   text-align: center;
   margin-left: 45%;
   margin-right: 55%;
+  margin-bottom: 25px;
 }
+
+.paginationNav.first{
+  text-align: center;
+  margin-left: 32%;
+  margin-right: 68%;
+  margin-bottom: 25px;
+}
+
 .pagination{
   text-align: center;
   width : 500px;
