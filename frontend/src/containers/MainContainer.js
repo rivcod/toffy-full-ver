@@ -1,19 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Main from '../components/Main';
-import { addTags } from '../modules/main'
 
-const MainContainer = ({ tags,addTags }) => {
+const MainContainer = ({ selectedLang }) => {
     return(
-        <Main checkTags={tags} onAddTags={addTags}/>
+        <Main selectedLang={selectedLang}/>
     );
 };
 
 export default connect(
     state => ({
-        tags: state.main.tags
+        tags: state.main.tags,
+        selectedLang: state.footer.selectedLang,
     }),
     {
-        addTags,
     }
 )(MainContainer);

@@ -1,4 +1,4 @@
-import React, { Component, useState, Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 
@@ -55,7 +55,6 @@ class MyPage extends Component {
       .then(res => this._renderText());
   };
 
-  
   render() {
     const { textList } = this.state;
     let _memo
@@ -122,10 +121,6 @@ class MyPage extends Component {
             </div>
               </div>
             </div>
-            
-            {/* <button onClick={this.handleSubmit} className="btn btn-primary _joinclassName">
-          Join
-        </button> */}
           </div>
         </div>
       </div>

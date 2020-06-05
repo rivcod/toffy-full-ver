@@ -15,7 +15,9 @@ const GameListContainer = ({
     postsPerPage,
     setTotalPosts,
     setCurrentPage,
-    setPostsPerPage
+    setPostsPerPage,
+    selectedLang,
+    selectedGame
 }) => {
     useEffect(() => {
         getGameList(1); // createRequestThunk에서 api에서 보내주는 객체의 성공 실패여부를 판단하고 dispatch로 리듀서 함수를 실행시켜 store 상태를 변화시킴
@@ -31,12 +33,14 @@ const GameListContainer = ({
             setTotalPosts={setTotalPosts}
             setCurrentPage={setCurrentPage}
             setPostsPerPage={setPostsPerPage}
+            selectedLang={selectedLang}
+            selectedGame={selectedGame}
         />
     );
 };
 
 export default connect(
-    ({ gameList, loading, tag, pagination }) => ({
+    ({ gameList, loading, tag, pagination, footer, navbar }) => ({
         // <GameList>의 props
         gameList: gameList.gameList,
         loadingGameList: loading['gameList/GET_GAMELIST'],
@@ -44,6 +48,8 @@ export default connect(
         currentPage:pagination.currentPage,
         totalPosts: pagination.totalPosts,
         postsPerPage: pagination.postsPerPage,
+        selectedLang: footer.selectedLang,
+        selectedGame : navbar.selectedGame
     }),
     {
         // 리듀서 함수 (module/gameList.js)

@@ -1,10 +1,9 @@
-import { createAction, handleActions } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import * as api from "../lib/api";
 import createRequestThunk from '../lib/createRequestThunk.js';
 
 const GET_GAMELIST_SUCCESS = "gameList/GET_GAMELIST_SUCCESS"; // module이름/액션함수이름
 const GET_GAMELIST = "gameList/GET_GAMELIST";
-const SET_CURRENTPAGE="gameList/SET_CURRENTPAGE"
 
 export const getGameList = createRequestThunk(GET_GAMELIST, api.getGameList);
 

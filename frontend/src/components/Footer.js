@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Footer extends Component {
-  render() {
+const Footer = ({selectedLang, selectLang}) => {
+  const setClassNameToggle = () => {
+    const prevClassName = document.getElementsByClassName("dropdown-menu")[0]
+    prevClassName.classList.toggle ("show");
+  }
     return (
       <div className="footer py-5">
         <div className="ht-tm-element btn-group btn-group-sm">
@@ -11,8 +14,8 @@ class Footer extends Component {
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >
-            Languages
+            onClick={() => setClassNameToggle()}>
+            {selectedLang}
           </button>
           <div
             className="dropdown-menu"
@@ -25,21 +28,20 @@ class Footer extends Component {
               transform: "translate3d(0px, 31px, 0px)"
             }}
           >
-            <a className="dropdown-item" href="#!">
+            <a className="dropdown-item" onClick={() =>{return(setClassNameToggle(), selectLang("English"))}}>
               English
             </a>
-            <a className="dropdown-item" href="#!">
-              Korean
+            <a className="dropdown-item" onClick={() => {return(setClassNameToggle(), selectLang("한국어"))}}>
+              한국어
             </a>
           </div>
         </div>
-        <p>
-          Thank you for downloading this theme. If you have trouble or find a
-          bug, please open an issue on GitHub:
+        <p className="notice">
+          Thank you for coming Toffy. If you have trouble or find a
+          bug, Please contact me at this address.: pianist5555@gmail.com
         </p>
       </div>
     );
-  }
 }
 
 export default Footer;
