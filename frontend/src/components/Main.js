@@ -48,7 +48,7 @@ const Main = ({ selectedLang }) => {
         </div>
       );
     } else if (questNum === "quest2") {
-      delete askArr["0"]
+      delete askArr["0"];
       return (
         <Fragment>
           <div class="row">
@@ -270,7 +270,7 @@ const Main = ({ selectedLang }) => {
         </div>
       );
     } else if (questNum === "questEng2") {
-      delete askArr["0"]
+      delete askArr["0"];
       return (
         <Fragment>
           <div class="row">
@@ -457,7 +457,9 @@ const Main = ({ selectedLang }) => {
   const quest1 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">💡설문조사!</span>
+        <span role="img" aria-label="">
+          당신은 어떤 게임을 좋아할까요?
+        </span>
         {OX("quest1")}
       </Fragment>
     );
@@ -465,7 +467,9 @@ const Main = ({ selectedLang }) => {
   const quest2 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"🐶댕댕이보다 🐱냥냥이!"</span>
+        <span role="img" aria-label="">
+          "댕댕이🐶보다 냥냥이🐱!"
+        </span>
         {OX("quest2")}
       </Fragment>
     );
@@ -473,7 +477,9 @@ const Main = ({ selectedLang }) => {
   const quest3 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"등골이 서늘해지는 짜릿한 😱공포를 느끼고 싶다."</span>
+        <span role="img" aria-label="">
+          "등골이 서늘해지는 짜릿한 공포😱를 느끼고 싶다."
+        </span>
         {OX("quest3")}
       </Fragment>
     );
@@ -481,7 +487,9 @@ const Main = ({ selectedLang }) => {
   const quest4 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"🧟좀비물 완전 내 취향!"</span>
+        <span role="img" aria-label="">
+          "좀비물 완전 내 취향!🧟"
+        </span>
         {OX("quest4")}
       </Fragment>
     );
@@ -489,7 +497,9 @@ const Main = ({ selectedLang }) => {
   const quest5 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"게임에 등장하는 🎵사운드트랙을 따로 찾아본 적이 있다."</span>
+        <span role="img" aria-label="">
+          "🎵 게임에 등장하는 사운드트랙을 따로 찾아본 적이 있다. 🎵"
+        </span>
         {OX("quest5")}
       </Fragment>
     );
@@ -497,17 +507,23 @@ const Main = ({ selectedLang }) => {
   const quest6 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"✍🏻스토리가 좋으면 좋을 수록 몰입도가 커진다."</span>
+        <span role="img" aria-label="">
+          "스토리가 좋으면 좋을 수록✍🏻 몰입도가 커진다."
+        </span>
         {OX("quest6")}
       </Fragment>
     );
   };
-  const tagPush =(num) => {
-    if(askArr[num]!=="0"){
-      return (<button className="ht-tm-element badge badge-primary main-badge">{askArr[num]}</button>);
+  const tagPush = (num) => {
+    if (askArr[num] !== "0") {
+      return (
+        <button className="ht-tm-element badge badge-primary main-badge">
+          {askArr[num]}
+        </button>
+      );
     }
-  }
-  
+  };
+
   const greet = () => {
     return (
       <Fragment>
@@ -526,7 +542,9 @@ const Main = ({ selectedLang }) => {
   const questEng1 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">💡Survey!</span>
+        <span role="img" aria-label="">
+          Can we get to know each other?
+        </span>
         {OX("questEng1")}
       </Fragment>
     );
@@ -534,7 +552,9 @@ const Main = ({ selectedLang }) => {
   const questEng2 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"Do you prefer 🐱cat than 🐶doggy?"</span>
+        <span role="img" aria-label="">
+          "Do you prefer cat🐱 than doggy🐶?"
+        </span>
         {OX("questEng2")}
       </Fragment>
     );
@@ -542,7 +562,9 @@ const Main = ({ selectedLang }) => {
   const questEng3 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"I fancy a thrilling 😱thrill."</span>
+        <span role="img" aria-label="">
+          "I fancy a thrilling thrill.😱"
+        </span>
         {OX("questEng3")}
       </Fragment>
     );
@@ -550,7 +572,9 @@ const Main = ({ selectedLang }) => {
   const questEng4 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"I really love 🧟zombie"</span>
+        <span role="img" aria-label="">
+          "I really love zombie🧟"
+        </span>
         {OX("questEng4")}
       </Fragment>
     );
@@ -558,7 +582,9 @@ const Main = ({ selectedLang }) => {
   const questEng5 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"I've been looking for 🎵soundtracks in the game."</span>
+        <span role="img" aria-label="">
+          "🎵 I've been looking for soundtracks in the game."
+        </span>
         {/*  */}
         {OX("questEng5")}
       </Fragment>
@@ -567,12 +593,14 @@ const Main = ({ selectedLang }) => {
   const questEng6 = () => {
     return (
       <Fragment>
-        <span role="img" aria-label="">"The better the ✍🏻story, the greater the immersion."</span>
+        <span role="img" aria-label="">
+          "The better the story, the greater the immersion.✍🏻"
+        </span>
         {OX("questEng6")}
       </Fragment>
     );
   };
-  
+
   const greetEng = () => {
     return (
       <Fragment>
@@ -589,7 +617,7 @@ const Main = ({ selectedLang }) => {
 
   const branchRendering = (num) => {
     const arrCheck = Object.keys(num);
-    if(selectedLang==="한국어"){
+    if (selectedLang === "한국어") {
       if (arrCheck.length === 0) {
         return quest1();
       } else if (arrCheck.length === 1) {
@@ -605,7 +633,7 @@ const Main = ({ selectedLang }) => {
       } else if (arrCheck.length === 6) {
         return greet();
       }
-    } else if(selectedLang==="English"){
+    } else if (selectedLang === "English") {
       if (arrCheck.length === 0) {
         return questEng1();
       } else if (arrCheck.length === 1) {
@@ -624,12 +652,12 @@ const Main = ({ selectedLang }) => {
     }
   };
   const entrance = (lang) => {
-    if(lang==="한국어"){
-      return "당신에게 딱 맞는 게임을 찾아보세요."
-    } else if(lang==="English") {
-      return "Find the game suits you perfectly on Toffy."
+    if (lang === "한국어") {
+      return "당신에게 딱 맞는 게임을 찾아보세요.";
+    } else if (lang === "English") {
+      return "Find the game suits you perfectly on Toffy.";
     }
-  }
+  };
   return (
     <div id="ht-tm-jumbotron">
       <div class="jumbotron bg-transparent mb-0 radius-0">

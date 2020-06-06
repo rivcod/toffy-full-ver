@@ -1,47 +1,58 @@
 import React from "react";
 
-const Footer = ({selectedLang, selectLang}) => {
+const Footer = ({ selectedLang, selectLang }) => {
   const setClassNameToggle = () => {
-    const prevClassName = document.getElementsByClassName("dropdown-menu")[0]
-    prevClassName.classList.toggle ("show");
-  }
-    return (
-      <div className="footer py-5">
-        <div className="ht-tm-element btn-group btn-group-sm">
-          <button
-            type="button"
-            className="btn dropdown-toggle btn-sm btn-primary"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            onClick={() => setClassNameToggle()}>
-            {selectedLang}
-          </button>
-          <div
-            className="dropdown-menu"
-            x-placement="bottom-start"
-            style={{
-              position: "absolute",
-              willChange: "transform",
-              top: "0px",
-              left: "0px",
-              transform: "translate3d(0px, 31px, 0px)"
+    const prevClassName = document.getElementsByClassName("dropdown-menu")[0];
+    prevClassName.classList.toggle("show");
+  };
+  return (
+    <div className="footer py-5">
+      <div className="ht-tm-element btn-group btn-group-sm">
+        <button
+          type="button"
+          className="btn dropdown-toggle btn-sm btn-primary"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          onClick={() => setClassNameToggle()}
+        >
+          {selectedLang}
+        </button>
+        <div
+          className="dropdown-menu"
+          x-placement="bottom-start"
+          style={{
+            position: "absolute",
+            willChange: "transform",
+            top: "0px",
+            left: "0px",
+            transform: "translate3d(0px, 31px, 0px)",
+          }}
+        >
+          <a
+            className="dropdown-item"
+            onClick={() => {
+              return setClassNameToggle(), selectLang("English");
             }}
           >
-            <a className="dropdown-item" onClick={() =>{return(setClassNameToggle(), selectLang("English"))}}>
-              English
-            </a>
-            <a className="dropdown-item" onClick={() => {return(setClassNameToggle(), selectLang("한국어"))}}>
-              한국어
-            </a>
-          </div>
+            English
+          </a>
+          <a
+            className="dropdown-item"
+            onClick={() => {
+              return setClassNameToggle(), selectLang("한국어");
+            }}
+          >
+            한국어
+          </a>
         </div>
-        <p className="notice">
-          Thank you for coming Toffy. If you have trouble or find a
-          bug, Please contact me at this address.: pianist5555@gmail.com
-        </p>
       </div>
-    );
-}
+      <p className="notice">
+        Thank you for visiting. If you have trouble or find a bug, Please write
+        it down on Contact page.
+      </p>
+    </div>
+  );
+};
 
 export default Footer;
