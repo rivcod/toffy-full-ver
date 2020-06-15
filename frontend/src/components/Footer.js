@@ -47,10 +47,14 @@ const Footer = ({ selectedLang, selectLang }) => {
           </a>
         </div>
       </div>
+      <a href="https://github.com/pianist5555/toffy-full-ver" class="ht-tm-element btn btn-primary fa-github">
+          Git
+        </a>
       <p className="notice">
         Thank you for visiting. If you have trouble or find a bug, Please write
         it down on Contact page.
       </p>
+      
     </div>
   );
 };

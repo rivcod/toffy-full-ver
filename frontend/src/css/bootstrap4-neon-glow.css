@@ -12327,6 +12327,14 @@ a.text-dark:focus {
   margin:0px;
 }
 
+.fa-github{
+  margin : 0 0 0 10px;
+  line-height: 1.0;
+  border-radius: 0.2rem;
+  height:31.5px;
+  text-align: center;
+}
+
 /*Languages*/
 .footer.py-5 > .ht-tm-element.btn-group.btn-group-sm{
   width:110px;
