@@ -64,13 +64,13 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
                       {game.price}
                     </a>
                     <div id="_tags">
-                      <button className="ht-tm-element badge badge-primary">
+                      <button className="ht-tm-element badge badge-primary" disabled>
                         {tagOne}
                       </button>
-                      <button className="ht-tm-element badge badge-primary">
+                      <button className="ht-tm-element badge badge-primary" disabled>
                         {tagTwo}
                       </button>
-                      <button className="ht-tm-element badge badge-primary">
+                      <button className="ht-tm-element badge badge-primary" disabled>
                         {tagThree}
                       </button>
                     </div>

@@ -7,7 +7,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@font-face {
+ @font-face {
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 100;
@@ -120,6 +120,7 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  max-width: 1920px;
 }
 
 article,
@@ -144,6 +145,8 @@ body {
   color: #e4e2ff;
   text-align: left;
   background-color:rgba(0,0,0,0.8);
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 [tabindex="-1"]:focus {
@@ -5275,11 +5278,12 @@ input[type="button"].btn-block {
 }
 
 .card-body {
+  
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.75rem;
+  padding: 110px 28px 0px 0px
 }
 
 .img-responsive {
@@ -12333,7 +12337,7 @@ a.text-dark:focus {
   margin : 0px 0px 0px 0px;
   background-size: 100%;
   /*background-image: url('../images/A_back.png');*/
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/A_back.png');
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/A_back.jpg');
 }
 .ContactBody{
   margin : 0px 330px 0px 0px;
@@ -12374,11 +12378,12 @@ a.text-dark:focus {
 }
 
 #ht-tm-jumbotron{
-  background-image: url('../images/A_back.png');
+  background-image: url('../images/A_back.jpg');
 }
 
 .TagsContainer {
   background-color: white;
+  width:1920px;
 }
 
 .submitLogo {

@@ -8,7 +8,7 @@ import logo from "../images/logo-white1.png";
     if(para === "Contact"){
       const myDiv = document.getElementById("inputBlank");
       myDiv.setAttribute('readonly',true)
-      myDiv.setAttribute('placeholder',"Search is not available here.")
+      myDiv.setAttribute('placeholder',"")
       console.log("myDiv = "+myDiv.value)
     }
   });
