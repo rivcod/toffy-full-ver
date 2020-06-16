@@ -305,7 +305,7 @@ const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrent
             }}>
             #야구
           </button>
-          <button className={colorToggle(56) ? "ht-tm-element badge badge-success" : "ht-tm-element badge badge-primary" } onClick={() => {
+          <button className={colorToggle(57) ? "ht-tm-element badge badge-success" : "ht-tm-element badge badge-primary" } onClick={() => {
               return tagToggle("57");
             }}>
             #사운드트랙
