@@ -29,7 +29,7 @@ const Footer = ({ selectedLang, selectLang }) => {
             transform: "translate3d(0px, 31px, 0px)",
           }}
         >
-          <a
+          <a href="#!"
             className="dropdown-item"
             onClick={() => {
               return setClassNameToggle(), selectLang("English");
@@ -37,7 +37,7 @@ const Footer = ({ selectedLang, selectLang }) => {
           >
             English
           </a>
-          <a
+          <a href="#!"
             className="dropdown-item"
             onClick={() => {
               return setClassNameToggle(), selectLang("한국어");
@@ -47,7 +47,7 @@ const Footer = ({ selectedLang, selectLang }) => {
           </a>
         </div>
       </div>
-      <a href="https://github.com/pianist5555/toffy-full-ver" class="ht-tm-element btn btn-primary fa-github">
+      <a href="https://github.com/pianist5555/toffy-full-ver" className="ht-tm-element btn btn-primary fa-github">
           GitHub
         </a>
       <p className="notice">

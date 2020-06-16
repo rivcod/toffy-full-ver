@@ -38,7 +38,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
             const tagTwo = nukeOne(game.tag2)
             const tagThree = nukeOne(game.tag3)
             return (
-              <div className="featured-job">
+              <div className="featured-job" key={game.id}>
                 <a href={game.href}>
                   {
                     <img
@@ -152,36 +152,36 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
       if(arg!=="searching"){
         if(selectedLang==="한국어"){
           return (
-            <div class="ht-tm-element alert alert-success" role="alert">
-            <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
+            <div className="ht-tm-element alert alert-success" role="alert">
+            <h4 className="alert-heading">게임을 찾지 못했습니다.</h4>
             장르 조합을 변경하시거나 &nbsp;
-            <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
+            <a href="Contact" className="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
           </div>
           )
         } else if (selectedLang==="English"){
           return (
-            <div class="ht-tm-element alert alert-success" role="alert">
-            <h4 class="alert-heading">Game not found.</h4>
+            <div className="ht-tm-element alert alert-success" role="alert">
+            <h4 clclassNameass="alert-heading">Game not found.</h4>
             Change genre combinations, or &nbsp;
-            <a href="Contact" class="alert-link">Click here to tell us the game you want.</a>
+            <a href="Contact" className="alert-link">Click here to tell us the game you want.</a>
           </div>
           )
         }
       } else {
         if(selectedLang==="한국어"){
           return (
-            <div class="ht-tm-element alert alert-primary" role="alert">
-            <h4 class="alert-heading">게임을 찾지 못했습니다.</h4>
+            <div className="ht-tm-element alert alert-primary" role="alert">
+            <h4 className="alert-heading">게임을 찾지 못했습니다.</h4>
             검색어를 변경하시거나 &nbsp;
             <a href="Contact" class="alert-link">이곳을 눌러 원하시는 게임을 말씀해주세요.</a>
           </div>
           )
         } else if (selectedLang==="English"){
           return (
-            <div class="ht-tm-element alert alert-primary" role="alert">
-            <h4 class="alert-heading">Game not found.</h4>
+            <div className="ht-tm-element alert alert-primary" role="alert">
+            <h4 className="alert-heading">Game not found.</h4>
             Change search value, or &nbsp;
-            <a href="Contact" class="alert-link">Click here to tell us the game you want.</a>
+            <a href="Contact" className="alert-link">Click here to tell us the game you want.</a>
           </div>
           )
         }
@@ -212,9 +212,9 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
   const loadingAnime = () => {
     if(loadingGameList){
     return(
-      <div class="ht-tm-codeblock mt-5">
-        <div class="progress ht-tm-element">
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width:'75%'}}></div>
+      <div className="ht-tm-codeblock mt-5">
+        <div className="progress ht-tm-element">
+          <div className="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width:'75%'}}></div>
         </div>
       </div>
     );}
