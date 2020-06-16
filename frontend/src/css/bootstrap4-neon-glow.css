@@ -12244,7 +12244,7 @@ a.text-dark:focus {
 /* 사용자 정의 CSS (선오) */
 /*설문조사*/
 .text-mono{
-  color:#17b06b
+  color:white;
 }
 /*로딩 애니메이션*/
 .ht-tm-codeblock.mt-5{
