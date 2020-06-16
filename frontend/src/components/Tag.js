@@ -80,11 +80,6 @@ const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrent
             }}>
             #공포
           </button>
-          <button className={colorToggle(11) ? "ht-tm-element badge badge-success" : "ht-tm-element badge badge-primary" } onClick={() => {
-              return tagToggle("11");
-            }}>
-            #레이싱
-          </button>
           <button className={colorToggle(12) ? "ht-tm-element badge badge-success" : "ht-tm-element badge badge-primary" } onClick={() => {
               return tagToggle("12");
             }}>
