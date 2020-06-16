@@ -101,7 +101,7 @@ class MyPage extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="submitLogo"></div>
+                  <div className="submitLogo"></div>
                   <div className="form-group">
                     <input
                       type="writer"
@@ -111,7 +111,7 @@ class MyPage extends Component {
                       id="_writer"
                       aria-describedby="_writer"
                       placeholder="Stranger"
-                      maxlength="20"
+                      maxLength="20"
                     ></input>
                     <textarea
                       type="text"
@@ -121,12 +121,12 @@ class MyPage extends Component {
                       id="_text"
                       aria-describedby="_text"
                       placeholder="Want to talk?"
-                      maxlength="200"
+                      maxLength="200"
                     ></textarea>
                     <div id="_apiJoinclassName">
                       <button
                         onClick={this._handleSubmit}
-                        class="ht-tm-element btn btn-outline-light"
+                        className="ht-tm-element btn btn-outline-light"
                       >
                         SEND
                       </button>
