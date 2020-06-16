@@ -12,9 +12,9 @@ const Tag = ({selectedTags, selectedColors, selectTags, unselectTags, setCurrent
   const tagToggle = (tags) => {
     const tagCasting = Array.from(selectedTags)
     setCurrentPage(1) // 페이지네이션 초기화
-    if(tagCasting!==""){
+    if(tagCasting!=""){
       for (var tagItem in tagCasting) {
-        if(tagCasting.indexOf(tags)===-1&&tagItem){
+        if(tagCasting.indexOf(tags)===-1){
           selectTags(tags)
           break;
         } else {
