@@ -39,7 +39,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
             const tagThree = nukeOne(game.tag3)
             return (
               <div className="featured-job" key={game.id}>
-                <a href={game.href} target='_blank'>
+                <a href={game.href} rel="noopener noreferrer" target='_blank'>
                   {
                     <img
                       src={game.image}
@@ -57,7 +57,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
                   </div>
                   <div id="_price">
                     <a
-                      href={game.href} target='_blank'
+                      href={game.href} rel="noopener noreferrer" target='_blank'
                       className="ht-tm-element btn btn-outline-primary btn-sm"
                       id="_priceBtn"
                     >
@@ -98,7 +98,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
         const tagThree = nukeOne(game.tag3)
         return (
           <div className="featured-job">
-            <a href={game.href} target='_blank'>
+            <a href={game.href} rel="noopener noreferrer" target='_blank'>
               {
                 <img
                   src={game.image}
@@ -116,7 +116,7 @@ const GameList = ({ gameList, loadingGameList, select, currentPage, setTotalPost
               </div>
               <div id="_price">
                 <a
-                  href={game.href} target='_blank'
+                  href={game.href} rel="noopener noreferrer" target='_blank'
                   className="ht-tm-element btn btn-outline-primary btn-sm"
                   id="_priceBtn"
                 >

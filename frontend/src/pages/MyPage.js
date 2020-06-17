@@ -47,7 +47,7 @@ class MyPage extends Component {
 
   //서버로 Data 전송
   _handleSubmit = () => {
-    if(writeSomething==true&&whoAreYou==true){
+    if(writeSomething===true&&whoAreYou===true){
       const value1 = this.state.value1;
       const value2 = this.state.value2;
       let input1, input2;
