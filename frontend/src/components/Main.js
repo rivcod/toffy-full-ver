@@ -504,7 +504,7 @@ const Main = ({ selectedLang }) => {
   };
   const tagPush =(num) => {
     if(askArr[num]!=="0"){
-      return (<button className="ht-tm-element badge badge-primary main-badge">{askArr[num]}</button>);
+      return (<button className="ht-tm-element badge badge-primary main-badge" disabled='disabled'>{askArr[num]}</button>);
     }
   }
   
