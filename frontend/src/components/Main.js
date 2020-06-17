@@ -638,7 +638,7 @@ const Main = ({ selectedLang }) => {
             <div className="row">
               <div className="col-xl-8">
                 <h1 className="display-2">
-                  #Tap of your tast<span className="vim-caret">e</span>
+                  #Tap off your tast<span className="vim-caret">e</span>
                 </h1>
                 <div className="lead mb-3 text-mono text-success">
                   {entrance(selectedLang)}
