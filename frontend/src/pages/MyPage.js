@@ -6,7 +6,8 @@ import "../css/bootstrap4-neon-glow.css";
 
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
-
+let writeSomething = false
+let whoAreYou = false
 class MyPage extends Component {
   state = {
     value1: "",
@@ -29,6 +30,7 @@ class MyPage extends Component {
   // writer
   _handleWriter = (e) => {
     e.preventDefault();
+    whoAreYou=true;
     this.setState({
       value1: e.target.value,
     });
@@ -37,6 +39,7 @@ class MyPage extends Component {
   //text
   _handleText = (e) => {
     e.preventDefault();
+    writeSomething=true;
     this.setState({
       value2: e.target.value,
     });
@@ -44,18 +47,21 @@ class MyPage extends Component {
 
   //서버로 Data 전송
   _handleSubmit = () => {
-    const value1 = this.state.value1;
-    const value2 = this.state.value2;
-    let input1, input2;
-    [input1, input2] = [
-      document.getElementById("_writer"),
-      document.getElementById("_text"),
-    ];
-    input1.value = "";
-    input2.value = "";
-    axios
-      .post("/api/tfnote/", { writer: value1, text: value2 })
-      .then((res) => this._renderText());
+    if(writeSomething==true&&whoAreYou==true){
+      const value1 = this.state.value1;
+      const value2 = this.state.value2;
+      let input1, input2;
+      [input1, input2] = [
+        document.getElementById("_writer"),
+        document.getElementById("_text"),
+      ];
+      input1.value = "";
+      input2.value = "";
+      axios
+        .post("/api/tfnote/", { writer: value1, text: value2 })
+        .then((res) => this._renderText());
+        writeSomething=false
+    }
   };
 
   render() {
@@ -111,6 +117,8 @@ class MyPage extends Component {
                       id="_writer"
                       aria-describedby="_writer"
                       placeholder="Stranger"
+                      onFocus={(e) => e.target.placeholder = ""} 
+                      onBlur={(e) => e.target.placeholder = "Stranger"}
                       maxLength="20"
                     ></input>
                     <textarea
@@ -118,6 +126,8 @@ class MyPage extends Component {
                       className="form-control text"
                       value={this.state.value}
                       onChange={this._handleText}
+                      onFocus={(e) => e.target.placeholder = ""} 
+                      onBlur={(e) => e.target.placeholder = "Want to talk?"}
                       id="_text"
                       aria-describedby="_text"
                       placeholder="Want to talk?"
