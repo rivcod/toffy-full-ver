@@ -22,8 +22,17 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
       }
         
       
-      const branchRendering = (number,check) => {
-        if(number<=currentPage+2&&number>=currentPage-2){ // 현재 선택된 페이지가 받아오는 숫자에 +2보다 작거나 같고 -2보다는 크다
+      const branchRendering = (number) => {
+        if((currentPage===1||currentPage===2)&&number<6){
+          return(
+            <li key={number} className={afterClassName.length===0&&number===1 ? "page-item active" :'page-item'} id={number}>
+              <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
+                {number}
+              </button>
+            </li>
+          )
+        }
+        else if(number<=currentPage+2&&number>=currentPage-2){ // 현재 선택된 페이지가 받아오는 숫자에 +2보다 작거나 같고 -2보다는 크다
             return(
               <li key={number} className={afterClassName.length===0&&number===1 ? "page-item active" :'page-item'} id={number}>
                 <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>
@@ -38,7 +47,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
       }
 
       const dotdotdotPrevious = () => {
-        if((currentPage)>4){
+        if((currentPage)>3){
           return (
             <button className="page-link">...</button>
           );
@@ -57,8 +66,8 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
           return(
             <nav className="paginationNav">
               <ul className='pagination'>
-                {pageNumbers.map((number,check) => (
-                  branchRendering(number,check)
+                {pageNumbers.map((number) => (
+                  branchRendering(number)
                 ))}
               </ul>
             </nav>
@@ -70,8 +79,8 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
               
               <button className="page-link" onClick={() => { return( (currentPage-1)!==0 ? (setCurrentPage(currentPage-1),setClassNameToggle(currentPage-1)) : "" ) }}>Previous</button>
                 {dotdotdotPrevious()}
-                {pageNumbers.map((number,check) => (
-                  branchRendering(number,check)
+                {pageNumbers.map((number) => (
+                  branchRendering(number)
                 ))}
                 {dotdotdotNext()}
               <button className="page-link" onClick={() => {return( currentPage<pageNumbers.length ? (setCurrentPage(currentPage+1),setClassNameToggle(currentPage+1)) : "" ) }}>Next</button>
