@@ -32,7 +32,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, setCurrentPage, sele
             </li>
           )
         }
-        else if(number<=currentPage+2&&number>=currentPage-2){ // 현재 선택된 페이지가 받아오는 숫자에 +2보다 작거나 같고 -2보다는 크다
+        else if(number<=currentPage+2&&number>=currentPage-2){
             return(
               <li key={number} className={afterClassName.length===0&&number===1 ? "page-item active" :'page-item'} id={number}>
                 <button onClick={() => {return(setCurrentPage(number),setClassNameToggle(number))}} className='page-link'>

@@ -12253,15 +12253,15 @@ a.text-dark:focus {
 /*페이지네이션*/
 .paginationNav{
   text-align: center;
-  margin-left: 65%;
-  margin-right: 35%;
+  margin-left: 45%;
+  margin-right: 55%;
   margin-bottom: 25px;
 }
 
 .paginationNav.first{
   text-align: center;
-  margin-left: 38%;
-  margin-right: 62%;
+  margin-left: 40%;
+  margin-right: 60%;
   margin-bottom: 25px;
 }
 
