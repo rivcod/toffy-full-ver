@@ -12350,8 +12350,6 @@ a.text-dark:focus {
   background-size: 100%;
   /*background-image: url('../images/A_back.png');*/
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/A_back.jpg');
-  position: fixed; 
-	overflow-y: scroll;
 	width: 100%
 }
 .ContactBody{
